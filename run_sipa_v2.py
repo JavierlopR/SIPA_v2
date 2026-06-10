@@ -43,9 +43,9 @@ def main():
     print("=" * 60)
     
     try:
-        # Ejecutar 'streamlit run src/app.py' en el directorio correcto
-        # shell=True es requerido en Windows para resolver comandos de scripts como streamlit
-        subprocess.run(["streamlit", "run", "src/app.py"], cwd=project_root, check=True, shell=True)
+        # Ejecutar Streamlit como un módulo de Python usando el mismo intérprete activo
+        # Esto evita problemas si la carpeta de scripts de pip no está en el PATH de Windows
+        subprocess.run([sys.executable, "-m", "streamlit", "run", "src/app.py"], cwd=project_root, check=True)
     except KeyboardInterrupt:
         print("\n👋 Servidor SIPA v2 detenido por el usuario. ¡Hasta pronto!")
     except Exception as e:
