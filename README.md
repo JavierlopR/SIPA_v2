@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JavierlopR/SIPA_v2/blob/main/notebooks/SIPA_v2_Colab.ipynb)
 
-**SIPA v2** es una plataforma educativa interactiva premium diseñada para inversores principiantes. Su propósito central es **desmitificar la ilusión de predecir el futuro del mercado** y orientar al usuario hacia la gestión de riesgos, la diversificación y la comprensión de su propia psicología financiera mediante inteligencia artificial.
+**SIPA v2** es una plataforma educativa interactiva diseñada para inversores principiantes. Su propósito central es **desmitificar la ilusión de predecir el futuro del mercado** y orientar al usuario hacia la gestión de riesgos, la diversificación y la comprensión de su propia psicología financiera mediante inteligencia artificial.
 
 ---
 
