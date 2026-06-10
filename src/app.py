@@ -23,6 +23,7 @@ from market_analysis import (
 from coach import (
     generate_coach_response, BIASES_COACHING, BROKERS_PROFILE,
 )
+from storage import load_user_data, save_user_data
 
 # ── Detectar versión de google-generativeai instalada ─────────────────────
 try:
@@ -44,6 +45,14 @@ MODEL_DIR = os.path.join(PROJECT_ROOT, 'models', 'intent_bias')
 INTENT_MODEL_PATH = os.path.join(MODEL_DIR, 'intent_model.joblib')
 BIAS_MODEL_PATH = os.path.join(MODEL_DIR, 'bias_model.joblib')
 
+
+# ── Inicialización de datos persistentes ───────────────────────────────────
+if "user_data_loaded" not in st.session_state:
+    saved_data = load_user_data()
+    st.session_state.gemini_key = saved_data.get("gemini_key", "")
+    if saved_data.get("chat_history"):
+        st.session_state.chat_history = saved_data["chat_history"]
+    st.session_state.user_data_loaded = True
 
 @st.cache_resource
 def load_ml_models():
@@ -140,26 +149,50 @@ with st.sidebar:
     if GEMINI_AVAILABLE:
         st.success("✅ Gemini SDK instalado")
     else:
-        st.warning("⚠️ SDK no instalado. Ejecuta: `pip install google-generativeai`")
+        st.warning("⚠️ SDK no instalado. Ejecuta: `pip install google-genai`")
 
     st.markdown(
         "**[Obtén tu clave gratis aquí →](https://aistudio.google.com/apikey)**"
         " (Google AI Studio, tier gratuito, sin tarjeta de crédito)",
         unsafe_allow_html=False
     )
-    gemini_key = st.text_input(
-        "🔑 Gemini API Key",
+    
+    if "gemini_key" not in st.session_state:
+        st.session_state.gemini_key = ""
+
+    st.text_input(
+        "Gemini API Key (Recomendado)",
         type="password",
-        placeholder="AIza...",
-        help="Clave de Google AI Studio. Es gratuita. Con ella SIPA responde como un asesor real."
+        placeholder="AIzaSy...",
+        key="gemini_key",
+        help="Consigue tu clave en Google AI Studio (Gratis)"
     )
+    col_btn1, col_btn2 = st.columns(2)
+    with col_btn1:
+        if st.button("Guardar Key", use_container_width=True):
+            save_user_data({
+                "gemini_key": st.session_state.gemini_key,
+                "chat_history": st.session_state.get("chat_history", [])
+            })
+            st.success("✅ Key guardada.")
+            st.rerun()
+    with col_btn2:
+        if st.button("Borrar Historial", use_container_width=True):
+            st.session_state.chat_history = []
+            save_user_data({
+                "gemini_key": st.session_state.gemini_key,
+                "chat_history": []
+            })
+            st.rerun()
+        
+    gemini_key = st.session_state.gemini_key
 
     with st.expander("¿Cómo conseguir la clave? (30 segundos)", expanded=False):
         st.markdown("""
-        1. Entra en **[aistudio.google.com](https://aistudio.google.com/apikey)**
-        2. Haz clic en **"Create API Key"**
+        1. Entra en **[aistudio.google.com/apikey](https://aistudio.google.com/apikey)**
+        2. Haz clic en **'Create API key'** → selecciona **'Create API key in new project'**
         3. Copia la clave (empieza por `AIza...`)
-        4. Pégala arriba
+        4. Pégala arriba y pulsa **Guardar Key**
         5. ¡Listo! Sin tarjeta, sin pago.
         """)
 
@@ -247,128 +280,144 @@ with tab_chat:
                 unsafe_allow_html=True
             )
 
-            if "chat_history" not in st.session_state:
-                st.session_state.chat_history = [
-                    {
-                        "role": "assistant",
-                        "content": (
-                            "👋 ¡Hola! Soy **SIPA Coach v2**, tu asistente de psicología financiera y mercados.\n\n"
-                            "Puedo ayudarte con:\n"
-                            "- 📊 **Análisis técnico en tiempo real** de cualquier acción, ETF o cripto que menciones\n"
-                            "- 🧠 **Diagnóstico de sesgos** cognitivos en tus decisiones de inversión\n"
-                            "- 🏦 **Consultas sobre cualquier broker**: comisiones, trampas de diseño, recomendaciones\n"
-                            "- ❓ **Gestión de posiciones**: ¿vender? ¿comprar más? ¿mantener?\n\n"
-                            "Cuéntame: ¿qué tienes en mente? Puedes escribir algo como: "
-                            "*'Compré Tesla y está cayendo, ¿vendo?'* o "
-                            "*'¿Qué piensas de Trade Republic para empezar?'*"
-                        )
-                    }
-                ]
+            # Usar un contenedor con altura fija para que el chat haga scroll automáticamente
+            chat_container = st.container(height=600, border=False)
+            
+            with chat_container:
+                if "chat_history" not in st.session_state:
+                    st.session_state.chat_history = [
+                        {
+                            "role": "assistant",
+                            "content": (
+                                "👋 ¡Hola! Soy **SIPA Coach v2**, tu asistente de psicología financiera y mercados.\n\n"
+                                "Puedo ayudarte con:\n"
+                                "- 📊 **Análisis técnico en tiempo real** de cualquier acción, ETF o cripto que menciones\n"
+                                "- 🧠 **Diagnóstico de sesgos** cognitivos en tus decisiones de inversión\n"
+                                "- 🏦 **Consultas sobre cualquier broker**: comisiones, trampas de diseño, recomendaciones\n"
+                                "- ❓ **Gestión de posiciones**: ¿vender? ¿comprar más? ¿mantener?\n\n"
+                                "Cuéntame: ¿qué tienes en mente? Puedes escribir algo como: "
+                                "*'Compré Tesla y está cayendo, ¿vendo?'* o "
+                                "*'¿Qué piensas de Trade Republic para empezar?'*"
+                            )
+                        }
+                    ]
 
-            for msg in st.session_state.chat_history:
-                with st.chat_message(msg["role"]):
-                    st.markdown(msg["content"])
+                for msg in st.session_state.chat_history:
+                    with st.chat_message(msg["role"]):
+                        st.markdown(msg["content"])
 
             user_input = st.chat_input("Escribe tu consulta sobre inversiones, activos o brokers...")
 
             if user_input:
                 st.session_state.chat_history.append({"role": "user", "content": user_input})
-                with st.chat_message("user"):
-                    st.markdown(user_input)
+                with chat_container:
+                    with st.chat_message("user"):
+                        st.markdown(user_input)
 
-                with st.chat_message("assistant"):
-                    with st.spinner("Analizando tu mensaje y consultando mercados..."):
-                        # ── NLP: Intención y Sesgo ─────────────────────────
-                        pred_intent = intent_model.predict([user_input])[0]
-                        pred_bias = bias_model.predict([user_input])[0]
-                        bias_probs_vector = bias_model.predict_proba([user_input])[0]
-                        classes_bias = bias_model.classes_
-                        probs_dict = {classes_bias[i]: float(bias_probs_vector[i]) for i in range(len(classes_bias))}
+                    with st.chat_message("assistant"):
+                        with st.spinner("Analizando tu mensaje y consultando mercados..."):
+                            # ── NLP: Intención y Sesgo ─────────────────────────
+                            pred_intent = intent_model.predict([user_input])[0]
+                            pred_bias = bias_model.predict([user_input])[0]
+                            bias_probs_vector = bias_model.predict_proba([user_input])[0]
+                            classes_bias = bias_model.classes_
+                            probs_dict = {classes_bias[i]: float(bias_probs_vector[i]) for i in range(len(classes_bias))}
 
-                        st.session_state.last_probs = probs_dict
-                        st.session_state.last_bias = pred_bias
+                            st.session_state.last_probs = probs_dict
+                            st.session_state.last_bias = pred_bias
 
-                        # ── Detección de ticker en el mensaje ─────────────
-                        detected_ticker = extract_ticker_from_text(user_input)
-                        ticker_audit = None
-                        if detected_ticker:
-                            ticker_audit = get_ticker_audit(detected_ticker)
+                            # ── Detección de ticker en el mensaje ─────────────
+                            detected_ticker = extract_ticker_from_text(user_input)
+                            ticker_audit = None
+                            if detected_ticker:
+                                ticker_audit = get_ticker_audit(detected_ticker)
 
-                        # ── Detección de broker mencionado en texto ────────
-                        msg_lower = user_input.lower()
-                        mentioned_broker = selected_broker_id or ""
-                        for bid, bdata in BROKERS_PROFILE.items():
-                            if bdata["name"].lower().split()[0] in msg_lower or bid.replace("_", " ") in msg_lower:
-                                mentioned_broker = bid
-                                break
+                            # ── Detección de broker mencionado en texto ────────
+                            msg_lower = user_input.lower()
+                            mentioned_broker = selected_broker_id or ""
+                            for bid, bdata in BROKERS_PROFILE.items():
+                                if bdata["name"].lower().split()[0] in msg_lower or bid.replace("_", " ") in msg_lower:
+                                    mentioned_broker = bid
+                                    break
 
-                        # ── Historial en formato Gemini ────────────────────
-                        gemini_history = []
-                        for hist_msg in st.session_state.chat_history[1:]:  # skip bienvenida
-                            role = "model" if hist_msg["role"] == "assistant" else "user"
-                            content = hist_msg["content"]
-                            for badge in ["✨ **[Gemini 2.0 Flash]**\n\n", "🧠 **[GPT-4o-mini]**\n\n",
-                                          "⚠️ **[Motor Local — Añade tu Gemini Key para respuestas inteligentes]**\n\n"]:
-                                content = content.replace(badge, "")
-                            gemini_history.append({"role": role, "parts": [content]})
+                            # ── Historial en formato Gemini ────────────────────
+                            gemini_history = []
+                            for hist_msg in st.session_state.chat_history[1:]:  # skip bienvenida
+                                role = "model" if hist_msg["role"] == "assistant" else "user"
+                                content = hist_msg["content"]
+                                for badge in ["✨ **[Gemini]**\n\n", "✨ **[Gemini 2.0 Flash]**\n\n", "🧠 **[GPT-4o-mini]**\n\n",
+                                              "⚠️ **[Motor Local — Añade tu Gemini Key para respuestas inteligentes]**\n\n"]:
+                                    content = content.replace(badge, "")
+                                gemini_history.append({"role": role, "parts": [content]})
 
-                        # ── Generar respuesta del Coach ────────────────────
-                        coach_output = generate_coach_response(
-                            user_text=user_input,
-                            detected_intent=pred_intent,
-                            detected_bias=pred_bias,
-                            bias_probs=probs_dict,
-                            broker_id=mentioned_broker if mentioned_broker else None,
-                            gemini_key=gemini_key,
-                            openai_key=openai_key,
-                            ticker_audit=ticker_audit,
-                            exp_level=exp_level,
-                            chat_history=gemini_history,
-                        )
+                            # ── Generar respuesta del Coach ────────────────────
+                            coach_output = generate_coach_response(
+                                user_text=user_input,
+                                detected_intent=pred_intent,
+                                detected_bias=pred_bias,
+                                bias_probs=probs_dict,
+                                broker_id=mentioned_broker if mentioned_broker else None,
+                                gemini_key=gemini_key,
+                                openai_key=openai_key,
+                                ticker_audit=ticker_audit,
+                                exp_level=exp_level,
+                                chat_history=gemini_history,
+                            )
 
-                    # ── Renderizar respuesta ───────────────────────────────
-                    engine = coach_output.get("llm_engine", "local")
-                    if engine == "Gemini 2.0 Flash":
-                        mode_badge = "✨ **[Gemini 2.0 Flash]**"
-                    elif engine == "GPT-4o-mini":
-                        mode_badge = "🧠 **[GPT-4o-mini]**"
-                    else:
-                        mode_badge = "⚠️ **[Motor Local — Añade tu Gemini Key para respuestas inteligentes]**"
-                    full_response = f"{mode_badge}\n\n{coach_output['response']}"
-                    st.markdown(full_response)
+                        # ── Renderizar respuesta ───────────────────────────────
+                        engine = coach_output.get("llm_engine", "local")
+                        if "Gemini" in engine:
+                            mode_badge = "✨ **[Gemini]**"
+                        elif "GPT" in engine:
+                            mode_badge = "🧠 **[GPT-4o-mini]**"
+                        else:
+                            mode_badge = "⚠️ **[Motor Local — Añade tu Gemini Key para respuestas inteligentes]**"
+                            
+                        # Limpiar respuesta de posibles fallos de markdown incompletos
+                        clean_response = coach_output['response'].strip()
+                        if clean_response.count("**") % 2 != 0:
+                            clean_response += "**"
+                        if clean_response.count("*") % 2 != 0 and clean_response.count("**") % 2 == 0:
+                            clean_response += "*"
+                            
+                        full_response = f"{mode_badge}\n\n{clean_response}"
+                        st.markdown(full_response)
 
+                        # ── Panel colapsable: diagnóstico NLP ──────────────────
+                        with st.expander("🔍 Diagnóstico NLP (detalles técnicos)", expanded=False):
+                            c1, c2, c3 = st.columns(3)
+                            c1.metric("Intención", pred_intent)
+                            c2.metric("Sesgo Dominante", pred_bias)
+                            c3.metric("Ticker detectado", detected_ticker or "ninguno")
+                            st.write("**Probabilidades de sesgos:**")
+                            for k, v in sorted(probs_dict.items(), key=lambda x: -x[1]):
+                                pct = v * 100
+                                st.progress(v, text=f"{k}: {pct:.1f}%")
 
-                    # ── Panel colapsable: diagnóstico NLP ──────────────────
-                    with st.expander("🔍 Diagnóstico NLP (detalles técnicos)", expanded=False):
-                        c1, c2, c3 = st.columns(3)
-                        c1.metric("Intención", pred_intent)
-                        c2.metric("Sesgo Dominante", pred_bias)
-                        c3.metric("Ticker detectado", detected_ticker or "ninguno")
-                        st.write("**Probabilidades de sesgos:**")
-                        for k, v in sorted(probs_dict.items(), key=lambda x: -x[1]):
-                            pct = v * 100
-                            st.progress(v, text=f"{k}: {pct:.1f}%")
+                        # ── Métricas del activo si se detectó ticker ──────────
+                        if ticker_audit and not ticker_audit.get("simulado") and ticker_audit.get("precio_actual"):
+                            with st.expander(
+                                f"📊 Métricas de mercado — {ticker_audit['nombre']} ({ticker_audit['ticker']})",
+                                expanded=True
+                            ):
+                                m1, m2, m3, m4, m5 = st.columns(5)
+                                ret = ticker_audit['retorno_hoy']
+                                signo = "+" if ret >= 0 else ""
+                                m1.metric("Precio", f"${ticker_audit['precio_actual']:,.2f}")
+                                m2.metric("Hoy", f"{signo}{ret:.2f}%")
+                                m3.metric("RSI 14d", ticker_audit['rsi_14'])
+                                m4.metric("vs SMA50", f"{ticker_audit['distancia_sma']:+.1f}%")
+                                m5.metric("Vol. Anual", f"{ticker_audit['vol_anualizada']:.1f}%")
 
-                    # ── Métricas del activo si se detectó ticker ──────────
-                    if ticker_audit and not ticker_audit.get("simulado") and ticker_audit.get("precio_actual"):
-                        with st.expander(
-                            f"📊 Métricas de mercado — {ticker_audit['nombre']} ({ticker_audit['ticker']})",
-                            expanded=True
-                        ):
-                            m1, m2, m3, m4, m5 = st.columns(5)
-                            ret = ticker_audit['retorno_hoy']
-                            signo = "+" if ret >= 0 else ""
-                            m1.metric("Precio", f"${ticker_audit['precio_actual']:,.2f}")
-                            m2.metric("Hoy", f"{signo}{ret:.2f}%")
-                            m3.metric("RSI 14d", ticker_audit['rsi_14'])
-                            m4.metric("vs SMA50", f"{ticker_audit['distancia_sma']:+.1f}%")
-                            m5.metric("Vol. Anual", f"{ticker_audit['vol_anualizada']:.1f}%")
+                                st.markdown(f"**Estado técnico:** `{ticker_audit['estado_tecnico'].upper()}`")
+                                if ticker_audit['alerta_tecnica']:
+                                    st.info(ticker_audit['alerta_tecnica'])
 
-                            st.markdown(f"**Estado técnico:** `{ticker_audit['estado_tecnico'].upper()}`")
-                            if ticker_audit['alerta_tecnica']:
-                                st.info(ticker_audit['alerta_tecnica'])
-
-                st.session_state.chat_history.append({"role": "assistant", "content": full_response})
+                    st.session_state.chat_history.append({"role": "assistant", "content": full_response})
+                    save_user_data({
+                        "gemini_key": st.session_state.get("gemini_key", ""),
+                        "chat_history": st.session_state.chat_history
+                    })
             st.markdown("</div>", unsafe_allow_html=True)
 
         with col_radar:

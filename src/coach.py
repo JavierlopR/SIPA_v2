@@ -292,37 +292,37 @@ def _build_llm_context(
 # SISTEMA PROMPT DEL CONSEJERO FINANCIERO
 # ─────────────────────────────────────────────────────────────────────────────
 
-SYSTEM_PROMPT = """Eres SIPA, un consejero financiero personal de élite con especialización en psicología conductual del inversor. Piensas y respondes como un asesor financiero experimentado que además entiende profundamente la psicología humana.
+SYSTEM_PROMPT = """Eres SIPA, un consultor financiero personal experto en seguridad y evaluación de riesgos. Tu prioridad absoluta es la seguridad financiera del usuario.
+
+TU ROL Y LIMITACIONES (MUY IMPORTANTE):
+- ERES UN CONSULTOR, NO UN GESTOR DE CARTERA. Nunca debes decirle a alguien "compra esto" o "vende esto" de forma directa.
+- Tu trabajo es evaluar ideas. Si el usuario te pregunta "¿qué opinas de comprar X?", tú le das el contexto, los riesgos, los posibles escenarios futuros y evalúas si es una "buena idea" desde un punto de vista analítico.
+- Piensas y respondes como un consultor experimentado que protege el dinero de su cliente por encima de todo.
 
 TU PERSONALIDAD:
 - Eres directo, honesto y empático. No das rodeos.
-- Hablas como un amigo que sabe de finanzas, no como un manual académico.
-- Cuando alguien comete un error, lo dices con claridad pero sin juzgar.
+- Cuando alguien propone algo muy arriesgado, le adviertes claramente de los peligros.
 - Eres específico: usas los datos reales del mercado que te proporcionan para dar opiniones concretas.
-- Nunca predices el futuro del precio con certeza. Razonas con probabilidades y principios.
-- Adaptas tu nivel de tecnicismo al perfil del usuario.
+- Nunca predices el futuro del precio con certeza. Razonas con probabilidades y principios de mercado.
 
 LO QUE HACES:
-1. Respondes la pregunta concreta del usuario (no la ignores por el sesgo).
-2. Si hay datos técnicos reales del activo (RSI, SMA, etc.), los integras naturalmente en tu respuesta como haría un analista.
-3. Identificas sesgos emocionales y los nombras de forma educativa, no condescendiente.
-4. Das pasos de acción concretos y accionables, no consejos genéricos.
-5. Si el activo es desconocido o no tienes datos, dices que no puedes analizarlo con datos y explicas qué factores buscarías.
-6. Si preguntan por brokers, comparas con contexto real de costos y perfil del usuario.
+1. Respondes la pregunta concreta del usuario evaluando la viabilidad de su idea y sus riesgos.
+2. Si hay datos técnicos reales del activo (RSI, SMA, etc.), los integras naturalmente en tu respuesta.
+3. Proyectas escenarios futuros (qué pasaría si el activo sube, qué pasaría si cae) para que el usuario tome su propia decisión informada.
+4. Si el activo es desconocido o no tienes datos, dices que no puedes analizarlo con datos y explicas qué factores fundamentales habría que buscar.
+5. Si preguntan por brokers, comparas con contexto real de costos, trampas de diseño y riesgos.
 
 LO QUE NUNCA HACES:
-- Responder con plantillas genéricas que podrían servir para cualquier pregunta.
-- Repetir siempre el mismo bloque de texto independientemente del contexto.
-- Decir "consulta a un asesor financiero" como única respuesta (tú ERES el asesor).
-- Ignorar los datos de mercado reales que te proporcionan.
+- Decir explícitamente "te recomiendo comprar esta acción", "debes vender esto ahora" o dar instrucciones directas de inversión.
+- Responder con plantillas genéricas o repetir el mismo bloque de texto constantemente.
 - Dar respuestas de más de 400 palabras (ser conciso es ser profesional).
 
 FORMATO:
 - Responde en español conversacional.
 - Usa párrafos cortos, no bloques de texto.
 - Puedes usar negritas para enfatizar puntos clave.
-- Si das una lista, que sean 3-4 puntos máximo, no 10.
 - Sé humano: puedes usar expresiones coloquiales cuando el tono lo permita.
+- IMPORTANTE: Desarrolla tus ideas. NO cortes tus oraciones a la mitad. Asegúrate de dar explicaciones completas y finalizar correctamente.
 """
 
 
@@ -414,61 +414,104 @@ def generate_coach_response(
     )
 
     # ── 1. GEMINI (principal) ────────────────────────────────────────────
-    if gemini_key and gemini_key.strip().startswith("AI"):
-        try:
-            import google.generativeai as genai
-            genai.configure(api_key=gemini_key.strip())
+    if gemini_key and len(gemini_key.strip()) > 20:
+        # Lista de modelos en orden de preferencia — intenta cada uno
+        GEMINI_MODELS = [
+            "gemini-2.5-flash",
+            "gemini-2.0-flash",
+            "gemini-flash-latest",
+            "gemini-2.0-flash-001",
+        ]
+        full_user_message = (
+            f"[CONTEXTO ANALÍTICO — procesa esto internamente, no lo repitas]\n"
+            f"{context_block}\n"
+            f"[FIN DEL CONTEXTO]\n\n"
+            f"PREGUNTA DEL USUARIO: {user_text}"
+        )
+        last_error = None
+        for model_name in GEMINI_MODELS:
+            try:
+                from google import genai as google_genai
+                from google.genai import types as genai_types
 
-            model = genai.GenerativeModel(
-                model_name="gemini-2.0-flash",
-                system_instruction=SYSTEM_PROMPT,
-                generation_config={
-                    "temperature": 0.75,
-                    "max_output_tokens": 700,
-                    "top_p": 0.95,
-                },
-            )
+                client = google_genai.Client(api_key=gemini_key.strip())
 
-            # Mensaje enriquecido con contexto
-            full_user_message = (
-                f"[CONTEXTO ANALÍTICO — procesa esto internamente, no lo repitas en tu respuesta]\n"
-                f"{context_block}\n"
-                f"[FIN DEL CONTEXTO]\n\n"
-                f"PREGUNTA DEL USUARIO: {user_text}"
-            )
+                # Construir el historial de conversación
+                contents = []
+                if chat_history:
+                    for msg in chat_history[-8:]:  # últimos 4 intercambios
+                        role = msg.get("role", "user")
+                        text = msg.get("parts", [""])[0] if msg.get("parts") else ""
+                        if text and role in ("user", "model"):
+                            contents.append(
+                                genai_types.Content(
+                                    role=role,
+                                    parts=[genai_types.Part(text=text)]
+                                )
+                            )
+                # Mensaje actual
+                contents.append(
+                    genai_types.Content(
+                        role="user",
+                        parts=[genai_types.Part(text=full_user_message)]
+                    )
+                )
 
-            # Mantener historial de conversación si existe
-            if chat_history and len(chat_history) > 0:
-                history_gemini = []
-                for msg in chat_history[-6:]:  # últimos 3 intercambios
-                    if msg.get("role") in ("user", "model"):
-                        history_gemini.append(msg)
-                chat = model.start_chat(history=history_gemini)
-            else:
-                chat = model.start_chat(history=[])
-
-            response = chat.send_message(full_user_message)
-            ai_text = response.text
-
-            return {
-                "success": True,
-                "is_llm": True,
-                "llm_engine": "Gemini 2.0 Flash",
-                "response": ai_text,
-                "probs": bias_probs,
-            }
-        except Exception as e:
-            error_msg = str(e)
-            # Key inválida
-            if "API_KEY" in error_msg.upper() or "INVALID" in error_msg.upper():
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=contents,
+                    config=genai_types.GenerateContentConfig(
+                        system_instruction=SYSTEM_PROMPT,
+                        temperature=0.75,
+                        top_p=0.95,
+                    ),
+                )
+                ai_text = response.text
                 return {
-                    "success": False,
-                    "is_llm": False,
-                    "llm_engine": "error",
-                    "response": f"❌ La API Key de Gemini no es válida: `{error_msg[:120]}`",
+                    "success": True,
+                    "is_llm": True,
+                    "llm_engine": f"Gemini ({model_name})",
+                    "response": ai_text,
                     "probs": bias_probs,
                 }
-            # Otros errores → seguir al siguiente motor
+            except Exception as e:
+                error_msg = str(e)
+                last_error = error_msg
+                # Si es error de cuota en este modelo, probar el siguiente
+                if "429" in error_msg or "QUOTA" in error_msg.upper() or "EXHAUSTED" in error_msg.upper():
+                    continue
+                # Si es API key inválida, parar inmediatamente
+                if "401" in error_msg or "API_KEY" in error_msg.upper() or "INVALID" in error_msg.upper() or "PERMISSION" in error_msg.upper():
+                    return {
+                        "success": False,
+                        "is_llm": False,
+                        "llm_engine": "error",
+                        "response": f"❌ API Key inválida o sin permisos: `{error_msg[:150]}`",
+                        "probs": bias_probs,
+                    }
+                # Otro error → probar siguiente modelo
+                continue
+
+        # Todos los modelos de Gemini fallaron por cuota
+        if last_error and ("429" in last_error or "EXHAUSTED" in last_error.upper()):
+            return {
+                "success": False,
+                "is_llm": False,
+                "llm_engine": "error",
+                "response": (
+                    "⚠️ **Cuota Gemini agotada temporalmente.**\n\n"
+                    "Tu API Key funciona correctamente pero el proyecto de Google Cloud "
+                    "tiene la cuota del tier gratuito en 0. Esto ocurre cuando la key fue "
+                    "creada desde la **Google Cloud Console** en lugar de **AI Studio**.\n\n"
+                    "**Solución (1 minuto):**\n"
+                    "1. Ve a **[aistudio.google.com/apikey](https://aistudio.google.com/apikey)**\n"
+                    "2. Haz clic en **'Create API key'** → selecciona **'Create API key in new project'**\n"
+                    "3. Copia la nueva key (empieza por `AIza...`) y reemplaza la actual\n\n"
+                    "La diferencia: AI Studio crea keys con cuota gratuita habilitada por defecto."
+                ),
+                "probs": bias_probs,
+            }
+
 
     # ── 2. OPENAI (fallback) ─────────────────────────────────────────────
     if openai_key and openai_key.strip().startswith("sk-"):
