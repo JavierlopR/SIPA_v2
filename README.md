@@ -1,4 +1,4 @@
-# 🧠 SIPA v2 — Personal Finance & Psychological Investment Coach
+# SIPA v2 — Personal Finance & Psychological Investment Coach
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JavierlopR/SIPA_v2/blob/main/notebooks/SIPA_v2_Colab.ipynb)
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 💎 Características Principales
+## Características Principales
 
 *   **Brain NLP Local (Scikit-Learn):** Un clasificador de alta velocidad que analiza tu texto en tiempo real y detecta **5 sesgos cognitivos financieros** (FOMO, Pánico, Exceso de Confianza, Aversión a la Pérdida, Anclaje) con más del **95.8% de precisión**.
 *   **Coach Psicológico Híbrido:** Te brinda asesoramiento conductual empático. Funciona 100% gratis en local mediante un sistema experto de reglas, y soporta modo híbrido conectando **OpenAI GPT-4o-mini** si introduces tu API Key.
@@ -16,7 +16,7 @@
 
 ---
 
-## 🚀 Ejecución en Google Colab
+## Ejecución en Google Colab
 
 Puedes arrancar y usar SIPA v2 de manera inmediata sin instalar nada en tu computadora:
 
@@ -26,7 +26,7 @@ Puedes arrancar y usar SIPA v2 de manera inmediata sin instalar nada en tu compu
 
 ---
 
-## 💻 Ejecución Local
+## Ejecución Local
 
 ### 1. Requisitos Previos
 
