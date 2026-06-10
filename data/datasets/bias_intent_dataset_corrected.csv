@@ -1,0 +1,714 @@
+texto,intencion,sesgo
+¿DÓNDE INVIERTO?,pedir_recomendacion,ninguno
+DIME EL ESTADO DE MIS INVERSIONES,consultar_cartera,ninguno
+toy pensando en vender mis tech stocks!,quiero_vender,ninguno
+"necesito liquidez, quiero vender por favor",quiero_vender,ninguno
+¿dónde puedo invertir para ganar dinero?,pedir_recomendacion,ninguno
+oye ¿qué es la capitalización bursátil?,explicar_concepto,ninguno
+¿cuál es el valor total de mis activos?!,consultar_cartera,ninguno
+¿qué es el riesgo en inversiones? urgente,explicar_concepto,ninguno
+quiero invertir en tech,quiero_comprar,ninguno
+quiero comprar mi primera acción!,quiero_comprar,ninguno
+¿cuánto vale mi cartera?,consultar_cartera,ninguno
+¿en qué sector debo invertir?,pedir_recomendacion,ninguno
+quiero vender mis pérdidas,quiero_vender,ninguno
+"disculpa, ¿qué tal está mi portfolio?",consultar_cartera,ninguno
+muéstrame mis inversiones,consultar_cartera,ninguno
+¿dónde puedo invertir para ganar dinero? por favor,pedir_recomendacion,ninguno
+estoy pensando en liquidar mi cartera,quiero_vender,ninguno
+¿qué significa P/E ratio?,explicar_concepto,ninguno
+¿qué me recomiendas?,pedir_recomendacion,ninguno
+dónde invierto?,pedir_recomendacion,ninguno
+necesito vender para comprar otra cosa,quiero_vender,ninguno
+¿qué es un índice bursátil? por favor,explicar_concepto,ninguno
+necesito vender para comprar otra cosa,quiero_vender,ninguno
+¿qué es el riesgo en inversiones?,explicar_concepto,ninguno
+quiero comprar mi primera acción por favor,quiero_comprar,ninguno
+¿QUÉ ACCIÓN ME RECOMIENDAN COMPRAR?,pedir_recomendacion,ninguno
+oye ¿qué tal si compro Tesla?,quiero_comprar,ninguno
+oye ¿es buen momento para vender?,quiero_vender,ninguno
+¿QUÉ ME RECOMIENDAN COMPRAR?,quiero_comprar,ninguno
+qué es un índice bursátil?,explicar_concepto,ninguno
+quiero invertir en tech,quiero_comprar,ninguno
+quiero diversificar mi portafolio,quiero_comprar,ninguno
+estoy considerando comprar ETFs,quiero_comprar,ninguno
+"necesito liquidez, quiero vender!",quiero_vender,ninguno
+muéstrame mis inversiones,consultar_cartera,ninguno
+voy a reducir mi exposición,quiero_vender,ninguno
+necesito salirme de Apple,quiero_vender,ninguno
+¿es buen momento para vender?!,quiero_vender,ninguno
+voy a salir del mercado por favor,quiero_vender,ninguno
+necesito ver el estado de mis activos,consultar_cartera,ninguno
+¿cómo está funcionando mi inversión?,consultar_cartera,ninguno
+explícame qué es un fondo mutuo,explicar_concepto,ninguno
+¿dónde puedo invertir para ganar dinero?,pedir_recomendacion,ninguno
+¿qué me recomiendan para principiantes? por favor,pedir_recomendacion,ninguno
+"necesito liquidez, quiero vender urgente",quiero_vender,ninguno
+¿qué tal si compro Tesla?!,quiero_comprar,ninguno
+oye necesito ver el estado de mis activos,consultar_cartera,ninguno
+oye estoy pensando en liquidar mi cartera,quiero_vender,ninguno
+¿debería vender todo ahora?,quiero_vender,ninguno
+¿es buen momento para comprar Apple?,quiero_comprar,ninguno
+¿qué acción me recomiendan comprar?,pedir_recomendacion,ninguno
+¿qué es el riesgo en inversiones? urgente,explicar_concepto,ninguno
+estoy considerando vender mis ganancias,quiero_vender,ninguno
+quiero entrar en el mercado,quiero_comprar,ninguno
+¿qué tal si compro Tesla?!,quiero_comprar,ninguno
+necesito vender para comprar otra cosa,quiero_vender,ninguno
+¿qué es un ETF?,explicar_concepto,ninguno
+"disculpa, ¿cómo van mis acciones?",consultar_cartera,ninguno
+QUIERO VENDER MIS PÉRDIDAS,quiero_vender,ninguno
+necesito un resumen de mi cartera,consultar_cartera,ninguno
+dime el valor de mis acciones,consultar_cartera,ninguno
+¿cuál es el valor actual de mi portafolio?!,consultar_cartera,ninguno
+¿QUÉ ES EL RSI?,explicar_concepto,ninguno
+"disculpa, ¿qué es la volatilidad?",explicar_concepto,ninguno
+¿qué es la capitalización bursátil? por favor,explicar_concepto,ninguno
+¿qué tal está mi portfolio?!,consultar_cartera,ninguno
+necesito un resumen de mi cartera,consultar_cartera,ninguno
+oye ¿cómo se calcula el rendimiento?,explicar_concepto,ninguno
+estoy buscando oportunidades de inversión,quiero_comprar,ninguno
+en qué debería poner mi dinero?,pedir_recomendacion,ninguno
+¿cómo se calcula el rendimiento?,explicar_concepto,ninguno
+MUÉSTRAME MIS INVERSIONES,consultar_cartera,ninguno
+estoy pensando en comprar acciones por favor,quiero_comprar,ninguno
+explícame qué es una acción,explicar_concepto,ninguno
+¿dónde me conviene invertir?,pedir_recomendacion,ninguno
+oye ¿qué acción me recomiendan comprar?,pedir_recomendacion,ninguno
+explícame qué es diversificación,explicar_concepto,ninguno
+estoy pensando en invertir en biotecnología,quiero_comprar,ninguno
+¿dónde me recomiendan invertir a largo plazo?,pedir_recomendacion,ninguno
+¿qué es la capitalización bursátil?!,explicar_concepto,ninguno
+oye ¿qué es un índice bursátil?,explicar_concepto,ninguno
+¿qué rendimiento tengo?,consultar_cartera,ninguno
+oye ¿cuánto he ganado/perdido?,consultar_cartera,ninguno
+¿cuál es el valor total de mis activos?,consultar_cartera,ninguno
+¿cómo se calcula el rendimiento?,explicar_concepto,ninguno
+¿qué es la capitalización bursátil? urgente,explicar_concepto,ninguno
+¿qué tal si compro Tesla?,quiero_comprar,ninguno
+¿en qué sector debo invertir? por favor,pedir_recomendacion,ninguno
+debería vender todo aora?,quiero_vender,ninguno
+quiero invertir en tech!,quiero_comprar,ninguno
+¿qué recomiendan para mi cartera?,pedir_recomendacion,ninguno
+¿cuál es el valor actual de mi portafolio?,consultar_cartera,ninguno
+"disculpa, ¿qué es un ETF?",explicar_concepto,ninguno
+¿qué es el RSI?,explicar_concepto,ninguno
+¿qué es buena inversión ahora?!,pedir_recomendacion,ninguno
+¿debería meter dinero en NVDA? por favor,quiero_comprar,ninguno
+"disculpa, ¿es buen momento para comprar Apple?",quiero_comprar,ninguno
+quiero vender mis pérdidas,quiero_vender,ninguno
+¿qué es un ETF?,explicar_concepto,ninguno
+necesito vender para comprar otra cosa urgente,quiero_vender,ninguno
+oye ¿qué me recomiendan para principiantes?,pedir_recomendacion,ninguno
+estoy considerando comprar ETFs por favor,quiero_comprar,ninguno
+¿QUÉ ME RECOMIENDAN COMPRAR?,quiero_comprar,ninguno
+¿debería meter dinero en NVDA? urgente,quiero_comprar,ninguno
+oye ¿dónde puedo invertir para ganar dinero?,pedir_recomendacion,ninguno
+¿qué es un ETF?,explicar_concepto,ninguno
+quiero invertir en tech por favor,quiero_comprar,ninguno
+QUIERO ENTRAR EN EL MERCADO,quiero_comprar,ninguno
+¿dónde me conviene invertir?,pedir_recomendacion,ninguno
+me gustaría invertir en criptomonedas,quiero_comprar,ninguno
+dime el estado de mis inversiones!,consultar_cartera,ninguno
+¿qué rendimiento tengo?!,consultar_cartera,ninguno
+ME GUSTARÍA INVERTIR EN CRIPTOMONEDAS,quiero_comprar,ninguno
+me gustaría invertir en criptomonedas,quiero_comprar,ninguno
+"¿me pueden dar una recomendación?, el mercado se viene abajo",pedir_recomendacion,panico
+"voy a liquidar todo, no quiero comprar nada",quiero_comprar,panico
+"¡VENDO TODO! Esto se hunde, voy a vender todo ya",quiero_vender,panico
+"¿qué significa diversificar?, estoy un poco preocupado por la volatilidad reciente",explicar_concepto,panico
+"¿dónde me recomiendan invertir a largo plazo?, tal vez sea prudente salirme de algunas posiciones volátiles",pedir_recomendacion,panico
+"¿qué es la capitalización bursátil?, el mercado está colapsando",explicar_concepto,panico
+"¿qué es la volatilidad?, no estoy seguro de mantener estas posiciones en este entorno",explicar_concepto,panico
+"¿en qué debería poner mi dinero?, ¡estoy quebrando!",pedir_recomendacion,panico
+"el mercado está colapsando, voy a vender todo ya",quiero_vender,panico
+"no puedo más con estas pérdidas, no quiero comprar nada",quiero_comprar,panico
+"No estoy muy cómodo con el nivel de riesgo actual, no quiero comprar nada",quiero_comprar,panico
+"Quizás debería ser más conservador por un tiempo, voy a vender todo ya",quiero_vender,panico
+"Quizás sea bueno tener más efectivo disponible, no quiero comprar nada",quiero_comprar,panico
+"¿dónde puedo invertir para ganar dinero?, tal vez sea prudente salirme de algunas posiciones volátiles",pedir_recomendacion,panico
+¿Cuánto he perdido? ¡no puedo creer que esté perdiendo tanto!,consultar_cartera,panico
+"¿qué es la volatilidad?, voy a liquidar todo",explicar_concepto,panico
+¿Cuánto he perdido? voy a liquidar todo,consultar_cartera,panico
+"¿qué es la capitalización bursátil?, voy a liquidar todo",explicar_concepto,panico
+"¿qué significa diversificar?, estoy un poco preocupado por la volatilidad reciente",explicar_concepto,panico
+"No sé, igual debería reducir un poco mi exposición antes de que pase algo, voy a vender todo ya",quiero_vender,panico
+"Estoy un poco preocupado por la volatilidad reciente, voy a vender todo ya",quiero_vender,panico
+"¿qué es el beta?, esto es una masacre",explicar_concepto,panico
+"No estoy seguro de mantener estas posiciones en este entorno, voy a vender todo ya",quiero_vender,panico
+"¿qué acción es buena compra?, ¡vendo todo! esto se hunde",pedir_recomendacion,panico
+"voy a liquidar todo, voy a vender todo ya",quiero_vender,panico
+"no puedo aguantar más, no quiero comprar nada",quiero_comprar,panico
+"¿qué acción es buena compra?, no estoy seguro de mantener estas posiciones en este entorno",pedir_recomendacion,panico
+"¿cómo se calcula el rendimiento?, el mercado está colapsando",explicar_concepto,panico
+"Quizás debería tomar algunas ganancias antes de que cambie el mercado, voy a vender todo ya",quiero_vender,panico
+"¿qué me dicen de invertir en crypto?, estoy pensando en reducir mi riesgo un poco",pedir_recomendacion,panico
+"¿dónde me recomiendan invertir a largo plazo?, ¡no puedo creer que esté perdiendo tanto!",pedir_recomendacion,panico
+¿Cuánto he perdido? quizás sea bueno tener más efectivo disponible,consultar_cartera,panico
+¿Cuánto he perdido? no estoy seguro de mantener estas posiciones en este entorno,consultar_cartera,panico
+"Quizás sea bueno tener más efectivo disponible, no quiero comprar nada",quiero_comprar,panico
+"No estoy seguro de mantener estas posiciones en este entorno, no quiero comprar nada",quiero_comprar,panico
+"explícame qué es un bono, tengo que salir antes de que sea peor",explicar_concepto,panico
+"¿qué es el riesgo en inversiones?, no estoy seguro de mantener estas posiciones en este entorno",explicar_concepto,panico
+¿Cuánto he perdido? estoy un poco preocupado por la volatilidad reciente,consultar_cartera,panico
+¿Cuánto he perdido? el mercado se viene abajo,consultar_cartera,panico
+"¡no puedo creer que esté perdiendo tanto!, no quiero comprar nada",quiero_comprar,panico
+"¡VENDO TODO! Esto se hunde, no quiero comprar nada",quiero_comprar,panico
+¿Cuánto he perdido? el mercado se viene abajo,consultar_cartera,panico
+"¿en qué sector debo invertir?, ¡no puedo creer que esté perdiendo tanto!",pedir_recomendacion,panico
+"explícame qué es una acción, quizás debería tomar algunas ganancias antes de que cambie el mercado",explicar_concepto,panico
+"¿qué me sugieren hacer con mi dinero?, ¡estoy arruinado!",pedir_recomendacion,panico
+"¿en qué debería poner mi dinero?, esto es una masacre",pedir_recomendacion,panico
+"¿dónde puedo obtener buenos rendimientos?, ¡estoy arruinado!",pedir_recomendacion,panico
+"esto es una masacre, no quiero comprar nada",quiero_comprar,panico
+¿Cuánto he perdido? estoy un poco preocupado por la volatilidad reciente,consultar_cartera,panico
+"No sé, igual debería reducir un poco mi exposición antes de que pase algo, voy a vender todo ya",quiero_vender,panico
+¿Cuánto he perdido? ¡no puedo creer que esté perdiendo tanto!,consultar_cartera,panico
+"¿qué es un índice bursátil?, ¡esto es un desastre!",explicar_concepto,panico
+"¿qué acción me recomiendan comprar?, estoy pensando en reducir mi riesgo un poco",pedir_recomendacion,panico
+"No estoy muy cómodo con el nivel de riesgo actual, no quiero comprar nada",quiero_comprar,panico
+"¿qué acción es buena compra?, esto es una masacre",pedir_recomendacion,panico
+"el mercado se viene abajo, no quiero comprar nada",quiero_comprar,panico
+"¿en qué sector debo invertir?, quizás debería tomar algunas ganancias antes de que cambie el mercado",pedir_recomendacion,panico
+"¿qué me recomiendan para principiantes?, no sé, igual debería reducir un poco mi exposición antes de que pase algo",pedir_recomendacion,panico
+¿Cuánto he perdido? quizás debería ser más conservador por un tiempo,consultar_cartera,panico
+¿Cuánto he perdido? estoy pensando en reducir mi riesgo un poco,consultar_cartera,panico
+"¿cómo funciona el trading?, no estoy seguro de mantener estas posiciones en este entorno",explicar_concepto,panico
+¿Cuánto he perdido? no estoy seguro de mantener estas posiciones en este entorno,consultar_cartera,panico
+"¡estoy quebrando!, voy a vender todo ya",quiero_vender,panico
+"esto es una masacre, voy a vender todo ya",quiero_vender,panico
+"¿qué es el riesgo en inversiones?, quizás debería ser más conservador por un tiempo",explicar_concepto,panico
+¿Cuánto he perdido? estoy pensando en reducir mi riesgo un poco,consultar_cartera,panico
+"¡no puedo creer que esté perdiendo tanto!, no quiero comprar nada",quiero_comprar,panico
+"Estoy pensando en reducir mi riesgo un poco, no quiero comprar nada",quiero_comprar,panico
+"explícame qué es el dividendo, ¡esto es un desastre!",explicar_concepto,panico
+¿Cuánto he perdido? quizás debería ser más conservador por un tiempo,consultar_cartera,panico
+"¿qué me dicen de invertir en crypto?, no sé, igual debería reducir un poco mi exposición antes de que pase algo",pedir_recomendacion,panico
+"explícame qué es diversificación, no estoy muy cómodo con el nivel de riesgo actual",explicar_concepto,panico
+"¡estoy arruinado!, no quiero comprar nada",quiero_comprar,panico
+"¿qué acción es buena compra?, no puedo aguantar más",pedir_recomendacion,panico
+"¡esto es un desastre!, no quiero comprar nada",quiero_comprar,panico
+"explícame qué es un fondo mutuo, quizás debería ser más conservador por un tiempo",explicar_concepto,panico
+"¿me pueden dar una recomendación?, quizás sea bueno tener más efectivo disponible",pedir_recomendacion,panico
+¿Cuánto he perdido? quizás debería ser más conservador por un tiempo,consultar_cartera,panico
+¿Cuánto he perdido? no puedo más con estas pérdidas,consultar_cartera,panico
+"¿cómo funciona el mercado de valores?, quizás sea bueno tener más efectivo disponible",explicar_concepto,panico
+"¡estoy quebrando!, no quiero comprar nada",quiero_comprar,panico
+"¿qué me recomiendan para principiantes?, esto es una masacre",pedir_recomendacion,panico
+¿Cuánto he perdido? no puedo aguantar más,consultar_cartera,panico
+"¡estoy arruinado!, no quiero comprar nada",quiero_comprar,panico
+"el mercado se viene abajo, no quiero comprar nada",quiero_comprar,panico
+"explícame qué es diversificación, no puedo más con estas pérdidas",explicar_concepto,panico
+"¿qué es la volatilidad?, estoy un poco preocupado por la volatilidad reciente",explicar_concepto,panico
+"Quizás sea bueno tener más efectivo disponible, voy a vender todo ya",quiero_vender,panico
+¿Cuánto he perdido? ¡estoy arruinado!,consultar_cartera,panico
+"¿dónde puedo obtener buenos rendimientos?, no estoy muy cómodo con el nivel de riesgo actual",pedir_recomendacion,panico
+"Tal vez deba reconsiderar mi exposición al riesgo, no quiero comprar nada",quiero_comprar,panico
+"¿dónde invierto?, ¡esto es un desastre!",pedir_recomendacion,panico
+"no puedo aguantar más, voy a vender todo ya",quiero_vender,panico
+"Quizás debería tomar algunas ganancias antes de que cambie el mercado, voy a vender todo ya",quiero_vender,panico
+"¿Cuánto he perdido? no sé, igual debería reducir un poco mi exposición antes de que pase algo",consultar_cartera,panico
+¿Cuánto he perdido? estoy pensando en reducir mi riesgo un poco,consultar_cartera,panico
+"Estoy un poco preocupado por la volatilidad reciente, voy a vender todo ya",quiero_vender,panico
+¿Cuánto he perdido? ¡no puedo creer que esté perdiendo tanto!,consultar_cartera,panico
+"no puedo más con estas pérdidas, no quiero comprar nada",quiero_comprar,panico
+"Estoy un poco preocupado por la volatilidad reciente, voy a vender todo ya",quiero_vender,panico
+"¿qué es el RSI?, tal vez deba reconsiderar mi exposición al riesgo",explicar_concepto,panico
+¿Cuánto he perdido? el mercado está colapsando,consultar_cartera,panico
+"explícame qué es un fondo mutuo, no sé, igual debería reducir un poco mi exposición antes de que pase algo",explicar_concepto,panico
+"¿qué me recomiendan para principiantes?, voy a liquidar todo",pedir_recomendacion,panico
+"¿dónde puedo invertir para ganar dinero?, no estoy seguro de mantener estas posiciones en este entorno",pedir_recomendacion,panico
+"¿qué es un índice bursátil?, tal vez deba reconsiderar mi exposición al riesgo",explicar_concepto,panico
+¿Cuánto he perdido? ¡esto es un desastre!,consultar_cartera,panico
+¿Cuánto he perdido? ¡vendo todo! esto se hunde,consultar_cartera,panico
+¿Cuánto he perdido? quizás sea bueno tener más efectivo disponible,consultar_cartera,panico
+¿Cuánto he perdido? no estoy muy cómodo con el nivel de riesgo actual,consultar_cartera,panico
+"¿qué significa P/E ratio?, ¡vendo todo! esto se hunde",explicar_concepto,panico
+¿Cuánto he perdido? quizás debería tomar algunas ganancias antes de que cambie el mercado,consultar_cartera,panico
+"No estoy seguro de mantener estas posiciones en este entorno, voy a vender todo ya",quiero_vender,panico
+¿Cuánto he perdido? ¡estoy quebrando!,consultar_cartera,panico
+"Quizás sea bueno tener más efectivo disponible, voy a vender todo ya",quiero_vender,panico
+"¿en qué debería poner mi dinero?, quizás debería tomar algunas ganancias antes de que cambie el mercado",pedir_recomendacion,panico
+¿Cuánto he perdido? voy a liquidar todo,consultar_cartera,panico
+"¡no puedo creer que esté perdiendo tanto!, voy a vender todo ya",quiero_vender,panico
+"¿dónde puedo obtener buenos rendimientos?, no estoy muy cómodo con el nivel de riesgo actual",pedir_recomendacion,panico
+"¿cómo funciona el mercado de valores?, no puedo más con estas pérdidas",explicar_concepto,panico
+"Varios expertos mencionan que las commodities están subiendo, quiero comprar crypto",quiero_comprar,fomo
+"¿qué me recomiendas?, he notado que muchos inversores están entrando a mercados emergentes",pedir_recomendacion,fomo
+"¿dónde debería poner mis ahorros?, no quiero ser el único que no gana",pedir_recomendacion,fomo
+"todo el mundo está ganando menos yo, quiero comprar Tesla",quiero_comprar,fomo
+"explícame qué es una acción, ¡voy a perderme la subida!",explicar_concepto,fomo
+"¿cómo se calcula el rendimiento?, no puedo ser el tonto que no invierte",explicar_concepto,fomo
+"¿qué es el beta?, ¡voy a arrepentirme si no entro ahora!",explicar_concepto,fomo
+"¿qué es el riesgo en inversiones?, mucha gente está hablando bien de las inversiones en ia",explicar_concepto,fomo
+"¿qué me recomiendas?, he leído que el sector inmobiliario está en alza",pedir_recomendacion,fomo
+"todo el mundo está ganando menos yo, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿qué es un índice bursátil?, he leído que el sector inmobiliario está en alza",explicar_concepto,fomo
+"¡estoy perdiendo la oportunidad de mi vida!, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿qué es un índice bursátil?, ¡todos están ganando menos yo!",explicar_concepto,fomo
+"Varios expertos mencionan que las commodities están subiendo, quiero comprar Apple",quiero_comprar,fomo
+¿Cuánto he ganado? no puedo ser el tonto que no invierte,consultar_cartera,fomo
+"¿me pueden dar una recomendación?, no quiero ser el único que no gana",pedir_recomendacion,fomo
+"Mucha gente está hablando bien de las inversiones en IA, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"explícame qué es un fondo mutuo, varios colegas han tenido buenos resultados con acciones de tecnología",explicar_concepto,fomo
+"Varios colegas han tenido buenos resultados con acciones de tecnología, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿qué es un índice bursátil?, varios amigos me han dicho que han ganado con etfs",explicar_concepto,fomo
+"¿cuál es la mejor inversión?, he visto que mucha gente está entrando en crypto, quizás debería echarle un ojo",pedir_recomendacion,fomo
+"¿qué es un ETF?, mucha gente está optimista sobre las acciones de crecimiento",explicar_concepto,fomo
+¿Cuánto he ganado? varios colegas han tenido buenos resultados con acciones de tecnología,consultar_cartera,fomo
+"¿qué recomiendan para mi cartera?, he notado que muchos inversores están entrando a mercados emergentes",pedir_recomendacion,fomo
+"¿dónde debería poner mis ahorros?, ¡estoy perdiendo la oportunidad de mi vida!",pedir_recomendacion,fomo
+"Varios colegas han tenido buenos resultados con acciones de tecnología, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"Mucha gente está hablando bien de las inversiones en IA, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿dónde me recomiendan invertir a largo plazo?, he visto que varios fondos están invirtiendo en sostenibilidad",pedir_recomendacion,fomo
+"explícame qué es un bono, ¡la subida va a continuar sin mí!",explicar_concepto,fomo
+"¿me pueden dar una recomendación?, ¡estoy perdiendo la oportunidad de mi vida!",pedir_recomendacion,fomo
+"¿qué recomiendan para mi cartera?, he notado que muchos inversores están entrando a mercados emergentes",pedir_recomendacion,fomo
+"¿me pueden dar una recomendación?, he notado que muchos inversores están entrando a mercados emergentes",pedir_recomendacion,fomo
+"He leído que el sector inmobiliario está en alza, quiero comprar crypto",quiero_comprar,fomo
+"¿qué es el RSI?, mucha gente está optimista sobre las acciones de crecimiento",explicar_concepto,fomo
+"todos están entrando al mercado, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"no puedo quedarme fuera, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"He oído que el sector de energía está teniendo un buen momento, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"Varios colegas han tenido buenos resultados con acciones de tecnología, quiero comprar crypto",quiero_comprar,fomo
+"¿cómo se calcula el rendimiento?, he visto que varios fondos están invirtiendo en sostenibilidad",explicar_concepto,fomo
+"¿cuál es la mejor inversión?, no puedo quedarme fuera",pedir_recomendacion,fomo
+"¡voy a arrepentirme si no entro ahora!, quiero comprar crypto",quiero_comprar,fomo
+"¿qué me recomiendas?, mucha gente está hablando bien de las inversiones en ia",pedir_recomendacion,fomo
+"¿dónde me recomiendan invertir a largo plazo?, no puedo ser el tonto que no invierte",pedir_recomendacion,fomo
+"¿qué es el beta?, varios amigos me han dicho que han ganado con etfs",explicar_concepto,fomo
+"He visto que mucha gente está entrando en crypto, quizás debería echarle un ojo, quiero comprar Apple",quiero_comprar,fomo
+"no puedo quedarme fuera, quiero comprar NVDA",quiero_comprar,fomo
+"¡voy a arrepentirme si no entro ahora!, quiero comprar NVDA",quiero_comprar,fomo
+¿Cuánto he ganado? no puedo quedarme fuera,consultar_cartera,fomo
+"Varios amigos me han dicho que han ganado con ETFs, quiero comprar NVDA",quiero_comprar,fomo
+"no puedo ser el tonto que no invierte, quiero comprar Tesla",quiero_comprar,fomo
+"He notado que muchos inversores están entrando a mercados emergentes, quiero comprar crypto",quiero_comprar,fomo
+"He notado que muchos inversores están entrando a mercados emergentes, quiero comprar Apple",quiero_comprar,fomo
+¿Cuánto he ganado? ¡voy a arrepentirme si no entro ahora!,consultar_cartera,fomo
+"¿qué acción es buena compra?, no puedo ser el tonto que no invierte",pedir_recomendacion,fomo
+"¿qué es el beta?, todos mis amigos están ricos con bitcoin",explicar_concepto,fomo
+"Varios colegas han tenido buenos resultados con acciones de tecnología, quiero comprar NVDA",quiero_comprar,fomo
+"He oído que el sector de energía está teniendo un buen momento, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿me pueden dar una recomendación?, varios colegas han tenido buenos resultados con acciones de tecnología",pedir_recomendacion,fomo
+"¿qué me dicen de invertir en crypto?, he notado que muchos inversores están entrando a mercados emergentes",pedir_recomendacion,fomo
+¿Cuánto he ganado? mucha gente está optimista sobre las acciones de crecimiento,consultar_cartera,fomo
+"He visto que varios fondos están invirtiendo en sostenibilidad, quiero comprar NVDA",quiero_comprar,fomo
+"¿qué es la capitalización bursátil?, mucha gente está optimista sobre las acciones de crecimiento",explicar_concepto,fomo
+¿Cuánto he ganado? no quiero ser el único que no gana,consultar_cartera,fomo
+"todo el mundo está haciendo dinero fácil, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿qué significa diversificar?, todo el mundo está haciendo dinero fácil",explicar_concepto,fomo
+"todos están entrando al mercado, quiero comprar NVDA",quiero_comprar,fomo
+"todos están entrando al mercado, quiero comprar Apple",quiero_comprar,fomo
+"¿Cuánto he ganado? he visto que mucha gente está entrando en crypto, quizás debería echarle un ojo",consultar_cartera,fomo
+"¿cómo funciona el interés compuesto?, he visto que varios fondos están invirtiendo en sostenibilidad",explicar_concepto,fomo
+"¡Todos están ganando menos yo!, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+¿Cuánto he ganado? varios colegas han tenido buenos resultados con acciones de tecnología,consultar_cartera,fomo
+"Mucha gente está hablando bien de las inversiones en IA, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"Varios amigos me han dicho que han ganado con ETFs, quiero comprar NVDA",quiero_comprar,fomo
+"no quiero ser el único que no gana, quiero comprar Tesla",quiero_comprar,fomo
+"¿cómo funciona el trading?, no puedo ser el tonto que no invierte",explicar_concepto,fomo
+"explícame qué es diversificación, no puedo ser el tonto que no invierte",explicar_concepto,fomo
+"He leído que el sector inmobiliario está en alza, quiero comprar NVDA",quiero_comprar,fomo
+"He visto que varios fondos están invirtiendo en sostenibilidad, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"todos están entrando al mercado, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"He leído que el sector inmobiliario está en alza, quiero comprar crypto",quiero_comprar,fomo
+"¿cómo funciona el trading?, he visto que mucha gente está entrando en crypto, quizás debería echarle un ojo",explicar_concepto,fomo
+¿Cuánto he ganado? no puedo ser el tonto que no invierte,consultar_cartera,fomo
+"¡voy a perderme la subida!, quiero comprar Apple",quiero_comprar,fomo
+¿Cuánto he ganado? mucha gente está optimista sobre las acciones de crecimiento,consultar_cartera,fomo
+"He visto que mucha gente está entrando en crypto, quizás debería echarle un ojo, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"Varios amigos me han dicho que han ganado con ETFs, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿cómo funciona el interés compuesto?, varios colegas han tenido buenos resultados con acciones de tecnología",explicar_concepto,fomo
+"explícame qué es una acción, ¡todos están ganando menos yo!",explicar_concepto,fomo
+"¿Cuánto he ganado? he visto que mucha gente está entrando en crypto, quizás debería echarle un ojo",consultar_cartera,fomo
+¿Cuánto he ganado? ¡voy a perderme la subida!,consultar_cartera,fomo
+"todo el mundo está ganando menos yo, quiero comprar Tesla",quiero_comprar,fomo
+"¿dónde invierto?, he leído que el sector inmobiliario está en alza",pedir_recomendacion,fomo
+"todo el mundo está ganando menos yo, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"He leído que el sector inmobiliario está en alza, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿qué es el riesgo en inversiones?, todos mis amigos están ricos con bitcoin",explicar_concepto,fomo
+"¡estoy perdiendo la oportunidad de mi vida!, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿Cuánto he ganado? he visto que mucha gente está entrando en crypto, quizás debería echarle un ojo",consultar_cartera,fomo
+¿Cuánto he ganado? ¡la subida va a continuar sin mí!,consultar_cartera,fomo
+"¡voy a perderme la subida!, quiero comprar NVDA",quiero_comprar,fomo
+"¿qué me recomiendan para principiantes?, he leído que el sector inmobiliario está en alza",pedir_recomendacion,fomo
+¿Cuánto he ganado? mucha gente está optimista sobre las acciones de crecimiento,consultar_cartera,fomo
+"¡la subida va a continuar sin mí!, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿dónde puedo invertir para ganar dinero?, he oído que el sector de energía está teniendo un buen momento",pedir_recomendacion,fomo
+¿Cuánto he ganado? varios amigos me han dicho que han ganado con etfs,consultar_cartera,fomo
+¿Cuánto he ganado? todos mis amigos están ricos con bitcoin,consultar_cartera,fomo
+"Mucha gente está optimista sobre las acciones de crecimiento, quiero comprar NVDA",quiero_comprar,fomo
+¿Cuánto he ganado? mucha gente está optimista sobre las acciones de crecimiento,consultar_cartera,fomo
+¿Cuánto he ganado? ¡todos están ganando menos yo!,consultar_cartera,fomo
+"¿qué me recomiendan para principiantes?, no puedo quedarme fuera",pedir_recomendacion,fomo
+"¿qué es el beta?, todo el mundo está ganando menos yo",explicar_concepto,fomo
+"¿qué es el RSI?, todo el mundo está ganando menos yo",explicar_concepto,fomo
+"Varios expertos mencionan que las commodities están subiendo, quiero comprar Apple",quiero_comprar,fomo
+"¿qué me recomiendan para principiantes?, varios expertos mencionan que las commodities están subiendo",pedir_recomendacion,fomo
+"explícame qué es una acción, todo el mundo está ganando menos yo",explicar_concepto,fomo
+"¡Todos están ganando menos yo!, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿qué es la capitalización bursátil?, mucha gente está hablando bien de las inversiones en ia",explicar_concepto,fomo
+"He leído que el sector inmobiliario está en alza, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+"¿me pueden dar una recomendación?, varios expertos mencionan que las commodities están subiendo",pedir_recomendacion,fomo
+"todos mis amigos están ricos con Bitcoin, pero igual vendo para comprar otra cosa",quiero_vender,fomo
+¿Cuánto he ganado? ¡estoy perdiendo la oportunidad de mi vida!,consultar_cartera,fomo
+"¿Cuánto he ganado? basado en mi investigación, creo que va a funcionar bien",consultar_cartera,overconfidence
+"Estoy confiado en mi estrategia de inversión, sé cuándo vender",quiero_vender,overconfidence
+"¿dónde debería poner mis ahorros?, mi análisis fundamental me da señales positivas",pedir_recomendacion,overconfidence
+"esto es una ganga obvia, voy a comprar este crypto",quiero_comprar,overconfidence
+¿Cuánto he ganado? esto es una ganga obvia,consultar_cartera,overconfidence
+¿Cuánto he ganado? soy el mejor inversor,consultar_cartera,overconfidence
+¿Cuánto he ganado? mi intuición nunca falla,consultar_cartera,overconfidence
+"¿qué es el riesgo en inversiones?, estoy confiado en mi estrategia de inversión",explicar_concepto,overconfidence
+"Mi experiencia me dice que este es el momento adecuado, sé cuándo vender",quiero_vender,overconfidence
+"¿dónde me recomiendan invertir a largo plazo?, soy el mejor inversor",pedir_recomendacion,overconfidence
+"esto es obvio, va a explotar, sé cuándo vender",quiero_vender,overconfidence
+"¿qué es buena inversión ahora?, nadie conoce este mercado como yo",pedir_recomendacion,overconfidence
+"¿qué recomiendan para mi cartera?, mi análisis me dice que esta acción tiene potencial",pedir_recomendacion,overconfidence
+"¿qué es la capitalización bursátil?, mi experiencia me dice que este es el momento adecuado",explicar_concepto,overconfidence
+"¿en qué sector debo invertir?, mi análisis me dice que esta acción tiene potencial",pedir_recomendacion,overconfidence
+"Basado en mis conocimientos, creo que es una buena decisión, voy a comprar este crypto",quiero_comprar,overconfidence
+¿Cuánto he ganado? mi análisis fundamental me da señales positivas,consultar_cartera,overconfidence
+"soy un genio del mercado, voy a comprar este crypto",quiero_comprar,overconfidence
+"Mi análisis me dice que esta acción tiene potencial, sé cuándo vender",quiero_vender,overconfidence
+"¿en qué sector debo invertir?, tengo una buena sensación sobre esta inversión",pedir_recomendacion,overconfidence
+"tengo un sexto sentido para las inversiones, sé cuándo vender",quiero_vender,overconfidence
+"¿dónde me recomiendan invertir a largo plazo?, he estudiado este sector y creo que hay oportunidades",pedir_recomendacion,overconfidence
+"¿qué acción me recomiendan comprar?, basado en mi investigación, creo que va a funcionar bien",pedir_recomendacion,overconfidence
+"¿qué acción me recomiendan comprar?, basado en mis conocimientos, creo que es una buena decisión",pedir_recomendacion,overconfidence
+"es matemático, tiene que subir, voy a comprar esta acción",quiero_comprar,overconfidence
+"voy a ser millonario con esto, voy a comprar este crypto",quiero_comprar,overconfidence
+"¿Cuánto he ganado? esto es obvio, va a explotar",consultar_cartera,overconfidence
+¿Cuánto he ganado? tengo una buena sensación sobre esta inversión,consultar_cartera,overconfidence
+"esto es una ganga obvia, voy a comprar esta acción",quiero_comprar,overconfidence
+"Basado en mis conocimientos, creo que es una buena decisión, sé cuándo vender",quiero_vender,overconfidence
+"Basado en mis conocimientos, creo que es una buena decisión, sé cuándo vender",quiero_vender,overconfidence
+"esto es obvio, va a explotar, sé cuándo vender",quiero_vender,overconfidence
+"¿qué acción me recomiendan comprar?, mi análisis me dice que esta acción tiene potencial",pedir_recomendacion,overconfidence
+"¿en qué sector debo invertir?, basado en mis conocimientos, creo que es una buena decisión",pedir_recomendacion,overconfidence
+"tengo un sexto sentido para las inversiones, voy a comprar este ETF",quiero_comprar,overconfidence
+"esto es obvio, va a explotar, sé cuándo vender",quiero_vender,overconfidence
+¿Cuánto he ganado? tengo un sexto sentido para las inversiones,consultar_cartera,overconfidence
+"¿qué acción es buena compra?, soy un genio del mercado",pedir_recomendacion,overconfidence
+"Mi experiencia me dice que este es el momento adecuado, sé cuándo vender",quiero_vender,overconfidence
+"Tengo una buena sensación sobre esta inversión, sé cuándo vender",quiero_vender,overconfidence
+¿Cuánto he ganado? nunca me equivoco,consultar_cartera,overconfidence
+"Estoy bastante seguro de que esta es una buena oportunidad, sé cuándo vender",quiero_vender,overconfidence
+"He estudiado este sector y creo que hay oportunidades, voy a comprar este ETF",quiero_comprar,overconfidence
+"¿qué es el beta?, esto es dinero fácil",explicar_concepto,overconfidence
+"explícame qué es diversificación, esto es dinero fácil",explicar_concepto,overconfidence
+"explícame qué es un fondo mutuo, estoy bastante seguro de que esta es una buena oportunidad",explicar_concepto,overconfidence
+"soy el mejor inversor, voy a comprar este ETF",quiero_comprar,overconfidence
+¿Cuánto he ganado? nunca me equivoco,consultar_cartera,overconfidence
+"nunca me equivoco, sé cuándo vender",quiero_vender,overconfidence
+"¿qué es la capitalización bursátil?, esto es dinero fácil",explicar_concepto,overconfidence
+"¿dónde puedo obtener buenos rendimientos?, mi intuición nunca falla",pedir_recomendacion,overconfidence
+¿Cuánto he ganado? tengo una buena sensación sobre esta inversión,consultar_cartera,overconfidence
+¿Cuánto he ganado? voy a ser millonario con esto,consultar_cartera,overconfidence
+"¿qué es el riesgo en inversiones?, esto es obvio, va a explotar",explicar_concepto,overconfidence
+"¿qué significa diversificar?, es matemático, tiene que subir",explicar_concepto,overconfidence
+"¿en qué sector debo invertir?, estoy bastante seguro de que esta es una buena oportunidad",pedir_recomendacion,overconfidence
+"nunca me equivoco, voy a comprar este crypto",quiero_comprar,overconfidence
+"nunca me equivoco, voy a comprar este ETF",quiero_comprar,overconfidence
+¿Cuánto he ganado? mi investigación me indica que hay upside potencial,consultar_cartera,overconfidence
+"¿qué es el RSI?, esto es dinero fácil",explicar_concepto,overconfidence
+"¿dónde debería poner mis ahorros?, soy un genio del mercado",pedir_recomendacion,overconfidence
+"soy el mejor inversor, voy a comprar este ETF",quiero_comprar,overconfidence
+"nadie conoce este mercado como yo, voy a comprar este crypto",quiero_comprar,overconfidence
+"¿qué significa P/E ratio?, he estudiado este sector y creo que hay oportunidades",explicar_concepto,overconfidence
+"¿qué me sugieren hacer con mi dinero?, basado en mi investigación, creo que va a funcionar bien",pedir_recomendacion,overconfidence
+"esto es obvio, va a explotar, sé cuándo vender",quiero_vender,overconfidence
+"¿cómo se calcula el rendimiento?, mi investigación me indica que hay upside potencial",explicar_concepto,overconfidence
+"Basado en mis conocimientos, creo que es una buena decisión, voy a comprar este crypto",quiero_comprar,overconfidence
+"¿Cuánto he ganado? basado en mis conocimientos, creo que es una buena decisión",consultar_cartera,overconfidence
+"explícame qué es un bono, estoy bastante seguro de que esta es una buena oportunidad",explicar_concepto,overconfidence
+"He estudiado este sector y creo que hay oportunidades, voy a comprar esta acción",quiero_comprar,overconfidence
+"¿qué es un ETF?, he estudiado este sector y creo que hay oportunidades",explicar_concepto,overconfidence
+"tengo un sexto sentido para las inversiones, voy a comprar este crypto",quiero_comprar,overconfidence
+"Mi análisis fundamental me da señales positivas, voy a comprar este ETF",quiero_comprar,overconfidence
+¿Cuánto he ganado? voy a ser millonario con esto,consultar_cartera,overconfidence
+"¿qué acción me recomiendan comprar?, tengo un sexto sentido para las inversiones",pedir_recomendacion,overconfidence
+"voy a ser millonario con esto, sé cuándo vender",quiero_vender,overconfidence
+"¿qué es el beta?, soy un genio del mercado",explicar_concepto,overconfidence
+"Estoy confiado en mi estrategia de inversión, sé cuándo vender",quiero_vender,overconfidence
+"esto es una ganga obvia, sé cuándo vender",quiero_vender,overconfidence
+"yo sé que esta acción va a subir seguro, voy a comprar esta acción",quiero_comprar,overconfidence
+"Basado en mis conocimientos, creo que es una buena decisión, sé cuándo vender",quiero_vender,overconfidence
+"explícame qué es el dividendo, he estudiado este sector y creo que hay oportunidades",explicar_concepto,overconfidence
+¿Cuánto he ganado? soy el mejor inversor,consultar_cartera,overconfidence
+"esto es una ganga obvia, voy a comprar este crypto",quiero_comprar,overconfidence
+"¿me pueden dar una recomendación?, esto es dinero fácil",pedir_recomendacion,overconfidence
+"¿qué es el riesgo en inversiones?, tengo un sexto sentido para las inversiones",explicar_concepto,overconfidence
+"Estoy bastante seguro de que esta es una buena oportunidad, voy a comprar este crypto",quiero_comprar,overconfidence
+¿Cuánto he ganado? soy el mejor inversor,consultar_cartera,overconfidence
+¿Cuánto he ganado? soy el mejor inversor,consultar_cartera,overconfidence
+"¿qué significa P/E ratio?, estoy confiado en mi estrategia de inversión",explicar_concepto,overconfidence
+"Mi análisis fundamental me da señales positivas, sé cuándo vender",quiero_vender,overconfidence
+"yo sé que esta acción va a subir seguro, voy a comprar este ETF",quiero_comprar,overconfidence
+"¿cómo funciona el trading?, mi experiencia me dice que este es el momento adecuado",explicar_concepto,overconfidence
+"¿cómo se calcula el rendimiento?, tengo un sexto sentido para las inversiones",explicar_concepto,overconfidence
+"Basado en mi investigación, creo que va a funcionar bien, voy a comprar esta acción",quiero_comprar,overconfidence
+"¿Cuánto he ganado? basado en mis conocimientos, creo que es una buena decisión",consultar_cartera,overconfidence
+"¿cómo funciona el interés compuesto?, es matemático, tiene que subir",explicar_concepto,overconfidence
+"esto es una ganga obvia, sé cuándo vender",quiero_vender,overconfidence
+"Mi análisis me dice que esta acción tiene potencial, sé cuándo vender",quiero_vender,overconfidence
+"¿cómo funciona el mercado de valores?, es matemático, tiene que subir",explicar_concepto,overconfidence
+"explícame qué es el dividendo, basado en mis conocimientos, creo que es una buena decisión",explicar_concepto,overconfidence
+"¿qué es el riesgo en inversiones?, nadie conoce este mercado como yo",explicar_concepto,overconfidence
+¿Cuánto he ganado? soy un genio del mercado,consultar_cartera,overconfidence
+"¿dónde me recomiendan invertir a largo plazo?, tengo un sexto sentido para las inversiones",pedir_recomendacion,overconfidence
+"esto es obvio, va a explotar, sé cuándo vender",quiero_vender,overconfidence
+"nunca me equivoco, voy a comprar esta acción",quiero_comprar,overconfidence
+"¿dónde puedo obtener buenos rendimientos?, tengo una buena sensación sobre esta inversión",pedir_recomendacion,overconfidence
+"soy el mejor inversor, sé cuándo vender",quiero_vender,overconfidence
+"¿en qué debería poner mi dinero?, esto es dinero fácil",pedir_recomendacion,overconfidence
+"tengo un sexto sentido para las inversiones, voy a comprar este crypto",quiero_comprar,overconfidence
+"Mi investigación me indica que hay upside potencial, voy a comprar este ETF",quiero_comprar,overconfidence
+"esto es obvio, va a explotar, voy a comprar este ETF",quiero_comprar,overconfidence
+"¿qué es buena inversión ahora?, tengo una buena sensación sobre esta inversión",pedir_recomendacion,overconfidence
+"¿dónde puedo obtener buenos rendimientos?, basado en mi investigación, creo que va a funcionar bien",pedir_recomendacion,overconfidence
+"soy un genio del mercado, voy a comprar esta acción",quiero_comprar,overconfidence
+"explícame qué es un fondo mutuo, basado en mis conocimientos, creo que es una buena decisión",explicar_concepto,overconfidence
+"nadie conoce este mercado como yo, voy a comprar este crypto",quiero_comprar,overconfidence
+"explícame qué es diversificación, esto es dinero fácil",explicar_concepto,overconfidence
+"estoy buscando oportunidades de inversión, pero prefiero mantener mi estrategia actual por ahora",quiero_comprar,loss_aversion
+"¿Cuánto he perdido? no me conviene vender en este momento, mejor espero",consultar_cartera,loss_aversion
+"¿qué recomiendan para mi cartera?, mejor espero a que vuelva a subir",pedir_recomendacion,loss_aversion
+"¿qué me recomiendas?, no quiero vender con pérdidas",pedir_recomendacion,loss_aversion
+"¿cuál es la mejor inversión?, no creo que sea el mejor momento para vender esta posición",pedir_recomendacion,loss_aversion
+¿Cuánto he perdido? no me parece prudente vender en estas condiciones,consultar_cartera,loss_aversion
+¿Cuánto he perdido? no me parece prudente vender en estas condiciones,consultar_cartera,loss_aversion
+¿Cuánto he perdido? tal vez debería mantener esta posición un poco más,consultar_cartera,loss_aversion
+"quiero diversificar mi portafolio, pero no vendo con pérdidas nunca",quiero_comprar,loss_aversion
+¿Cuánto he perdido? prefiero no tomar decisiones precipitadas con esta inversión,consultar_cartera,loss_aversion
+"¿qué me recomiendan para principiantes?, prefiero no tomar decisiones precipitadas con esta inversión",pedir_recomendacion,loss_aversion
+¿Cuánto he perdido? no puedo vender por debajo de mi precio de compra,consultar_cartera,loss_aversion
+"¿dónde puedo invertir mi dinero?, pero no creo que sea el mejor momento para vender esta posición",quiero_comprar,loss_aversion
+"explícame qué es un fondo mutuo, no estoy seguro de vender ahora, quizás es mejor esperar",explicar_concepto,loss_aversion
+"¿qué es buena inversión ahora?, prefiero esperar a que suba",pedir_recomendacion,loss_aversion
+"explícame qué es un bono, no puedo vender por debajo de mi precio de compra",explicar_concepto,loss_aversion
+"No me conviene vender en este momento, mejor espero, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? no creo que sea el mejor momento para vender esta posición,consultar_cartera,loss_aversion
+"No creo que sea el mejor momento para vender esta posición, no puedo vender",quiero_vender,loss_aversion
+"Prefiero esperar un poco antes de decidir sobre esta posición, no puedo vender",quiero_vender,loss_aversion
+"No creo que sea el mejor momento para vender esta posición, no puedo vender",quiero_vender,loss_aversion
+"prefiero mantenerlo a vender perdiendo, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? prefiero mantenerlo a vender perdiendo,consultar_cartera,loss_aversion
+"¿qué es el riesgo en inversiones?, tal vez debería mantener esta posición un poco más",explicar_concepto,loss_aversion
+¿Cuánto he perdido? no quiero vender con pérdidas,consultar_cartera,loss_aversion
+"¿Cuánto he perdido? no estoy seguro de vender ahora, quizás es mejor esperar",consultar_cartera,loss_aversion
+"quiero entrar en el mercado, pero mejor darle tiempo a que se recupere antes de actuar",quiero_comprar,loss_aversion
+"Prefiero mantener mi estrategia actual por ahora, no puedo vender",quiero_vender,loss_aversion
+"explícame qué es un fondo mutuo, no me conviene vender en este momento, mejor espero",explicar_concepto,loss_aversion
+¿Cuánto he perdido? prefiero no tomar decisiones precipitadas con esta inversión,consultar_cartera,loss_aversion
+"quiero invertir en tech, pero prefiero esperar a que suba",quiero_comprar,loss_aversion
+"¿cómo se calcula el rendimiento?, no estoy seguro de vender ahora, quizás es mejor esperar",explicar_concepto,loss_aversion
+"No estoy seguro de vender ahora, quizás es mejor esperar, no puedo vender",quiero_vender,loss_aversion
+"¿qué acción me recomiendan comprar?, prefiero esperar a que suba",pedir_recomendacion,loss_aversion
+"¿me pueden dar una recomendación?, no estoy seguro de vender ahora, quizás es mejor esperar",pedir_recomendacion,loss_aversion
+"me gustaría invertir en criptomonedas, pero no vendo con pérdidas nunca",quiero_comprar,loss_aversion
+"¿qué acción recomiendan comprar?, pero no me parece prudente vender en estas condiciones",quiero_comprar,loss_aversion
+"¿en qué debería poner mi dinero?, prefiero esperar a que suba",pedir_recomendacion,loss_aversion
+¿Cuánto he perdido? mejor espero a que vuelva a subir,consultar_cartera,loss_aversion
+"¿cuál es la mejor inversión?, mejor esperar a ver cómo evoluciona la situación",pedir_recomendacion,loss_aversion
+"explícame qué es un bono, mejor espero a que vuelva a subir",explicar_concepto,loss_aversion
+¿Cuánto he perdido? mejor esperar a ver cómo evoluciona la situación,consultar_cartera,loss_aversion
+"prefiero esperar a que suba, no puedo vender",quiero_vender,loss_aversion
+"¿dónde me conviene invertir?, mejor esperar a ver cómo evoluciona la situación",pedir_recomendacion,loss_aversion
+¿Cuánto he perdido? no quiero vender con pérdidas,consultar_cartera,loss_aversion
+"explícame qué es un fondo mutuo, me duele demasiado vender ahora",explicar_concepto,loss_aversion
+"explícame qué es un fondo mutuo, prefiero esperar a que suba",explicar_concepto,loss_aversion
+"prefiero mantenerlo a vender perdiendo, no puedo vender",quiero_vender,loss_aversion
+"¿qué me recomiendan comprar?, pero no estoy seguro de vender ahora, quizás es mejor esperar",quiero_comprar,loss_aversion
+"¿qué significa diversificar?, no voy a realizar esta pérdida",explicar_concepto,loss_aversion
+"explícame qué es un fondo mutuo, prefiero no tomar decisiones precipitadas con esta inversión",explicar_concepto,loss_aversion
+"¿qué significa diversificar?, mejor darle tiempo a que se recupere antes de actuar",explicar_concepto,loss_aversion
+"¿qué me recomiendan comprar?, pero me duele demasiado vender ahora",quiero_comprar,loss_aversion
+"estoy considerando comprar ETFs, pero tal vez debería mantener esta posición un poco más",quiero_comprar,loss_aversion
+"¿qué es la capitalización bursátil?, no estoy seguro de vender ahora, quizás es mejor esperar",explicar_concepto,loss_aversion
+¿Cuánto he perdido? no vendo con pérdidas nunca,consultar_cartera,loss_aversion
+"¿dónde puedo obtener buenos rendimientos?, no creo que sea el mejor momento para vender esta posición",pedir_recomendacion,loss_aversion
+"quiero entrar en el mercado, pero no voy a realizar esta pérdida",quiero_comprar,loss_aversion
+"No estoy seguro de vender ahora, quizás es mejor esperar, no puedo vender",quiero_vender,loss_aversion
+"me duele demasiado vender ahora, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? no me parece prudente vender en estas condiciones,consultar_cartera,loss_aversion
+"no quiero vender con pérdidas, no puedo vender",quiero_vender,loss_aversion
+"¿qué es el beta?, no voy a realizar esta pérdida",explicar_concepto,loss_aversion
+"estoy pensando en invertir en biotecnología, pero no me conviene vender en este momento, mejor espero",quiero_comprar,loss_aversion
+"¿qué me recomiendan comprar?, pero prefiero mantener mi estrategia actual por ahora",quiero_comprar,loss_aversion
+¿Cuánto he perdido? tal vez debería mantener esta posición un poco más,consultar_cartera,loss_aversion
+"No me parece prudente vender en estas condiciones, no puedo vender",quiero_vender,loss_aversion
+"quiero añadir más acciones a mi cartera, pero me duele demasiado vender ahora",quiero_comprar,loss_aversion
+"¿qué acción me recomiendan comprar?, mejor esperar a ver cómo evoluciona la situación",pedir_recomendacion,loss_aversion
+"No me parece prudente vender en estas condiciones, no puedo vender",quiero_vender,loss_aversion
+"mejor espero a que vuelva a subir, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? no quiero vender con pérdidas,consultar_cartera,loss_aversion
+"Mejor darle tiempo a que se recupere antes de actuar, no puedo vender",quiero_vender,loss_aversion
+"¿qué me dicen de invertir en crypto?, no estoy seguro de vender ahora, quizás es mejor esperar",pedir_recomendacion,loss_aversion
+"¿dónde me conviene invertir?, mejor esperar a ver cómo evoluciona la situación",pedir_recomendacion,loss_aversion
+"¿cuál es la mejor inversión?, prefiero no tomar decisiones precipitadas con esta inversión",pedir_recomendacion,loss_aversion
+"¿dónde puedo invertir mi dinero?, pero mejor espero a que vuelva a subir",quiero_comprar,loss_aversion
+"no voy a realizar esta pérdida, no puedo vender",quiero_vender,loss_aversion
+"¿es buena idea comprar ahora?, pero no me conviene vender en este momento, mejor espero",quiero_comprar,loss_aversion
+"¿cómo funciona el interés compuesto?, no puedo vender por debajo de mi precio de compra",explicar_concepto,loss_aversion
+"estoy pensando en comprar acciones, pero voy a esperar a que recupere",quiero_comprar,loss_aversion
+"¿qué acción es buena compra?, no creo que sea el mejor momento para vender esta posición",pedir_recomendacion,loss_aversion
+"¿qué es un ETF?, no puedo vender por debajo de mi precio de compra",explicar_concepto,loss_aversion
+"¿es buen momento para comprar Apple?, pero no me parece prudente vender en estas condiciones",quiero_comprar,loss_aversion
+"¿qué me dicen de invertir en crypto?, no creo que sea el mejor momento para vender esta posición",pedir_recomendacion,loss_aversion
+"quiero comprar mi primera acción, pero no me parece prudente vender en estas condiciones",quiero_comprar,loss_aversion
+¿Cuánto he perdido? no quiero vender con pérdidas,consultar_cartera,loss_aversion
+"¿qué acción es buena compra?, prefiero mantener mi estrategia actual por ahora",pedir_recomendacion,loss_aversion
+"¿qué es buena inversión ahora?, tal vez debería mantener esta posición un poco más",pedir_recomendacion,loss_aversion
+"¿dónde puedo invertir mi dinero?, pero tal vez debería mantener esta posición un poco más",quiero_comprar,loss_aversion
+"explícame qué es el dividendo, me duele demasiado vender ahora",explicar_concepto,loss_aversion
+"no vendo con pérdidas nunca, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? no voy a realizar esta pérdida,consultar_cartera,loss_aversion
+"¿qué es buena inversión ahora?, prefiero no tomar decisiones precipitadas con esta inversión",pedir_recomendacion,loss_aversion
+"¿es buen momento para comprar Apple?, pero mejor darle tiempo a que se recupere antes de actuar",quiero_comprar,loss_aversion
+"prefiero mantenerlo a vender perdiendo, no puedo vender",quiero_vender,loss_aversion
+"¿dónde invierto?, no puedo vender por debajo de mi precio de compra",pedir_recomendacion,loss_aversion
+"Mejor darle tiempo a que se recupere antes de actuar, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? no me parece prudente vender en estas condiciones,consultar_cartera,loss_aversion
+¿Cuánto he perdido? voy a esperar a que recupere,consultar_cartera,loss_aversion
+"¿qué recomiendan para mi cartera?, mejor darle tiempo a que se recupere antes de actuar",pedir_recomendacion,loss_aversion
+¿Cuánto he perdido? prefiero mantener mi estrategia actual por ahora,consultar_cartera,loss_aversion
+"Prefiero no tomar decisiones precipitadas con esta inversión, no puedo vender",quiero_vender,loss_aversion
+"¿qué recomiendan para mi cartera?, no estoy seguro de vender ahora, quizás es mejor esperar",pedir_recomendacion,loss_aversion
+"¿dónde me recomiendan invertir a largo plazo?, prefiero mantenerlo a vender perdiendo",pedir_recomendacion,loss_aversion
+¿Cuánto he perdido? prefiero esperar un poco antes de decidir sobre esta posición,consultar_cartera,loss_aversion
+"¿es buen momento para comprar Apple?, pero prefiero mantener mi estrategia actual por ahora",quiero_comprar,loss_aversion
+"No me parece prudente vender en estas condiciones, no puedo vender",quiero_vender,loss_aversion
+¿Cuánto he perdido? prefiero mantenerlo a vender perdiendo,consultar_cartera,loss_aversion
+"¿en qué debería poner mi dinero?, mejor espero a que vuelva a subir",pedir_recomendacion,loss_aversion
+"Prefiero esperar un poco antes de decidir sobre esta posición, no puedo vender",quiero_vender,loss_aversion
+"¿qué tal si compro Tesla?, pero mejor espero a que vuelva a subir",quiero_comprar,loss_aversion
+"explícame qué es un fondo mutuo, no estoy seguro de vender ahora, quizás es mejor esperar",explicar_concepto,loss_aversion
+"¿qué me recomiendan comprar?, pero mejor darle tiempo a que se recupere antes de actuar",quiero_comprar,loss_aversion
+¿Cuánto he perdido? no quiero vender con pérdidas,consultar_cartera,loss_aversion
+"Tal vez debería mantener esta posición un poco más, no puedo vender",quiero_vender,loss_aversion
+"¿qué es un ETF?, mejor esperar a ver cómo evoluciona la situación",explicar_concepto,loss_aversion
+¿Cuánto he perdido? no puedo vender por debajo de mi precio de compra,consultar_cartera,loss_aversion
+"estoy pensando en comprar acciones, pero no me parece prudente vender en estas condiciones",quiero_comprar,loss_aversion
+"quiero añadir más acciones a mi cartera, pero no voy a realizar esta pérdida",quiero_comprar,loss_aversion
+"¿Cuánto vale comparado con mi precio de compra? a este nivel no me siento cómodo vendiendo, prefiero esperar",consultar_cartera,anchoring
+"¿qué me recomiendan para principiantes?, compré a 80, no puedo vender por debajo",pedir_recomendacion,anchoring
+"¿Cuánto vale comparado con mi precio de compra? compré a 80, no puedo vender por debajo",consultar_cartera,anchoring
+"¿qué recomiendan para mi cartera?, la compré a 200, no vendo por debajo de eso",pedir_recomendacion,anchoring
+"la compré a 200, no vendo por debajo de eso, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"No me parece justo vender a este nivel, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"la compré a 30, mi punto de equilibrio es 30, no vendo por debajo",quiero_vender,anchoring
+"No me parece el momento adecuado para vender a este precio, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"compré a 80, no puedo vender por debajo, no vendo por debajo",quiero_vender,anchoring
+"¿cómo funciona el interés compuesto?, no estoy convencido de vender a este precio, mejor mantengo",explicar_concepto,anchoring
+"¿Cuánto vale comparado con mi precio de compra? no me parece un buen precio de salida, mejor aguardo",consultar_cartera,anchoring
+"¿Cuánto vale comparado con mi precio de compra? no me parece un buen precio de salida, mejor aguardo",consultar_cartera,anchoring
+"¿qué es la volatilidad?, no me parece justo vender a este nivel, prefiero esperar",explicar_concepto,anchoring
+"¿qué es el riesgo en inversiones?, compré a 150, necesito que vuelva a ese nivel",explicar_concepto,anchoring
+"la compré a 200, no vendo por debajo de eso, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"compré a 50, tengo que esperar a que vuelva a 50, no vendo por debajo",quiero_vender,anchoring
+"¿qué es buena inversión ahora?, este precio está por debajo de lo que esperaba, mejor espero",pedir_recomendacion,anchoring
+"¿cuál es la mejor inversión?, a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",pedir_recomendacion,anchoring
+"A este precio no me convence, cuando vuelva al nivel donde compré ya vemos, no vendo por debajo",quiero_vender,anchoring
+"No estoy convencido de vender a este precio, mejor mantengo, no vendo por debajo",quiero_vender,anchoring
+"¿Cuánto vale comparado con mi precio de compra? a este precio no estoy cómodo, prefiero esperar una mejora",consultar_cartera,anchoring
+"No estoy convencido de vender a este precio, mejor mantengo, no vendo por debajo",quiero_vender,anchoring
+"¿dónde puedo invertir para ganar dinero?, mi precio de compra fue 100, no vendo por menos",pedir_recomendacion,anchoring
+"¿dónde me conviene invertir?, compré a 150, necesito que vuelva a ese nivel",pedir_recomendacion,anchoring
+"¿Cuánto vale comparado con mi precio de compra? a este nivel no me siento cómodo vendiendo, prefiero esperar",consultar_cartera,anchoring
+"¿Cuánto vale comparado con mi precio de compra? a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",consultar_cartera,anchoring
+"la compré a 200, no vendo por debajo de eso, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"la compré a 30, mi punto de equilibrio es 30, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"la compré a 200, no vendo por debajo de eso, no vendo por debajo",quiero_vender,anchoring
+"¿qué significa diversificar?, la compré a 200, no vendo por debajo de eso",explicar_concepto,anchoring
+"¿dónde me recomiendan invertir a largo plazo?, la compré a 30, mi punto de equilibrio es 30",pedir_recomendacion,anchoring
+"A este nivel no me siento cómodo vendiendo, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"la compré a 200, no vendo por debajo de eso, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿qué me sugieren hacer con mi dinero?, este precio está por debajo de lo que esperaba, mejor espero",pedir_recomendacion,anchoring
+"No me gusta vender a este nivel, prefiero mantener, no vendo por debajo",quiero_vender,anchoring
+"compré a 80, no puedo vender por debajo, no vendo por debajo",quiero_vender,anchoring
+"¿en qué sector debo invertir?, no estoy convencido de vender a este precio, mejor mantengo",pedir_recomendacion,anchoring
+"¿Cuánto vale comparado con mi precio de compra? compré a 50, tengo que esperar a que vuelva a 50",consultar_cartera,anchoring
+"¿Cuánto vale comparado con mi precio de compra? este nivel no me parece adecuado para vender, prefiero esperar",consultar_cartera,anchoring
+"compré a 50, tengo que esperar a que vuelva a 50, no vendo por debajo",quiero_vender,anchoring
+"A este precio no estoy cómodo, prefiero esperar una mejora, no vendo por debajo",quiero_vender,anchoring
+"A este precio no me convence, cuando vuelva al nivel donde compré ya vemos, no vendo por debajo",quiero_vender,anchoring
+"¿qué me recomiendan para principiantes?, a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",pedir_recomendacion,anchoring
+"¿me pueden dar una recomendación?, la compré a 30, mi punto de equilibrio es 30",pedir_recomendacion,anchoring
+"No me parece justo vender a este nivel, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"explícame qué es el dividendo, compré a 150, necesito que vuelva a ese nivel",explicar_concepto,anchoring
+"compré a 50, tengo que esperar a que vuelva a 50, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿qué es la volatilidad?, a este nivel no me siento cómodo vendiendo, prefiero esperar",explicar_concepto,anchoring
+"¿cómo se calcula el rendimiento?, compré a 50, tengo que esperar a que vuelva a 50",explicar_concepto,anchoring
+"mi precio de compra fue 100, no vendo por menos, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿qué significa P/E ratio?, no me parece justo vender a este nivel, prefiero esperar",explicar_concepto,anchoring
+"¿cómo se calcula el rendimiento?, compré a 50, tengo que esperar a que vuelva a 50",explicar_concepto,anchoring
+"¿Cuánto vale comparado con mi precio de compra? compré a 50, tengo que esperar a que vuelva a 50",consultar_cartera,anchoring
+"No me parece justo vender a este nivel, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"la compré a 30, mi punto de equilibrio es 30, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"mi precio de compra fue 100, no vendo por menos, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"A este nivel no me siento cómodo vendiendo, prefiero esperar, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿dónde me conviene invertir?, la compré a 200, no vendo por debajo de eso",pedir_recomendacion,anchoring
+"¿qué es el riesgo en inversiones?, la compré a 200, no vendo por debajo de eso",explicar_concepto,anchoring
+"¿en qué sector debo invertir?, la compré a 30, mi punto de equilibrio es 30",pedir_recomendacion,anchoring
+"compré a 80, no puedo vender por debajo, no vendo por debajo",quiero_vender,anchoring
+"¿me pueden dar una recomendación?, no me parece un buen precio de salida, mejor aguardo",pedir_recomendacion,anchoring
+"explícame qué es un fondo mutuo, no me parece un buen precio de salida, mejor aguardo",explicar_concepto,anchoring
+"¿cómo funciona el trading?, a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",explicar_concepto,anchoring
+"No me parece justo vender a este nivel, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"explícame qué es un bono, compré a 80, no puedo vender por debajo",explicar_concepto,anchoring
+"la compré a 30, mi punto de equilibrio es 30, no vendo por debajo",quiero_vender,anchoring
+"¿Cuánto vale comparado con mi precio de compra? no me gusta vender a este nivel, prefiero mantener",consultar_cartera,anchoring
+"¿Cuánto vale comparado con mi precio de compra? compré a 50, tengo que esperar a que vuelva a 50",consultar_cartera,anchoring
+"A este precio no me convence, cuando vuelva al nivel donde compré ya vemos, no vendo por debajo",quiero_vender,anchoring
+"¿qué es un índice bursátil?, compré a 150, necesito que vuelva a ese nivel",explicar_concepto,anchoring
+"¿qué es buena inversión ahora?, compré a 150, necesito que vuelva a ese nivel",pedir_recomendacion,anchoring
+¿Cuánto vale comparado con mi precio de compra? no me parece el momento adecuado para vender a este precio,consultar_cartera,anchoring
+"¿qué recomiendan para mi cartera?, no me parece justo vender a este nivel, prefiero esperar",pedir_recomendacion,anchoring
+"¿Cuánto vale comparado con mi precio de compra? este precio está por debajo de lo que esperaba, mejor espero",consultar_cartera,anchoring
+"A este nivel no me siento cómodo vendiendo, prefiero esperar, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿Cuánto vale comparado con mi precio de compra? compré a 150, necesito que vuelva a ese nivel",consultar_cartera,anchoring
+"¿dónde me conviene invertir?, compré a 150, necesito que vuelva a ese nivel",pedir_recomendacion,anchoring
+"¿en qué sector debo invertir?, a este nivel no me siento cómodo vendiendo, prefiero esperar",pedir_recomendacion,anchoring
+"¿qué me sugieren hacer con mi dinero?, a este precio no estoy cómodo, prefiero esperar una mejora",pedir_recomendacion,anchoring
+"¿me pueden dar una recomendación?, la compré a 200, no vendo por debajo de eso",pedir_recomendacion,anchoring
+"Este precio está por debajo de lo que esperaba, mejor espero, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"compré a 80, no puedo vender por debajo, no vendo por debajo",quiero_vender,anchoring
+"explícame qué es un bono, la compré a 200, no vendo por debajo de eso",explicar_concepto,anchoring
+"No estoy convencido de vender a este precio, mejor mantengo, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿cómo funciona el interés compuesto?, no me parece el momento adecuado para vender a este precio",explicar_concepto,anchoring
+"mi precio de compra fue 100, no vendo por menos, no vendo por debajo",quiero_vender,anchoring
+"¿Cuánto vale comparado con mi precio de compra? a este nivel no me siento cómodo vendiendo, prefiero esperar",consultar_cartera,anchoring
+"Este precio está por debajo de lo que esperaba, mejor espero, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"Este nivel no me parece adecuado para vender, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"compré a 80, no puedo vender por debajo, no vendo por debajo",quiero_vender,anchoring
+"¿qué me sugieren hacer con mi dinero?, a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",pedir_recomendacion,anchoring
+"¿cómo funciona el mercado de valores?, la compré a 200, no vendo por debajo de eso",explicar_concepto,anchoring
+"Este precio está por debajo de lo que esperaba, mejor espero, no vendo por debajo",quiero_vender,anchoring
+"¿qué es un índice bursátil?, a este nivel no me siento cómodo vendiendo, prefiero esperar",explicar_concepto,anchoring
+"¿dónde me conviene invertir?, compré a 50, tengo que esperar a que vuelva a 50",pedir_recomendacion,anchoring
+"¿qué acción es buena compra?, no me parece un buen precio de salida, mejor aguardo",pedir_recomendacion,anchoring
+"compré a 80, no puedo vender por debajo, no vendo por debajo",quiero_vender,anchoring
+"A este nivel no me siento cómodo vendiendo, prefiero esperar, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"compré a 150, necesito que vuelva a ese nivel, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"la compré a 200, no vendo por debajo de eso, no vendo por debajo",quiero_vender,anchoring
+"¿qué es un ETF?, a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",explicar_concepto,anchoring
+"No me parece un buen precio de salida, mejor aguardo, no vendo por debajo",quiero_vender,anchoring
+"¿cómo funciona el trading?, no me parece el momento adecuado para vender a este precio",explicar_concepto,anchoring
+"¿qué es la volatilidad?, no me gusta vender a este nivel, prefiero mantener",explicar_concepto,anchoring
+"¿qué me sugieren hacer con mi dinero?, a este nivel no me siento cómodo vendiendo, prefiero esperar",pedir_recomendacion,anchoring
+"¿Cuánto vale comparado con mi precio de compra? no me parece un buen precio de salida, mejor aguardo",consultar_cartera,anchoring
+"Este precio está por debajo de lo que esperaba, mejor espero, no vendo por debajo",quiero_vender,anchoring
+"explícame qué es una acción, a este precio no me convence, cuando vuelva al nivel donde compré ya vemos",explicar_concepto,anchoring
+"A este precio no me convence, cuando vuelva al nivel donde compré ya vemos, por eso no quiero comprar ahora",quiero_comprar,anchoring
+"¿me pueden dar una recomendación?, no estoy convencido de vender a este precio, mejor mantengo",pedir_recomendacion,anchoring
+"¿Cuánto vale comparado con mi precio de compra? compré a 80, no puedo vender por debajo",consultar_cartera,anchoring
+¿Cuánto vale comparado con mi precio de compra? no me parece el momento adecuado para vender a este precio,consultar_cartera,anchoring
+"compré a 50, tengo que esperar a que vuelva a 50, no vendo por debajo",quiero_vender,anchoring
+"¿Cuánto vale comparado con mi precio de compra? no estoy convencido de vender a este precio, mejor mantengo",consultar_cartera,anchoring
+"¿qué es la capitalización bursátil?, la compré a 200, no vendo por debajo de eso",explicar_concepto,anchoring
+"No me parece el momento adecuado para vender a este precio, no vendo por debajo",quiero_vender,anchoring
+"¿en qué sector debo invertir?, este nivel no me parece adecuado para vender, prefiero esperar",pedir_recomendacion,anchoring
+"A este nivel no me siento cómodo vendiendo, prefiero esperar, no vendo por debajo",quiero_vender,anchoring
+"¿Cuánto vale comparado con mi precio de compra? este precio está por debajo de lo que esperaba, mejor espero",consultar_cartera,anchoring

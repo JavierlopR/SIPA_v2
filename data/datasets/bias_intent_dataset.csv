@@ -1,0 +1,981 @@
+texto,intencion,sesgo
+toy pensando en vender mis posiciones desbalanceadas,quiero_vender,ninguno
+ayuda ¡voy a perder mi alma!,pedir_recomendacion,panico
+"ayuda compré a 190, necesito volver a 190",pedir_recomendacion,anchoring
+¿cómo funciona el anchoring bias?,pedir_recomendacion,ninguno
+todos están en la liga de los ricos,pedir_recomendacion,fomo
+todos están viajando por el mundo,pedir_recomendacion,fomo
+nadie puede cuestionarme,pedir_recomendacion,overconfidence
+nadie puede ganarle al mercado como yo,pedir_recomendacion,overconfidence
+¿QUÉ RECOMIENDAN PARA MI CARTERA?,pedir_recomendacion,ninguno
+nadie puede predecir como yo,pedir_recomendacion,overconfidence
+explícame qué es diversificación!,explicar_concepto,ninguno
+NADIE PUEDE DUDAR DE MI GENIO,pedir_recomendacion,overconfidence
+"mi precio de compra fue 108, espero ese nivel!!!",pedir_recomendacion,anchoring
+necesito un resumen de mi cartera,consultar_cartera,ninguno
+¿debería comprar más de esta acción?,quiero_comprar,ninguno
+¿CUÁL ES LA MEJOR INVERSIÓN EN ASIA?,pedir_recomendacion,ninguno
+necesito un resumen ejecutivo de mi cartera urgente,consultar_cartera,ninguno
+"ayuda la compré a 20, ese es mi punto de equilibrio",pedir_recomendacion,anchoring
+"mi precio de compra fue 120, espero ese nivel por favor",pedir_recomendacion,anchoring
+necesito ver mis resultados mensuales urgente,consultar_cartera,ninguno
+¿cuál es la mejor inversión para principiantes?!,pedir_recomendacion,ninguno
+¿cómo funciona el valuation?,explicar_concepto,ninguno
+oye dime el valor total de mi portafolio,consultar_cartera,ninguno
+oye ¿qué acción me recomiendan vender?,pedir_recomendacion,ninguno
+"la compré a 50, no vendo por debajo de 50",pedir_recomendacion,anchoring
+"ayuda la compré a 24, ese es mi punto de equilibrio",pedir_recomendacion,anchoring
+¿qué es una criptomoneda?,explicar_concepto,ninguno
+¿dónde puedo invertir en tiempos de incertidumbre?,pedir_recomendacion,ninguno
+quiero vender mis acciones especulativas urgente,quiero_vender,ninguno
+quiero vender mis posiciones de infraestructura urgente,quiero_vender,ninguno
+¿qué significa spread de crédito?,explicar_concepto,ninguno
+¡esto es una condena! por favor,pedir_recomendacion,panico
+voy a vender mis acciones de salud,quiero_vender,ninguno
+ayuda tengo que liquidar antes del colapso total,pedir_recomendacion,panico
+ayuda no puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+dime el valor de mis acciones,consultar_cartera,ninguno
+es buen momento para vender?,quiero_vender,ninguno
+"la compré a 62, no vendo por debajo de 62",pedir_recomendacion,anchoring
+¿qué significa liquidity? urgente,explicar_concepto,ninguno
+¿cuál es el valor actual de mi portafolio?,consultar_cartera,ninguno
+mi inteligencia es incomparable!!!,pedir_recomendacion,overconfidence
+mejor lo dejo por favor,pedir_recomendacion,loss_aversion
+¿es buena idea comprar tecnología?,quiero_comprar,ninguno
+oye estoy considerando vender mis posiciones de mercados desarrollados,quiero_vender,ninguno
+¿dónde invierto mi dinero extra?,pedir_recomendacion,ninguno
+ayuda ¡no puedo más con esta angustia!,pedir_recomendacion,panico
+¿es buena idea comprar ahora?,quiero_comprar,ninguno
+necesito información sobre crypto,pedir_recomendacion,ninguno
+¿cuál es el valor de mis posiciones? urgente,consultar_cartera,ninguno
+¿es buena idea comprar ahora? urgente,quiero_comprar,ninguno
+soy un iluminado,pedir_recomendacion,overconfidence
+¿cómo funciona el análisis de indicadores?,explicar_concepto,ninguno
+¡estoy perdiendo la oportunidad de mi vida!,pedir_recomendacion,fomo
+oye ¿en qué debería invertir para jubilación?,pedir_recomendacion,ninguno
+dime el performance de mi cartera urgente,consultar_cartera,ninguno
+¿cómo funciona el análisis monetario?,explicar_concepto,ninguno
+¿qué es el rendimiento de dividendos?!,explicar_concepto,ninguno
+nadie puede entender mi profundidad ahora,pedir_recomendacion,overconfidence
+¿qué me dicen de invertir en tecnología?,pedir_recomendacion,ninguno
+¿dónde me conviene invertir?!,pedir_recomendacion,ninguno
+ayuda todos los que invirtieron ya dejaron herencia,pedir_recomendacion,fomo
+"compré a 175, no vendo hasta ese precio",pedir_recomendacion,anchoring
+"MI COSTO FUE 85, ESE ES MI PISO",pedir_recomendacion,anchoring
+no puedo ser el único burócrata,pedir_recomendacion,fomo
+"mi costo fue 78, ese es mi piso ahora",pedir_recomendacion,anchoring
+explícame qué es el ratio de deuda por favor,explicar_concepto,ninguno
+"disculpa, ¿debería vender mis posiciones grandes?",quiero_vender,ninguno
+estoy konsiderando vender mis posiciones de mercados desarrollados,quiero_vender,ninguno
+muéstrame el detalle de mi portafolio,consultar_cartera,ninguno
+no vendo con rojo,pedir_recomendacion,loss_aversion
+ESTO ES EVIDENTE,pedir_recomendacion,overconfidence
+¿CUÁL ES LA MEJOR INVERSIÓN EN CONSUMO?,pedir_recomendacion,ninguno
+"compré a 158, no vendo hasta ese precio!!!",pedir_recomendacion,anchoring
+quiero saber cómo va mi dinero por favor,consultar_cartera,ninguno
+quiero vender mis acciones especulativas,quiero_vender,ninguno
+ayuda ¿cómo funciona el momentum investing?,pedir_recomendacion,ninguno
+¡estoy acabado!,pedir_recomendacion,panico
+mi visión es clara,pedir_recomendacion,overconfidence
+¿cómo funciona el trading?,explicar_concepto,ninguno
+"disculpa, ¿qué me sugieren para mi primer inversión?",pedir_recomendacion,ninguno
+¿EN QUÉ CRIPTOMONEDAS DEBO INVERTIR?,pedir_recomendacion,ninguno
+todos mis compañeros ya retiraron,pedir_recomendacion,fomo
+¡estoy destruido!,pedir_recomendacion,panico
+¿cómo van mis acciones?,consultar_cartera,ninguno
+el mercado está explotando,pedir_recomendacion,panico
+¿debería comprar más Tesla?!,quiero_comprar,ninguno
+esperaré pacientemente,pedir_recomendacion,loss_aversion
+cómo funciona el análisis sectorial?,explicar_concepto,ninguno
+necesito vender mis posiciones de riesgo urgente,quiero_vender,ninguno
+¿cuál es la mejor inversión sostenible?!,pedir_recomendacion,ninguno
+necesito un resumen ejecutivo de mi cartera,consultar_cartera,ninguno
+estoy pensando en comprar bancos por favor,quiero_comprar,ninguno
+¿qué es el fear and greed index?,explicar_concepto,ninguno
+qué me recomiendan para developed economies?,pedir_recomendacion,ninguno
+voy a perder mi familia!!!,pedir_recomendacion,panico
+prefiero mantener,pedir_recomendacion,loss_aversion
+¿cuál es la mejor inversión en agricultura? por favor,pedir_recomendacion,ninguno
+muéstrame el rendimiento de mis fondos,consultar_cartera,ninguno
+¿qué tal si compro oro? urgente,quiero_comprar,ninguno
+EL MERCADO SE VIENE ABAJO,pedir_recomendacion,panico
+ayuda todos mis amigos ya tienen carteras,pedir_recomendacion,fomo
+ayuda soy un revolucionario,pedir_recomendacion,overconfidence
+"mi precio de entrada fue 80, espero ese nivel",pedir_recomendacion,anchoring
+¿qué significa spread de crédito? por favor,explicar_concepto,ninguno
+"disculpa, ¿qué me dicen si compro más de esto?",quiero_comprar,ninguno
+¿qué es un REIT?,explicar_concepto,ninguno
+prefiero mantenerlo a vender perdiendo!!!,pedir_recomendacion,loss_aversion
+cómo funciona el mercado de derivados?,explicar_concepto,ninguno
+quiero invertir en startups,quiero_comprar,ninguno
+kiero entender el smart beta,pedir_recomendacion,ninguno
+ayuda voy a aguantar,pedir_recomendacion,loss_aversion
+necesito información sobre Tesla,pedir_recomendacion,ninguno
+voy a ser un inspiración,pedir_recomendacion,overconfidence
+quiero vender algunas acciones,quiero_vender,ninguno
+¿qué es el sharpe ratio?,pedir_recomendacion,ninguno
+soy incompable,pedir_recomendacion,overconfidence
+¡ESTO ES INSOPORTABLE!,pedir_recomendacion,panico
+quiero vender mis acciones de crecimiento,quiero_vender,ninguno
+¿qué me sugieren para water utilities? urgente,pedir_recomendacion,ninguno
+¿es buena idea comprar ahora?,quiero_comprar,ninguno
+necesito vender para reequilibrar por favor,quiero_vender,ninguno
+QUIERO VENDER MIS POSICIONES DE VALOR,quiero_vender,ninguno
+¿qué es el goal-based investing? ahora,pedir_recomendacion,ninguno
+¿cuánto vale mi portfolio actual? por favor,consultar_cartera,ninguno
+ayuda soy un semidiós,pedir_recomendacion,overconfidence
+necesito vender para tomar ganancias,quiero_vender,ninguno
+no puedo trabajar hasta los 65 por favor,pedir_recomendacion,fomo
+cómo va mi dinero en el mercado?,consultar_cartera,ninguno
+¿debería comprar más de esta acción?,quiero_comprar,ninguno
+dime el estado de mis finanzas invertidas,consultar_cartera,ninguno
+¿cómo está el valor de mis activos? por favor,consultar_cartera,ninguno
+necesito revisar mi portafolio completo,consultar_cartera,ninguno
+voy a deprimirme si no entro,pedir_recomendacion,fomo
+"disculpa, ¿cuál es el valor de mi patrimonio bursátil?",consultar_cartera,ninguno
+esto es garantizado,pedir_recomendacion,overconfidence
+mejor esperar por favor,pedir_recomendacion,loss_aversion
+¿debería comprar más cuando baja?,quiero_comprar,ninguno
+estoy considerando comprar fondos indexados,quiero_comprar,ninguno
+no puedo vender con pérdidas,pedir_recomendacion,loss_aversion
+MI INTUICIÓN ES DIVINA,pedir_recomendacion,overconfidence
+¿cómo funciona el dollar cost averaging?,pedir_recomendacion,ninguno
+prefiero aguantar!!!,pedir_recomendacion,loss_aversion
+"compré a 164, nunca vendo asta ese precio",pedir_recomendacion,anchoring
+ESTO ES MI MAGIA,pedir_recomendacion,overconfidence
+¿qué significa QE?!,explicar_concepto,ninguno
+oye ¿en qué sector hay oportunidades?,pedir_recomendacion,ninguno
+ayuda ¿cómo funciona el análisis de rendimiento?,pedir_recomendacion,ninguno
+necesito vender para pagar impuestos,quiero_vender,ninguno
+quiero comprar mi primera acción,quiero_comprar,ninguno
+NADIE PUEDE PREDECIR COMO YO,pedir_recomendacion,overconfidence
+¡voy a perder mi futuro!,pedir_recomendacion,panico
+¿dónde invierto?!,pedir_recomendacion,ninguno
+mi hermano ya compró su casa con inversiones!!!,pedir_recomendacion,fomo
+¿dónde está el medical innovation?,pedir_recomendacion,ninguno
+¿qué es el patrimonio neto?!,explicar_concepto,ninguno
+dónde puedo invertir mi dinero?,quiero_comprar,ninguno
+¿qué es el enterprise value?,explicar_concepto,ninguno
+me pueden dar una recomendación?,pedir_recomendacion,ninguno
+estoy pensando en comprar a buen precio,quiero_comprar,ninguno
+necesito vender mis posiciones de calidad,quiero_vender,ninguno
+ayuda soy un revolucionario,pedir_recomendacion,overconfidence
+"la compré a 98, ese es mi precio base por favor",pedir_recomendacion,anchoring
+¿qué es el riesgo en inversiones?,explicar_concepto,ninguno
+explícame qué es blockchain,explicar_concepto,ninguno
+todos los que compraron crypto ya no pagan impuestos,pedir_recomendacion,fomo
+"disculpa, ¿dónde está el sustainability opportunity?",pedir_recomendacion,ninguno
+voy a vender todo!,quiero_vender,ninguno
+esto es inevitable,pedir_recomendacion,overconfidence
+¿qué me dicen si compro Amazon? urgente,quiero_comprar,ninguno
+ayuda ¿cómo funciona el trading?,pedir_recomendacion,ninguno
+¿cómo funciona el trading?!!!,pedir_recomendacion,ninguno
+quiero saber mi situación financiera,consultar_cartera,ninguno
+tengo que liquidar todo o me muero,pedir_recomendacion,panico
+no puedo más con el sufrimiento!!!,pedir_recomendacion,panico
+explícame qué es el rendimiento anualizado,explicar_concepto,ninguno
+ayuda necesito información sobre riesgo de crédito,pedir_recomendacion,ninguno
+¿qué significa discounted cash flow?,explicar_concepto,ninguno
+cómo funciona el análisis ESG?,explicar_concepto,ninguno
+estoy considerando vender mis ganancias,quiero_vender,ninguno
+ayuda ¡esto es un horror!,pedir_recomendacion,panico
+¿debería meter dinero en NVDA?!,quiero_comprar,ninguno
+¿qué tal si compro walmart?,quiero_comprar,ninguno
+¿dónde está el energy opportunity? urgente,pedir_recomendacion,ninguno
+ayuda ¿qué es el put-call ratio?,pedir_recomendacion,ninguno
+no quiero ser el único esclavo del trabajo por favor,pedir_recomendacion,fomo
+esto es obvio!!!,pedir_recomendacion,overconfidence
+¿en qué sector hay oportunidades?!,pedir_recomendacion,ninguno
+"compré a 72, no vendo por debajo",pedir_recomendacion,anchoring
+¿QUÉ ES EL DRAWDOWN?,pedir_recomendacion,ninguno
+"compré a 148, necesito ese precio",pedir_recomendacion,anchoring
+el mercado está acabando con mi futuro por favor,pedir_recomendacion,panico
+¿qué es blockchain?!!!,pedir_recomendacion,ninguno
+no quiero ser un simple mortal,pedir_recomendacion,fomo
+nunca puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+NO VOY A REALIZAR PÉRDIDAS,pedir_recomendacion,loss_aversion
+¿DÓNDE ESTÁ EL COMMUNICATION OPPORTUNITY?,pedir_recomendacion,ninguno
+ESTOY PENSANDO EN VENDER MIS POSICIONES DE VALOR,quiero_vender,ninguno
+tengo que salirme de todo ahora o nunca,pedir_recomendacion,panico
+¿dónde puedo invertir fuera de acciones?,pedir_recomendacion,ninguno
+necesito información sobre VPN ahora,pedir_recomendacion,ninguno
+cuál es la mejor inversión para principiantes?,pedir_recomendacion,ninguno
+oye ¿cómo se calcula el rendimiento?,explicar_concepto,ninguno
+¿dónde puedo empezar a invertir?,pedir_recomendacion,ninguno
+dime el valor total de mi portafolio,consultar_cartera,ninguno
+voy a reducir mi riesgo por favor,quiero_vender,ninguno
+¿cuánto dinero tengo invertido en total?!,consultar_cartera,ninguno
+qué tal si compro Tesla?,quiero_comprar,ninguno
+voy a vender mis acciones de salud,quiero_vender,ninguno
+"mi precio de compra fue 116, espero ese nivel por favor",pedir_recomendacion,anchoring
+muéstrame el detalle de mi portafolio,consultar_cartera,ninguno
+voy a reducir mi exposición!,quiero_vender,ninguno
+voy a salir del mercado urgente,quiero_vender,ninguno
+¿qué es un REIT? urgente,explicar_concepto,ninguno
+quiero invertir en sectores que crecen,quiero_comprar,ninguno
+¿CÓMO FUNCIONA EL ANÁLISIS ESG?,explicar_concepto,ninguno
+mejor espero ahora,pedir_recomendacion,loss_aversion
+esperaré pacientemente por favor,pedir_recomendacion,loss_aversion
+voy a trascender el tiempo ahora,pedir_recomendacion,overconfidence
+no kiero ser el único ke no gana,pedir_recomendacion,fomo
+tengo que salir ya,pedir_recomendacion,panico
+voy a cambiar las reglas por favor,pedir_recomendacion,overconfidence
+¿qué tal está mi portfolio? por favor,consultar_cartera,ninguno
+todos los que compraron Bitcoin en 2020 son libres,pedir_recomendacion,fomo
+estoy pensando en vender mis tech stocks,quiero_vender,ninguno
+"disculpa, ¿cómo funciona el mercado de futuros?",explicar_concepto,ninguno
+voy a reducir mi exposición urgente,quiero_vender,ninguno
+"compré a 158, no vendo hasta ese precio",pedir_recomendacion,anchoring
+tengo que liquidar antes del olvido,pedir_recomendacion,panico
+quiero saber mi patrimonio!,consultar_cartera,ninguno
+necesito revisar mi cartera completa,consultar_cartera,ninguno
+voy a quedar en la calle por favor,pedir_recomendacion,panico
+¿qué me dicen de impact investing?,pedir_recomendacion,ninguno
+no puedo ver cómo otros se enriquecen!!!,pedir_recomendacion,fomo
+"LA COMPRÉ A 24, ESE ES MI PUNTO DE EQUILIBRIO",pedir_recomendacion,anchoring
+no puedo soportar más pérdidas ahora,pedir_recomendacion,panico
+esto es obvio!!!,pedir_recomendacion,overconfidence
+esto es garantizado,pedir_recomendacion,overconfidence
+¿qué es el information ratio? por favor,pedir_recomendacion,ninguno
+QUIERO VENDER MIS PÉRDIDAS,quiero_vender,ninguno
+prefiero mantener la posición,pedir_recomendacion,loss_aversion
+quiero invertir en inteligencia artificial,quiero_comprar,ninguno
+¿en qué commodities debo invertir? por favor,pedir_recomendacion,ninguno
+¿cómo funciona el análisis de sentimiento? por favor,explicar_concepto,ninguno
+¿debería comprar cuando hay corrección?,quiero_comprar,ninguno
+oye ¿qué significa Porter's Five Forces?,explicar_concepto,ninguno
+¿qué significa diversificar?,explicar_concepto,ninguno
+"la compré a 38, no vendo por debajo de 38 por favor",pedir_recomendacion,anchoring
+esto se hunde!!!,pedir_recomendacion,panico
+¿debería meter dinero en NVDA?,quiero_comprar,ninguno
+oye quiero revisar mi situación patrimonial,consultar_cartera,ninguno
+¿dónde me conviene poner mi dinero?,pedir_recomendacion,ninguno
+no vendo así,pedir_recomendacion,loss_aversion
+esto es mi revolución ahora,pedir_recomendacion,overconfidence
+no quiero quedarme mirando desde afuera,pedir_recomendacion,fomo
+oye ¿cuál es la mejor inversión defensiva?,pedir_recomendacion,ninguno
+dónde está la innovación?,pedir_recomendacion,ninguno
+ayuda necesito saber sobre asset allocation,pedir_recomendacion,ninguno
+explícame qué es el advance-decline line!,explicar_concepto,ninguno
+muéstrame mis inversiones y su valor,consultar_cartera,ninguno
+¿dónde ta el environmental oppotunity? po favor,pedir_recomendacion,ninguno
+esto es evidente,pedir_recomendacion,overconfidence
+qué me recomiendan para social investing?,pedir_recomendacion,ninguno
+¡ESTOY EN EL ABISMO!,pedir_recomendacion,panico
+mi sabiduría es ancestral,pedir_recomendacion,overconfidence
+necesito vender mis posiciones de finanzas,quiero_vender,ninguno
+quiero invertir en sectores defensivos!,quiero_comprar,ninguno
+¿qué es el P/E ratio?,pedir_recomendacion,ninguno
+ayuda ¿cómo funciona el scalping?,pedir_recomendacion,ninguno
+"compré a 164, no vendo hasta ese precio por favor",pedir_recomendacion,anchoring
+prefiero esperar,pedir_recomendacion,loss_aversion
+"necesito liquidez, quiero vender por favor",quiero_vender,ninguno
+"disculpa, ¿cuál es la mejor inversión sostenible?",pedir_recomendacion,ninguno
+"compré a 80, no puedo vender por debajo",pedir_recomendacion,anchoring
+el mercado está borrando mi memoria,pedir_recomendacion,panico
+¿qué es el análisis técnico?,pedir_recomendacion,ninguno
+¿cómo funciona el arbitraje? por favor,explicar_concepto,ninguno
+¡estoy desesperado!,pedir_recomendacion,panico
+ayuda ¿qué es el goal-based investing?,pedir_recomendacion,ninguno
+¿en qué real estate debo invertir?,pedir_recomendacion,ninguno
+todo el mundo ta en el paraíso financiero,pedir_recomendacion,fomo
+¡voy a perder mi juventud si no invierto! ahora,pedir_recomendacion,fomo
+tengo que dominar el mercado,pedir_recomendacion,overconfidence
+explícame qué es inflación,explicar_concepto,ninguno
+QUIERO COMPRAR ACCIONES DE EMPRESAS EN EXPANSIÓN,quiero_comprar,ninguno
+me estoy perdiendo la vida!!!,pedir_recomendacion,fomo
+mi estrategia es infalible por favor,pedir_recomendacion,overconfidence
+mi talento es divino,pedir_recomendacion,overconfidence
+voy a reducir mi cartera!,quiero_vender,ninguno
+no puedo más con estas pérdidas,pedir_recomendacion,panico
+no puedo creer esta caída,pedir_recomendacion,panico
+¡estoy quebrando!,pedir_recomendacion,panico
+"disculpa, ¿dónde me conviene invertir?",pedir_recomendacion,ninguno
+"la compré a 46, no vendo por debajo de 46 ahora",pedir_recomendacion,anchoring
+todos tan entrando al mercado,pedir_recomendacion,fomo
+el mercado está acabando con mi futuro por favor,pedir_recomendacion,panico
+¿es buen momento para entrar en cripto? por favor,quiero_comprar,ninguno
+oye ¿qué significa Greeks en opciones?,explicar_concepto,ninguno
+"ayuda la compré a 92, ese es mi precio base",pedir_recomendacion,anchoring
+todos están entrando al mercado,pedir_recomendacion,fomo
+oye estoy considerando vender mis posiciones agresivas,quiero_vender,ninguno
+todo el mundo está en el movimiento,pedir_recomendacion,fomo
+"compré a 174, necesito volver a 174",pedir_recomendacion,anchoring
+me gustaría invertir en criptomonedas,quiero_comprar,ninguno
+¿cómo funciona el scalping?,pedir_recomendacion,ninguno
+¿cómo funciona el valuation?,pedir_recomendacion,ninguno
+"ayuda mi costo fue 86, ese es mi piso",pedir_recomendacion,anchoring
+no vendo con rojo ahora,pedir_recomendacion,loss_aversion
+¡VOY A PERDER MI CASA!,pedir_recomendacion,panico
+estoy considerando vender mis posiciones dominantes,quiero_vender,ninguno
+¿dónde está la oportunidad ahora? por favor,pedir_recomendacion,ninguno
+¡TENGO QUE ENTRAR YA!,pedir_recomendacion,fomo
+tengo que vender antes del aniquilamiento total,pedir_recomendacion,panico
+oye quiero ver mis resultados financieros,consultar_cartera,ninguno
+ayuda todo el mundo está en el movimiento,pedir_recomendacion,fomo
+no puedo soportar más pérdidas!!!,pedir_recomendacion,panico
+¿cuánto vale todo lo invertido?,consultar_cartera,ninguno
+¿cómo van mis fondos este año?,consultar_cartera,ninguno
+esto es certeza absoluta ahora,pedir_recomendacion,overconfidence
+soy el elegido ahora,pedir_recomendacion,overconfidence
+¿ES BUEN MOMENTO PARA VENDER?,quiero_vender,ninguno
+estoy considerando comprar ETFs,quiero_comprar,ninguno
+cómo funciona el mercado de opciones?,explicar_concepto,ninguno
+¿qué me recomiendan para Eurozone? por favor,pedir_recomendacion,ninguno
+voy a salirme de commodities por favor,quiero_vender,ninguno
+todos en Instagram muestran sus ganancias,pedir_recomendacion,fomo
+"necesito liquidez, quiero vender por favor",quiero_vender,ninguno
+todo el mundo está en la cima por favor,pedir_recomendacion,fomo
+"ayuda compré a 70, no vendo por debajo de 70",pedir_recomendacion,anchoring
+¿qué es el yield curve?!,explicar_concepto,ninguno
+nadie puede competir konmigo po favor,pedir_recomendacion,overconfidence
+esperaré a que suba,pedir_recomendacion,loss_aversion
+MEJOR ESPERO PACIENTEMENTE,pedir_recomendacion,loss_aversion
+esperaré pacientemente,pedir_recomendacion,loss_aversion
+"disculpa, ¿cuál es la mejor inversión defensiva?",pedir_recomendacion,ninguno
+¿es buen momento para vender? po favor,quiero_vender,ninguno
+"disculpa, ¿es buen momento para comprar valor?",quiero_comprar,ninguno
+necesito revisar mi cartera completa,consultar_cartera,ninguno
+EXPLÍCAME QUÉ ES LA GOBERNANZA CORPORATIVA,explicar_concepto,ninguno
+"ayuda compré a 68, no vendo por debajo",pedir_recomendacion,anchoring
+"mi precio de compra fue 116, espero ese nivel",pedir_recomendacion,anchoring
+quiero vender mis posiciones de infraestructura,quiero_vender,ninguno
+me siento como un dinosaurio,pedir_recomendacion,fomo
+estoy buscando diversificar!,quiero_comprar,ninguno
+el mercado está humillándome por favor,pedir_recomendacion,panico
+quiero entender la tasa de interés,pedir_recomendacion,ninguno
+necesito ver el estado de mis posiciones,consultar_cartera,ninguno
+quiero ver mi cartera,pedir_recomendacion,ninguno
+soy un innovador,pedir_recomendacion,overconfidence
+esto es una locura ahora,pedir_recomendacion,panico
+mejor lo mantengo!!!,pedir_recomendacion,loss_aversion
+quiero comprar acciones de retail,quiero_comprar,ninguno
+nunca puedo ser el único mortal,pedir_recomendacion,fomo
+SOY UN PIONERO,pedir_recomendacion,overconfidence
+"disculpa, ¿dónde puedo invertir para capitalización?",pedir_recomendacion,ninguno
+¡esto es la nada!,pedir_recomendacion,panico
+¿debería vender mis bonos aora?,quiero_vender,ninguno
+¿qué me dicen de China?!,pedir_recomendacion,ninguno
+¡estoy muy arruinado para siempre!,pedir_recomendacion,panico
+ayuda no puedo aceptar vender perdiendo,pedir_recomendacion,loss_aversion
+necesito vender mis activos de alto rendimiento,quiero_vender,ninguno
+quiero añadir más diversificación!,quiero_comprar,ninguno
+explícame qué es la gobernanza corporativa!,explicar_concepto,ninguno
+"la compré a 90, ese es mi precio base",pedir_recomendacion,anchoring
+¿cómo funciona el valuation?,explicar_concepto,ninguno
+¡estoy acabado! ahora,pedir_recomendacion,panico
+¿es buena idea vender ahora?,quiero_vender,ninguno
+¿es buen momento para comprar Apple?,quiero_comprar,ninguno
+VOY A AGUANTAR PACIENTEMENTE,pedir_recomendacion,loss_aversion
+¡voy a perder mis sueños!,pedir_recomendacion,panico
+quiero entender la tasa de interés,pedir_recomendacion,ninguno
+ayuda esto es un colapso total,pedir_recomendacion,panico
+NADIE PUEDE CUESTIONARME,pedir_recomendacion,overconfidence
+¿qué me recomiendan para reits?,pedir_recomendacion,ninguno
+ESTOY BUSCANDO COMPRAR ALGO SEGURO,quiero_comprar,ninguno
+¿qué tal si compro petróleo? por favor,quiero_comprar,ninguno
+no quiero ser el único en la base,pedir_recomendacion,fomo
+"la compré a 50, no vendo por debajo de 50!!!",pedir_recomendacion,anchoring
+¿CÓMO FUNCIONA EL DOLLAR COST AVERAGING?,explicar_concepto,ninguno
+explícame qué es inflación,explicar_concepto,ninguno
+¿debería vender mis posiciones grandes?,quiero_vender,ninguno
+¿cómo funciona el scalping? ahora,pedir_recomendacion,ninguno
+quiero comprar acciones de finanzas,quiero_comprar,ninguno
+mejor mantener,pedir_recomendacion,loss_aversion
+todos los que compraron antes son ricos ahora,pedir_recomendacion,fomo
+me gustaría invertir en criptomonedas,quiero_comprar,ninguno
+¿qué significa asset allocation?,explicar_concepto,ninguno
+¿qué me dicen de los bonos? urgente,pedir_recomendacion,ninguno
+¿es buena idea comprar tecnología?,quiero_comprar,ninguno
+¡voy a perder mi casa!,pedir_recomendacion,panico
+¿dónde está el futuro de las inversiones? por favor,pedir_recomendacion,ninguno
+¿debería comprar acciones de construcción?,quiero_comprar,ninguno
+mejor mantener,pedir_recomendacion,loss_aversion
+dime el estado de mis finanzas invertidas,consultar_cartera,ninguno
+quiero invertir en startups,quiero_comprar,ninguno
+¿CÓMO FUNCIONA EL ANÁLISIS DE INDICADORES?,explicar_concepto,ninguno
+necesito vender mis posiciones de calidad urgente,quiero_vender,ninguno
+¡voy a perder mi lugar en la historia!,pedir_recomendacion,fomo
+¿dónde está el manufacturing opportunity? por favor,pedir_recomendacion,ninguno
+¿cuánto dinero tengo en el mercado bursátil? por favor,consultar_cartera,ninguno
+ayuda me siento como un completo perdedor,pedir_recomendacion,fomo
+necesito ver mis ganancias/pérdidas,consultar_cartera,ninguno
+¿en qué finanzas debo invertir?!,pedir_recomendacion,ninguno
+¿cómo funciona el optimización de cartera?,explicar_concepto,ninguno
+mejor espero,pedir_recomendacion,loss_aversion
+¿qué es el confirmation bias? ahora,pedir_recomendacion,ninguno
+ayuda esto es mi ejemplo,pedir_recomendacion,overconfidence
+el mercado está humillándome,pedir_recomendacion,panico
+mi análisis es perfecto!!!,pedir_recomendacion,overconfidence
+¿qué me recomiendan para electric vehicles?,pedir_recomendacion,ninguno
+no puedo vender con pérdidas,pedir_recomendacion,loss_aversion
+"compré a 182, necesito volver a 182 por favor",pedir_recomendacion,anchoring
+¿es buen momento para vender?,quiero_vender,ninguno
+no quiero perder el tren,pedir_recomendacion,fomo
+ESTO ES EVIDENTE,pedir_recomendacion,overconfidence
+NECESITO SABER MI PATRIMONIO FINANCIERO,consultar_cartera,ninguno
+"disculpa, ¿en qué oil debo invertir?",pedir_recomendacion,ninguno
+explícame qué es el rendimiento anualizado!,explicar_concepto,ninguno
+¿debería comprar más riesgo? urgente,quiero_comprar,ninguno
+"compré a 176, necesito volver a 176",pedir_recomendacion,anchoring
+NO PUEDO ACEPTAR ESTA PÉRDIDA,pedir_recomendacion,loss_aversion
+no puedo ser el único esclavo,pedir_recomendacion,fomo
+necesito revisar mi situación financiera,consultar_cartera,ninguno
+VOY A REDUCIR MI CARTERA DE DIVIDENDOS,quiero_vender,ninguno
+¿cómo funciona el análisis de crédito?!,explicar_concepto,ninguno
+TENGO QUE SALIRME DE TODO INMEDIATAMENTE,pedir_recomendacion,panico
+¿cuál es mi rendimiento total?!,consultar_cartera,ninguno
+esto es mi campo,pedir_recomendacion,overconfidence
+¿cómo funciona el análisis de sentimiento? por favor,explicar_concepto,ninguno
+no puedo ser un simple espectador!!!,pedir_recomendacion,fomo
+esto es evidente ahora,pedir_recomendacion,overconfidence
+no puedo más con este infierno!!!,pedir_recomendacion,panico
+¿qué es el riesgo ambiental?,explicar_concepto,ninguno
+¿qué es el horizonte de inversión?!,explicar_concepto,ninguno
+¿cómo funciona el valuation?,pedir_recomendacion,ninguno
+esperaré por favor,pedir_recomendacion,loss_aversion
+estoy pensando en comprar acciones por favor,quiero_comprar,ninguno
+toy pensando en invertir en latinoamérica,quiero_comprar,ninguno
+¿DÓNDE ESTÁ EL BATTERY OPPORTUNITY?,pedir_recomendacion,ninguno
+¿cuánto he ganado con mis inversiones?!,consultar_cartera,ninguno
+mejor esperar ahora,pedir_recomendacion,loss_aversion
+quiero ver mis posiciones y su valor por favor,consultar_cartera,ninguno
+"ayuda compré a 152, no vendo hasta ese precio",pedir_recomendacion,anchoring
+mejor espero!!!,pedir_recomendacion,loss_aversion
+necesito vender para reequilibrar,quiero_vender,ninguno
+"disculpa, ¿cuál es la mejor inversión en materiales?",pedir_recomendacion,ninguno
+¿qué es el strategic asset allocation?!!!,pedir_recomendacion,ninguno
+¿qué es el loss aversion?,pedir_recomendacion,ninguno
+¿es buen momento para vender retail?,quiero_vender,ninguno
+no quiero quedarme mirando desde afuera po favor,pedir_recomendacion,fomo
+oye ¿es buen momento para vender?,quiero_vender,ninguno
+"compré a 60, no vendo por debajo",pedir_recomendacion,anchoring
+¿debería vender mis posiciones de crecimiento? urgente,quiero_vender,ninguno
+voy a esperar ahora,pedir_recomendacion,loss_aversion
+nadie puede explicar mi éxito,pedir_recomendacion,overconfidence
+ayuda esto es garantizado,pedir_recomendacion,overconfidence
+VOY A MORIR DE ENVIDIA SI NO ENTRO,pedir_recomendacion,fomo
+no puedo vender con rojo,pedir_recomendacion,loss_aversion
+todos los jóvenes ya son independientes,pedir_recomendacion,fomo
+voy a vender mis acciones de salud,quiero_vender,ninguno
+¡estoy en el abismo! ahora,pedir_recomendacion,panico
+¿qué me recomiendan para frontier markets?!,pedir_recomendacion,ninguno
+¡ESTO ES UNA TRAGEDIA GRIEGA!,pedir_recomendacion,panico
+oye estoy considerando comprar fondos mutuos,quiero_comprar,ninguno
+"la compré a 20, ese es mi punto de equilibrio!!!",pedir_recomendacion,anchoring
+dime el rendimiento de mi portafolio,consultar_cartera,ninguno
+no puedo más con esta mediocridad!!!,pedir_recomendacion,fomo
+voy a retirarme joven con esto,pedir_recomendacion,overconfidence
+"mi precio de entrada fue 98, espero ese nivel",pedir_recomendacion,anchoring
+estoy considerando vender mis bancos,quiero_vender,ninguno
+"mi precio de entrada fue 86, espero ese nivel",pedir_recomendacion,anchoring
+¿cuánto vale todo lo que tengo invertido?,consultar_cartera,ninguno
+esto es obvio ahora,pedir_recomendacion,overconfidence
+¿cómo funciona el análisis macroeconómico? ahora,pedir_recomendacion,ninguno
+esto es obvio,pedir_recomendacion,overconfidence
+estoy pensando en comprar a buen precio,quiero_comprar,ninguno
+NECESITO REVISAR MI CARTERA COMPLETA,consultar_cartera,ninguno
+¿qué es el drawdown?,pedir_recomendacion,ninguno
+QUIERO ENTRAR EN EL MERCADO,quiero_comprar,ninguno
+¿QUÉ ES EL MEAN REVERSION?,pedir_recomendacion,ninguno
+¿cómo va mi portfolio esta semana? urgente,consultar_cartera,ninguno
+¿es buena idea comprar ahora que está barato? urgente,quiero_comprar,ninguno
+¿dónde puedo invertir con bajo riesgo?,pedir_recomendacion,ninguno
+no quiero realizar esta pérdida,pedir_recomendacion,loss_aversion
+¿cuánto vale todo lo invertido?,consultar_cartera,ninguno
+¿ES BUENA IDEA COMPRAR AHORA QUE HAY VOLATILIDAD?,quiero_comprar,ninguno
+¿qué significa ventaja competitiva?,explicar_concepto,ninguno
+no vendo con rojo por favor,pedir_recomendacion,loss_aversion
+voy a morir de vergüenza si nunca entro,pedir_recomendacion,fomo
+tengo que liquidar todo o me muero,pedir_recomendacion,panico
+"disculpa, ¿cómo funciona el mercado de derivados?",explicar_concepto,ninguno
+NO PUEDO SEGUIR SIENDO EL MISMO,pedir_recomendacion,fomo
+¿dónde está el esg opportunity?,pedir_recomendacion,ninguno
+"compré a 140, necesito ese precio ahora",pedir_recomendacion,anchoring
+quiero invertir en tech,quiero_comprar,ninguno
+oye necesito un reporte de mi cartera,consultar_cartera,ninguno
+todo el mundo está en el paraíso financiero ahora,pedir_recomendacion,fomo
+¿cómo funciona el análisis de riesgos?,pedir_recomendacion,ninguno
+¿qué significa market cap?,pedir_recomendacion,ninguno
+me estoy quedando en el pasado ahora,pedir_recomendacion,fomo
+NECESITO INFORMACIÓN SOBRE CICLOS DE MERCADO,pedir_recomendacion,ninguno
+necesito vender mis activos de alto rendimiento por favor,quiero_vender,ninguno
+¿qué es el análisis técnico?,pedir_recomendacion,ninguno
+ayuda no puedo más con esta angustia,pedir_recomendacion,panico
+mi primo se hizo rico con GameStop por favor,pedir_recomendacion,fomo
+esto es una tortura,pedir_recomendacion,panico
+oye ¿es buena idea vender ahora?,quiero_vender,ninguno
+oye quiero ver mis posiciones y su valor,consultar_cartera,ninguno
+"COMPRÉ A 138, NECESITO ESE PRECIO",pedir_recomendacion,anchoring
+muéstrame el performance de mis activos,consultar_cartera,ninguno
+¿qué significa green investing?!,explicar_concepto,ninguno
+¿dónde debería poner mis ahorros?!,pedir_recomendacion,ninguno
+¿QUÉ TAL MIS INVERSIONES ESTE MES?,consultar_cartera,ninguno
+ayuda no necesito análisis técnico,pedir_recomendacion,overconfidence
+oye quiero comprar mi primer ETF,quiero_comprar,ninguno
+¿CUÁL ES MI RENDIMIENTO ACUMULADO ESTE AÑO?,consultar_cartera,ninguno
+¿cómo está funcionando todo lo invertido? urgente,consultar_cartera,ninguno
+¿QUÉ SIGNIFICA TEORÍA MODERNA DE PORTAFOLIO?,explicar_concepto,ninguno
+"mi costo fue 74, ese es mi piso!!!",pedir_recomendacion,anchoring
+¿cómo funciona el trading?!,explicar_concepto,ninguno
+¿qué es el goal-based investing?,pedir_recomendacion,ninguno
+¿qué es el rendimiento de dividendos?,explicar_concepto,ninguno
+¿cuál es el valor de mis inversiones actuales?,consultar_cartera,ninguno
+esto es obvio para cualquiera con cerebro ahora,pedir_recomendacion,overconfidence
+quiero comprar acciones de energía por favor,quiero_comprar,ninguno
+¿qué tal si compro acciones de China?!,quiero_comprar,ninguno
+ayuda no necesito análisis técnico,pedir_recomendacion,overconfidence
+no voy a realizar ahora,pedir_recomendacion,loss_aversion
+¡no puedo más!,pedir_recomendacion,panico
+VOY A PERDER MIS AHORROS DE TODA LA VIDA,pedir_recomendacion,panico
+no puedo más con esta mediocridad,pedir_recomendacion,fomo
+dime el estado de mis finanzas bursátiles!,consultar_cartera,ninguno
+ME ESTOY PERDIENDO LA VIDA,pedir_recomendacion,fomo
+esto es una agonía,pedir_recomendacion,panico
+¡VOY A PERDER MI CHANCE!,pedir_recomendacion,fomo
+quiero entender el maximum drawdown,pedir_recomendacion,ninguno
+estoy considerando vender mis blue chips,quiero_vender,ninguno
+"mi precio de compra fue 125, espero ese nivel por favor",pedir_recomendacion,anchoring
+voy a reducir mis concentraciones,quiero_vender,ninguno
+¿QUÉ ES EL PIB?,pedir_recomendacion,ninguno
+necesito un resumen de mi cartera por favor,consultar_cartera,ninguno
+EXPLÍCAME QUÉ ES EL RENDIMIENTO ANUALIZADO,explicar_concepto,ninguno
+necesito saber cómo está mi dinero,consultar_cartera,ninguno
+ayuda ¡esta es mi última oportunidad!,pedir_recomendacion,fomo
+QUIERO REVISAR MI SITUACIÓN PATRIMONIAL,consultar_cartera,ninguno
+QUIERO VENDER MIS PÉRDIDAS,quiero_vender,ninguno
+¿cuál es la mejor inversión en agricultura? por favor,pedir_recomendacion,ninguno
+nadie tiene mi visión,pedir_recomendacion,overconfidence
+¿qué tal si compro acciones de consumo?,quiero_comprar,ninguno
+esto es mi campo,pedir_recomendacion,overconfidence
+¿qué tal si compro Walmart?!,quiero_comprar,ninguno
+¿QUÉ ES LA CORRELACIÓN?,explicar_concepto,ninguno
+¿qué me recomiendan para infrastructure?,pedir_recomendacion,ninguno
+"la compré a 30, mi punto de equilibrio es 30 ahora",pedir_recomendacion,anchoring
+no quiero perderme la subida,pedir_recomendacion,fomo
+quiero invertir en empresas sólidas,quiero_comprar,ninguno
+estoy pensando en invertir en biotecnología por favor,quiero_comprar,ninguno
+"compré a 164, no vendo hasta ese precio!!!",pedir_recomendacion,anchoring
+el mercado está destruyendo todo,pedir_recomendacion,panico
+¿qué tal si compro bonos?,quiero_comprar,ninguno
+¿qué es el open interest? aora,pedir_recomendacion,ninguno
+oye ¿cómo funciona el position trading?,explicar_concepto,ninguno
+¿qué es el WACC?!,explicar_concepto,ninguno
+no vendo con pérdidas,pedir_recomendacion,loss_aversion
+voy a perder todos mis ahorros ahora,pedir_recomendacion,panico
+no puedo quedarme en el muelle por favor,pedir_recomendacion,fomo
+el mercado está en ruinas ahora,pedir_recomendacion,panico
+¿qué me recomiendan para principiantes?,pedir_recomendacion,ninguno
+estoy pensando en liquidar mi cartera,quiero_vender,ninguno
+ayuda ¿qué es el confirmation bias?,pedir_recomendacion,ninguno
+no quiero realizar ahora,pedir_recomendacion,loss_aversion
+oye ¿qué significa pairs trading?,explicar_concepto,ninguno
+¡no puedo más con este sufrimiento!,pedir_recomendacion,panico
+todos los influencers están recomendando comprar,pedir_recomendacion,fomo
+quiero comprar empresas estables,quiero_comprar,ninguno
+MEJOR ESPERO PACIENTEMENTE,pedir_recomendacion,loss_aversion
+esto es mi marca!!!,pedir_recomendacion,overconfidence
+¡voy a odiarme mañana si no compro! ahora,pedir_recomendacion,fomo
+ayuda no puedo quedarme fuera,pedir_recomendacion,fomo
+¿qué me recomiendan para developed ekonomies?,pedir_recomendacion,ninguno
+muéstrame mis inversiones y su valor,consultar_cartera,ninguno
+necesito datos del mercado,pedir_recomendacion,ninguno
+necesito datos de inflación ahora,pedir_recomendacion,ninguno
+¿en qué carbon credits debo invertir?,pedir_recomendacion,ninguno
+PREFIERO AGUANTAR,pedir_recomendacion,loss_aversion
+¿qué tal mis inversiones este mes?,consultar_cartera,ninguno
+ayuda mi habilidad es legendaria,pedir_recomendacion,overconfidence
+necesito saber sobre attribution analysis,pedir_recomendacion,ninguno
+explícame qué es el flujo de caja!,explicar_concepto,ninguno
+VOY A ESPERAR A QUE SUBA,pedir_recomendacion,loss_aversion
+¿en qué debería invertir para jubilación?,pedir_recomendacion,ninguno
+oye explícame qué es el algorithmic trading,explicar_concepto,ninguno
+ayuda ¿cómo funciona el análisis de ratings?,pedir_recomendacion,ninguno
+¿qué me recomiendan comprar para principiantes?!,quiero_comprar,ninguno
+dime cómo van mis resultados!,consultar_cartera,ninguno
+¡esto es horrible!,pedir_recomendacion,panico
+¿DÓNDE ESTÁ EL REAL ESTATE OPPORTUNITY?,pedir_recomendacion,ninguno
+"disculpa, ¿cuál es el valor actual de mi patrimonio?",consultar_cartera,ninguno
+quiero ver todo lo que tengo invertido,consultar_cartera,ninguno
+¿debería vender mis crypto ahora? urgente,quiero_vender,ninguno
+oye ¿dónde me recomiendan invertir a largo plazo?,pedir_recomendacion,ninguno
+mi capacidad es extraordinaria,pedir_recomendacion,overconfidence
+necesito revisar mi cartera completa,consultar_cartera,ninguno
+mi análisis es perfecto por favor,pedir_recomendacion,overconfidence
+el mercado está acabando con mi futuro,pedir_recomendacion,panico
+¿cómo funciona el análisis de industria?,explicar_concepto,ninguno
+toy konsiderando vender mis blue chips por favor,quiero_vender,ninguno
+¿dónde me recomiendan invertir a largo plazo?,pedir_recomendacion,ninguno
+quiero un resumen de mis activos,consultar_cartera,ninguno
+nunca puedo aguantar más dolor,pedir_recomendacion,panico
+oye ¿qué significa volatilidad de VIX?,explicar_concepto,ninguno
+soy un guía,pedir_recomendacion,overconfidence
+nunca quiero vender con pérdidas,pedir_recomendacion,loss_aversion
+necesito vender para tomar ganancias por favor,quiero_vender,ninguno
+oye dime el performance de mi cartera,consultar_cartera,ninguno
+prefiero no vender!!!,pedir_recomendacion,loss_aversion
+estoy pensando en liquidar mi cartera,quiero_vender,ninguno
+¿qué es blockchain?,pedir_recomendacion,ninguno
+esto es mi ejemplo,pedir_recomendacion,overconfidence
+cuál es la mejor inversión?,pedir_recomendacion,ninguno
+quiero salirme de apple,quiero_vender,ninguno
+dime el rendimiento de mi portafolio urgente,consultar_cartera,ninguno
+necesito saber sobre CAPM,pedir_recomendacion,ninguno
+¿dónde está el financial sector opportunity?,pedir_recomendacion,ninguno
+¿qué es el RSI?!,explicar_concepto,ninguno
+ayuda mejor lo dejo ahí,pedir_recomendacion,loss_aversion
+voy a ser un líder,pedir_recomendacion,overconfidence
+ayuda tengo que vender antes de enloquecer,pedir_recomendacion,panico
+QUIERO SALIRME DEL MERCADO POR UN TIEMPO,quiero_vender,ninguno
+qué me dicen si compro Amazon?,quiero_comprar,ninguno
+¡esta es la generación dorada y no estoy en ella! ahora,pedir_recomendacion,fomo
+explícame qué es la tasa de interés,explicar_concepto,ninguno
+necesito vender para pagar impuestos,quiero_vender,ninguno
+ayuda tengo que vender ya o muero,pedir_recomendacion,panico
+oye ¿qué tal si compro Tesla?,quiero_comprar,ninguno
+ESTO ES GARANTIZADO,pedir_recomendacion,overconfidence
+todos mis conocidos ya compraron por favor,pedir_recomendacion,fomo
+¡esto es terrible!!!!,pedir_recomendacion,panico
+quiero añadir más diversificación,quiero_comprar,ninguno
+quiero salirme de Apple por favor,quiero_vender,ninguno
+"disculpa, ¿debería comprar acciones de bancos?",quiero_comprar,ninguno
+"compré a 74, no vendo por debajo",pedir_recomendacion,anchoring
+¿debería comprar más Tesla?!,quiero_comprar,ninguno
+tengo que vender antes de enloquecer ahora,pedir_recomendacion,panico
+necesito saber sobre attribution analysis,pedir_recomendacion,ninguno
+¿qué me recomiendan para frontier markets?!,pedir_recomendacion,ninguno
+oye necesito vender mis posiciones de crecimiento,quiero_vender,ninguno
+no vendo con pérdidas nunca,pedir_recomendacion,loss_aversion
+no quiero perderme la subida!!!,pedir_recomendacion,fomo
+necesito vender para diversificar,quiero_vender,ninguno
+¿cómo ta funcionando mi inversión?!,consultar_cartera,ninguno
+"compré a 156, no vendo hasta ese precio!!!",pedir_recomendacion,anchoring
+¿qué es el análisis fundamental?,explicar_concepto,ninguno
+¿en qué criptomonedas debo invertir?,pedir_recomendacion,ninguno
+oye ¿dónde puedo invertir para ganar dinero?,pedir_recomendacion,ninguno
+esto es una agonía,pedir_recomendacion,panico
+prefiero mantener,pedir_recomendacion,loss_aversion
+esto se hunde,pedir_recomendacion,panico
+muéstrame el estado de mis posiciones,consultar_cartera,ninguno
+¡esta es la última llamada!,pedir_recomendacion,fomo
+¿es buen momento para vender? urgente,quiero_vender,ninguno
+nadie puede explicar mi éxito,pedir_recomendacion,overconfidence
+ESTOY BUSCANDO DÓNDE INVERTIR,quiero_comprar,ninguno
+nadie puede explicar mi éxito,pedir_recomendacion,overconfidence
+ayuda esto es mi ejemplo,pedir_recomendacion,overconfidence
+¿DÓNDE ME CONVIENE INVERTIR?,pedir_recomendacion,ninguno
+voy a enloquecer si no entro ya,pedir_recomendacion,fomo
+"la compré a 32, ese es mi punto de equilibrio por favor",pedir_recomendacion,anchoring
+NO PUEDO VENDER ASÍ,pedir_recomendacion,loss_aversion
+"mi precio de entrada fue 96, espero ese nivel",pedir_recomendacion,anchoring
+debería comprar acciones de construcción?,quiero_comprar,ninguno
+¿dónde puedo invertir sin mucho riesgo?,pedir_recomendacion,ninguno
+el mercado está destruyendo todo,pedir_recomendacion,panico
+quiero información sobre commodities,pedir_recomendacion,ninguno
+¿cuál es la mejor inversión en América Latina?,pedir_recomendacion,ninguno
+¿dónde está la innovación?,pedir_recomendacion,ninguno
+voy a perder mi voluntad,pedir_recomendacion,panico
+¿qué es el yield curve? urgente,explicar_concepto,ninguno
+esto es el apocalipsis financiero,pedir_recomendacion,panico
+oye ¿cuánto tengo en el mercado actualmente?,consultar_cartera,ninguno
+me estoy quedando en el pasado,pedir_recomendacion,fomo
+quiero vender mis acciones sobrepeso!,quiero_vender,ninguno
+¿qué es el loss aversion?,pedir_recomendacion,ninguno
+quiero entender la asignación de activos por favor,pedir_recomendacion,ninguno
+"compré a 185, necesito volver a 185",pedir_recomendacion,anchoring
+¿cómo funciona el trading?,explicar_concepto,ninguno
+no quiero realizar,pedir_recomendacion,loss_aversion
+nadie puede explicar mi éxito!!!,pedir_recomendacion,overconfidence
+¡no puedo más con este sufrimiento!!!!,pedir_recomendacion,panico
+"disculpa, ¿qué es el moat económico?",explicar_concepto,ninguno
+¿cómo funciona el arbitraje?,explicar_concepto,ninguno
+necesito saber mi situación patrimonial,consultar_cartera,ninguno
+yo siento el mercado,pedir_recomendacion,overconfidence
+necesito vender mis posiciones de finanzas!,quiero_vender,ninguno
+¿EN QUÉ ESG DEBO INVERTIR?,pedir_recomendacion,ninguno
+¿qué es un índice bursátil?!,explicar_concepto,ninguno
+"compré a 165, no vendo hasta ese precio",pedir_recomendacion,anchoring
+esto es certeza,pedir_recomendacion,overconfidence
+¿ES BUEN MOMENTO PARA COMPRAR APPLE?,quiero_comprar,ninguno
+¿debería vender mis posiciones conservadoras?,quiero_vender,ninguno
+"la compré a 58, no vendo por debajo de 58",pedir_recomendacion,anchoring
+¿qué es el yield curve?!,explicar_concepto,ninguno
+¿qué me sugieren para commodities? por favor,pedir_recomendacion,ninguno
+¿cómo funciona el trading?,pedir_recomendacion,ninguno
+necesito un informe de mi cartera,consultar_cartera,ninguno
+"LA COMPRÉ A 200, NO VENDO POR DEBAJO DE ESO",pedir_recomendacion,anchoring
+"compré a 146, necesito ese precio!!!",pedir_recomendacion,anchoring
+oye ¿es buen momento para vender?,quiero_vender,ninguno
+¿QUÉ RECOMIENDAN PARA MI CARTERA?,pedir_recomendacion,ninguno
+"compré a 72, no vendo por debajo",pedir_recomendacion,anchoring
+ayuda mejor aguantar,pedir_recomendacion,loss_aversion
+¿cómo funciona el mercado de valores? por favor,explicar_concepto,ninguno
+¿dónde está el food security opportunity? urgente,pedir_recomendacion,ninguno
+quiero ver el reporte de mis inversiones,consultar_cartera,ninguno
+oye explícame qué es el perfil de riesgo,explicar_concepto,ninguno
+prefiero no vender,pedir_recomendacion,loss_aversion
+¿qué es la frontera eficiente?!,explicar_concepto,ninguno
+¿debería comprar más ahora?,quiero_comprar,ninguno
+voy a salirme de energía,quiero_vender,ninguno
+VOY A ESPERAR,pedir_recomendacion,loss_aversion
+QUIERO INVERTIR EN VALORES DE CALIDAD,quiero_comprar,ninguno
+ayuda no puedo ser el único inquilino,pedir_recomendacion,fomo
+¿es buena idea vender ahora?!,quiero_vender,ninguno
+voy a reducir mi exposición,quiero_vender,ninguno
+¿qué tal si compro petróleo?,quiero_comprar,ninguno
+cómo funciona el análisis de competencia?,explicar_concepto,ninguno
+prefiero mantener,pedir_recomendacion,loss_aversion
+quiero entender el momentum,pedir_recomendacion,ninguno
+¿qué es el dividend investing?,pedir_recomendacion,ninguno
+quiero invertir en sectores defensivos urgente,quiero_comprar,ninguno
+EL MERCADO ESTÁ MURIENDO,pedir_recomendacion,panico
+QUIERO COMPRAR ACCIONES DE EMPRESAS EN EXPANSIÓN,quiero_comprar,ninguno
+voy a aguantar hasta que suba,pedir_recomendacion,loss_aversion
+mejor lo mantengo,pedir_recomendacion,loss_aversion
+¿qué significa TIR?,explicar_concepto,ninguno
+¿cuál es la mejor inversión en América Latina?,pedir_recomendacion,ninguno
+no puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+¿qué me recomiendan para el corto plazo?,pedir_recomendacion,ninguno
+¿qué es el order flow? por favor,pedir_recomendacion,ninguno
+¿qué me recomiendan comprar para principiantes?!,quiero_comprar,ninguno
+dime cómo van mis resultados,consultar_cartera,ninguno
+¿qué tal si compro Walmart?,quiero_comprar,ninguno
+"compré a 75, no vendo por debajo!!!",pedir_recomendacion,anchoring
+necesito vender mis activos de bajo riesgo,quiero_vender,ninguno
+explícame qué es el maximum drawdown,explicar_concepto,ninguno
+quiero salirme de Apple urgente,quiero_vender,ninguno
+"compré a 185, necesito volver a 185",pedir_recomendacion,anchoring
+ayuda nadie puede replicar mi éxito,pedir_recomendacion,overconfidence
+¿qué tal si compro acciones de consumo? urgente,quiero_comprar,ninguno
+"compré a 178, necesito volver a 178 ahora",pedir_recomendacion,anchoring
+¿cuál es la mejor inversión de dividendos?!,pedir_recomendacion,ninguno
+¿DÓNDE ESTÁ EL FUTURO DE LAS INVERSIONES?,pedir_recomendacion,ninguno
+"compré a 72, nunca vendo por debajo",pedir_recomendacion,anchoring
+quiero un resumen de mis activos,consultar_cartera,ninguno
+todos los que compraron Bitcoin en 2020 son libres,pedir_recomendacion,fomo
+¿qué tal si compro petróleo?,quiero_comprar,ninguno
+quiero comprar empresas estables,quiero_comprar,ninguno
+no puedo más con esta presión social,pedir_recomendacion,fomo
+oye ¿qué me recomiendan para green bonds?,pedir_recomendacion,ninguno
+no puedo vender con pérdidas,pedir_recomendacion,loss_aversion
+¿es buen momento para vender todo?,quiero_vender,ninguno
+voy a perder mi identidad ahora,pedir_recomendacion,panico
+¿CÓMO FUNCIONA EL VALUATION?,pedir_recomendacion,ninguno
+muéstrame el rendimiento de mis inversiones por favor,consultar_cartera,ninguno
+¿cuál es la mejor inversión en AI?,pedir_recomendacion,ninguno
+"compré a 64, no vendo por debajo!!!",pedir_recomendacion,anchoring
+¿dónde está el global opportunity? por favor,pedir_recomendacion,ninguno
+estoy pensando en vender mis valores de pago,quiero_vender,ninguno
+¿cuál es la mejor inversión pasiva?,pedir_recomendacion,ninguno
+EXPLÍCAME QUÉ ES EL MAXIMUM DRAWDOWN,explicar_concepto,ninguno
+estoy considerando vender mis posiciones largoplacistas urgente,quiero_vender,ninguno
+oye ¿qué me sugieren para semiconductores?,pedir_recomendacion,ninguno
+"disculpa, ¿cómo está mi portfolio hoy?",consultar_cartera,ninguno
+¿dónde puedo invertir mi dinero? urgente,quiero_comprar,ninguno
+"mi precio de entrada fue 90, espero ese nivel!!!",pedir_recomendacion,anchoring
+ayuda tengo que vender antes de desaparecer,pedir_recomendacion,panico
+ESTOY PENSANDO EN COMPRAR GOOGLE,quiero_comprar,ninguno
+¿debería comprar acciones de construcción?!,quiero_comprar,ninguno
+esto es obvio,pedir_recomendacion,overconfidence
+"disculpa, ¿en qué debería invertir este año?",pedir_recomendacion,ninguno
+"compré a 160, no vendo hasta que vuelva a 160",pedir_recomendacion,anchoring
+esto es mi revelación!!!,pedir_recomendacion,overconfidence
+¿cómo funciona la frontera eficiente?!!!,pedir_recomendacion,ninguno
+quiero comprar acciones de IA!,quiero_comprar,ninguno
+quiero comprar acciones baratas,quiero_comprar,ninguno
+explícame qué es el dividendo,explicar_concepto,ninguno
+quiero aprender sobre inversiones por favor,pedir_recomendacion,ninguno
+no vendo con pérdidas por favor,pedir_recomendacion,loss_aversion
+quiero un resumen de mis activos!,consultar_cartera,ninguno
+oye ¿qué significa EBITDA?,explicar_concepto,ninguno
+¿qué significa QE?!,explicar_concepto,ninguno
+todos los que compraron antes son ricos ahora,pedir_recomendacion,fomo
+"disculpa, ¿qué es el yield curve?",explicar_concepto,ninguno
+nunca puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+"compré a 175, nunca vendo hasta ese precio",pedir_recomendacion,anchoring
+¿qué es EBITDA?,pedir_recomendacion,ninguno
+¿dónde está el precious metals opportunity?,pedir_recomendacion,ninguno
+no puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+"compré a 160, no vendo hasta ese precio",pedir_recomendacion,anchoring
+no puedo aceptar esta pérdida ahora,pedir_recomendacion,loss_aversion
+estoy pensando en invertir en latinoamérica,quiero_comprar,ninguno
+voy a aguantar hasta que suba ahora,pedir_recomendacion,loss_aversion
+prefiero esperar a ke recupere,pedir_recomendacion,loss_aversion
+necesito ver el estado completo de mis activos,consultar_cartera,ninguno
+no puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+ME ESTOY QUEDANDO EN EL PASADO,pedir_recomendacion,fomo
+explícame qué es el dividendo,explicar_concepto,ninguno
+QUIERO ENTENDER LOS ÍNDICES,pedir_recomendacion,ninguno
+estoy pensando en comprar REITs,quiero_comprar,ninguno
+el mercado está desmoronándose,pedir_recomendacion,panico
+oye ¿cómo va mi portfolio esta semana?,consultar_cartera,ninguno
+¿en qué sector debo invertir? urgente,pedir_recomendacion,ninguno
+¿cómo están funcionando mis inversiones?!,consultar_cartera,ninguno
+"mi costo fue 32, necesito recuperar 32",pedir_recomendacion,anchoring
+ayuda quiero entender el factor timing,pedir_recomendacion,ninguno
+mejor mantener la posición,pedir_recomendacion,loss_aversion
+¡voy a perder mis sueños! ahora,pedir_recomendacion,panico
+"mi precio de compra fue 112, espero ese nivel",pedir_recomendacion,anchoring
+me estoy muy perdiendo la revolución,pedir_recomendacion,fomo
+¿qué es el ISM?!!!,pedir_recomendacion,ninguno
+mi conocimiento es superior,pedir_recomendacion,overconfidence
+necesito vender mis acciones de China,quiero_vender,ninguno
+¿EN QUÉ COMMODITIES DEBO INVERTIR AHORA?,pedir_recomendacion,ninguno
+no puedo más con esta ansiedad,pedir_recomendacion,fomo
+voy a perder mi voluntad,pedir_recomendacion,panico
+¡ESTA ES LA ÚLTIMA LLAMADA!,pedir_recomendacion,fomo
+quiero invertir en sectores defensivos,quiero_comprar,ninguno
+¡tengo que crear mi fortuna ya! ahora,pedir_recomendacion,fomo
+cómo funciona el análisis de industria?,explicar_concepto,ninguno
+me estoy perdiendo la libertad fiscal ahora,pedir_recomendacion,fomo
+estoy considerando vender mis posiciones largas,quiero_vender,ninguno
+necesito saber cuánto he ganado/perdido,consultar_cartera,ninguno
+no voy a realizar,pedir_recomendacion,loss_aversion
+"compré a 74, no vendo por debajo!!!",pedir_recomendacion,anchoring
+quiero entender el market depth ahora,pedir_recomendacion,ninguno
+¿cómo funciona el análisis de factores?,pedir_recomendacion,ninguno
+¡tengo que meter dinero ya!,pedir_recomendacion,fomo
+voy a deprimirme si no entro ahora,pedir_recomendacion,fomo
+oye quiero ver mis resultados financieros,consultar_cartera,ninguno
+oye quiero invertir en mercados emergentes,quiero_comprar,ninguno
+¿qué significa PMI?!,explicar_concepto,ninguno
+¿qué es el sharpe ratio?,pedir_recomendacion,ninguno
+oye necesito ver el estado completo de mis activos,consultar_cartera,ninguno
+mejor mantener,pedir_recomendacion,loss_aversion
+oye ¿cuál es el valor de mi patrimonio bursátil?,consultar_cartera,ninguno
+¿qué es la inversión sostenible? por favor,explicar_concepto,ninguno
+¿cuál es mi patrimonio actual?,consultar_cartera,ninguno
+tengo que vender inmediatamente,pedir_recomendacion,panico
+"compré a 162, no vendo hasta ese precio por favor",pedir_recomendacion,anchoring
+soy un titán ahora,pedir_recomendacion,overconfidence
+¡esto es devastador!,pedir_recomendacion,panico
+ayuda voy a perder mi conciencia,pedir_recomendacion,panico
+voy a desaparecer si no entro ya,pedir_recomendacion,fomo
+"compré a 68, no vendo por debajo",pedir_recomendacion,anchoring
+necesito ver mis ganancias,consultar_cartera,ninguno
+¿debería comprar mas ahora?!,quiero_comprar,ninguno
+ayuda voy a mantener,pedir_recomendacion,loss_aversion
+QUIERO ENTENDER EL MARKET DEPTH,pedir_recomendacion,ninguno
+oye ¿qué es el credit rating?,explicar_concepto,ninguno
+QUIERO AÑADIR MÁS POSICIONES,quiero_comprar,ninguno
+no vendo con rojo ahora,pedir_recomendacion,loss_aversion
+tengo que esperar a que suba,pedir_recomendacion,loss_aversion
+oye necesito vender mis activos concentrados,quiero_vender,ninguno
+oye ¿es buena idea comprar ahora que sube?,quiero_comprar,ninguno
+¿cuánto vale mi portafolio?,pedir_recomendacion,ninguno
+"mi costo fue 42, necesito recuperar 42",pedir_recomendacion,anchoring
+¡LA SUBIDA VA A CONTINUAR SIN MÍ!,pedir_recomendacion,fomo
+necesito vender mis posiciones de calidad urgente,quiero_vender,ninguno
+cómo está funcionando todo lo invertido?,consultar_cartera,ninguno
+¿qué me recomiendan para electric vehicles?,pedir_recomendacion,ninguno
+oye quiero comprar acciones de dividendos,quiero_comprar,ninguno
+oye ¿debería comprar más crypto?,quiero_comprar,ninguno
+oye ¿qué me dicen si compro más de esto?,quiero_comprar,ninguno
+MI INTELIGENCIA ES INCOMPARABLE,pedir_recomendacion,overconfidence
+"disculpa, ¿qué es el análisis PESTEL?",explicar_concepto,ninguno
+necesito ver mis resultados mensuales,consultar_cartera,ninguno
+no puedo ser el único burócrata,pedir_recomendacion,fomo
+necesito vender mis activos de alto rendimiento,quiero_vender,ninguno
+¿qué es te disposition effect? aora,pedir_recomendacion,ninguno
+"compré a 150, necesito que vuelva a ese nivel",pedir_recomendacion,anchoring
+quiero añadir más posiciones,quiero_comprar,ninguno
+¿cuánto dinero tengo en el mercado? urgente,consultar_cartera,ninguno
+dime el estado de mis inversiones,consultar_cartera,ninguno
+¿cuál es el valor total de mis activos?,consultar_cartera,ninguno
+"compré a 160, no vendo hasta ese precio!!!",pedir_recomendacion,anchoring
+ayuda soy un iluminado,pedir_recomendacion,overconfidence
+voy a aguantar hasta que suba por favor,pedir_recomendacion,loss_aversion
+quiero invertir en empresas sólidas,quiero_comprar,ninguno
+mi genio es innegable!!!,pedir_recomendacion,overconfidence
+"compré a 165, no vendo hasta ese precio ahora",pedir_recomendacion,anchoring
+¿debería comprar acciones de construcción? urgente,quiero_comprar,ninguno
+me estoy perdiendo la libertad,pedir_recomendacion,fomo
+¿debería vender mis posiciones geográficas?!,quiero_vender,ninguno
+necesito vender mis posiciones de riesgo,quiero_vender,ninguno
+VOY A AGUANTAR,pedir_recomendacion,loss_aversion
+quiero entender el risk-adjusted return,pedir_recomendacion,ninguno
+nadie puede negar mi talento ahora,pedir_recomendacion,overconfidence
+mejor lo mantengo,pedir_recomendacion,loss_aversion
+explícame qué es diversificación,explicar_concepto,ninguno
+no puedo más con esta presión social,pedir_recomendacion,fomo
+¡estoy desesperado! ahora,pedir_recomendacion,panico
+esperaré pacientemente,pedir_recomendacion,loss_aversion
+quiero salirme de Apple urgente,quiero_vender,ninguno
+"compré a 156, no vendo hasta ese precio!!!",pedir_recomendacion,anchoring
+quiero revisar mi situación patrimonial,consultar_cartera,ninguno
+¿en qué oil debo invertir? por favor,pedir_recomendacion,ninguno
+oye quiero vender mis posiciones sensibles,quiero_vender,ninguno
+VOY A LIQUIDAR MIS INVERSIONES ESPECULATIVAS,quiero_vender,ninguno
+cómo funciona el valuation?,explicar_concepto,ninguno
+estoy buscando oportunidades de compra,quiero_comprar,ninguno
+ayuda ¿cómo funciona el análisis de opciones?,pedir_recomendacion,ninguno
+oye ¿cuál es el valor de mis activos financieros?,consultar_cartera,ninguno
+ayuda prefiero aguantar,pedir_recomendacion,loss_aversion
+¿es buen momento para vender? urgente,quiero_vender,ninguno
+esto es obvio!!!,pedir_recomendacion,overconfidence
+no puedo aceptar esta pérdida,pedir_recomendacion,loss_aversion
+"mi costo fue 50, necesito recuperar 50",pedir_recomendacion,anchoring
+esto es obvio,pedir_recomendacion,overconfidence
+oye voy a vender todo,quiero_vender,ninguno
+cuánto vale todo lo que tengo invertido?,consultar_cartera,ninguno
+¿cuánto vale mi portfolio actual?,consultar_cartera,ninguno
+¿qué es el factor investing?,pedir_recomendacion,ninguno
+¡es el fin del mundo!,pedir_recomendacion,panico
+dime cómo van mis resultados,consultar_cartera,ninguno
+¿EN QUÉ OIL DEBO INVERTIR?,pedir_recomendacion,ninguno
+¿qué es el ISM?!,explicar_concepto,ninguno
+¿cómo funciona el análisis de crecimiento?,pedir_recomendacion,ninguno
+"compré a 70, no vendo por debajo",pedir_recomendacion,anchoring
+oye quiero vender mis inversiones a largo plazo,quiero_vender,ninguno
+oye ¿dónde está el potencial de crecimiento?,pedir_recomendacion,ninguno
+estoy considerando vender mis posiciones dominantes urgente,quiero_vender,ninguno
+esto es garantizado,pedir_recomendacion,overconfidence
+¿cuánto dinero tengo en el mercado bursátil?,consultar_cartera,ninguno
+necesito ver el estado de mis activos por favor,consultar_cartera,ninguno
+¡esta es la época dorada y me la estoy perdiendo!,pedir_recomendacion,fomo
+voy a vender mis acciones de salud por favor,quiero_vender,ninguno
+qué es el ISM?,explicar_concepto,ninguno
+mejor lo dejo ahí,pedir_recomendacion,loss_aversion
+quiero vender mis acciones de China,quiero_vender,ninguno
+explícame qué es diversificación!,explicar_concepto,ninguno
+¿qué es el put-call ratio?,pedir_recomendacion,ninguno
+¿cómo funciona el análisis monetario? por favor,explicar_concepto,ninguno
+nunca puedo vender así,pedir_recomendacion,loss_aversion
+mejor esperar por favor,pedir_recomendacion,loss_aversion
+¡esto es un horror!,pedir_recomendacion,panico
+qué me dicen de renewable energy?,pedir_recomendacion,ninguno
+esperaré a que suba,pedir_recomendacion,loss_aversion
+"compré a 164, no vendo hasta ese precio",pedir_recomendacion,anchoring
+¿dónde debería poner mis ahorros? urgente,pedir_recomendacion,ninguno
+"mi precio de compra fue 100, espero ese nivel!!!",pedir_recomendacion,anchoring
+¿qué tal si compro tesla?,quiero_comprar,ninguno
+explícame qué es el bid-ask spread,explicar_concepto,ninguno
+¿QUÉ ACCIÓN ME RECOMIENDAN VENDER?,pedir_recomendacion,ninguno
+quiero vender mis acciones de energía,quiero_vender,ninguno
+NO PUEDO VER MÁS HISTORIAS DE ÉXITO,pedir_recomendacion,fomo
+¿QUÉ ES EL MOAT ECONÓMICO?,pedir_recomendacion,ninguno
+"la compré a 110, ese es mi precio base",pedir_recomendacion,anchoring
+¡esto es una pesadilla!,pedir_recomendacion,panico
+¿qué es blockcain?,pedir_recomendacion,ninguno
+ESTO ES MI SUPERPOTENCIA,pedir_recomendacion,overconfidence
+¿qué es el RSI? por favor,pedir_recomendacion,ninguno
+¿qué me dicen de impact investing?,pedir_recomendacion,ninguno
+necesito información sobre VPN!!!,pedir_recomendacion,ninguno
+quiero ver mi rendimiento,consultar_cartera,ninguno
+"mi precio de entrada fue 120, espero ese nivel!!!",pedir_recomendacion,anchoring
+quiero salirme del mercado por un tiempo!,quiero_vender,ninguno
+mi talento es divino,pedir_recomendacion,overconfidence
+¿qué es el beta?!,explicar_concepto,ninguno
+"la compré a 30, mi punto de equilibrio es 30",pedir_recomendacion,anchoring
+¿qué me recomiendan para gold? urgente,pedir_recomendacion,ninguno
+oye estoy pensando en comprar REITs,quiero_comprar,ninguno
+nadie entiende la dinámica como yo,pedir_recomendacion,overconfidence
+¡tengo que arrepentirme si no entro ahora!,pedir_recomendacion,fomo
+necesito vender mis fondos urgente,quiero_vender,ninguno
+quiero diversificar con nuevas compras urgente,quiero_comprar,ninguno
+boi a liquidar mis posiciones de commodities urgente,quiero_vender,ninguno
+¿dónde invierto?!,pedir_recomendacion,ninguno
+¿cuál es el valor total de mis activos?!,consultar_cartera,ninguno
+¿qué es la política fiscal? urgente,explicar_concepto,ninguno
+estoy pensando en vender mis posiciones ganadoras por favor,quiero_vender,ninguno
+¿qué significa green investing? urgente,explicar_concepto,ninguno
