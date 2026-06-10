@@ -1,424 +1,386 @@
 # -*- coding: utf-8 -*-
 """
-SIPA v2 - Motor Inteligente de Coaching Psicológico y Financiero
-Genera respuestas dinámicas basadas en métricas de mercado reales y sesgos detectados.
+SIPA v2 - Motor de Coaching con Gemini AI como cerebro principal.
+
+Arquitectura:
+  1. NLP local (scikit-learn) detecta sesgo e intención → contexto
+  2. yfinance descarga datos reales del activo mencionado → contexto
+  3. Gemini 2.0 Flash recibe TODO el contexto + mensaje original → respuesta inteligente
+  4. Fallback a OpenAI si no hay key de Gemini
+  5. Fallback a motor de reglas enriquecido si no hay ninguna key
+
+El motor de reglas ahora solo es el ÚLTIMO recurso, no el principal.
 """
 
 import sys
+import re
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
-# ---------------------------------------------------------------------------
-# PERFILES DE BROKERS (completo, universal, sin restricción)
-# ---------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────────────────────
+# PERFILES DE BROKERS
+# ─────────────────────────────────────────────────────────────────────────────
 BROKERS_PROFILE = {
     "trade_republic": {
         "name": "Trade Republic",
         "region": "Europa / Internacional",
         "tipo": "Neobroker",
-        "comisiones": "1€ por orden manual. DCA automático en ETFs: gratis. Cuenta de efectivo remunerada ~4% TAE.",
+        "comisiones": "1€ por orden manual. DCA automático en ETFs gratis. Cuenta remunerada ~4% TAE.",
         "minimo_deposito": "1€",
         "activos_disponibles": "Acciones, ETFs, derivados, cripto, bonos",
         "pitfall": "FOMO impulsivo",
-        "pitfall_detail": (
-            "Trade Republic fue diseñado para que comprar sea tan fácil y satisfactorio como comprar en Amazon. "
-            "Listas de activos en tendencia, gráficos en verde fluorescente y notificaciones de subidas rápidas "
-            "generan el impulso de comprar sin análisis previo. El peligro: entrar en máximos de euforia por pura interfaz."
-        ),
-        "ventajas": "Comisión flat de 1€, DCA gratuito, cuenta remunerada, interfaz muy limpia.",
-        "desventajas": "Oferta limitada de mercados, sin gráficos técnicos avanzados, incentiva el trading emocional.",
+        "pitfall_detail": "Diseñado para que comprar sea tan fácil como Amazon. Listas de trending, gráficos en verde fluorescente y notificaciones de subidas crean el impulso de comprar sin análisis. El peligro: entrar en máximos por pura interfaz.",
+        "ventajas": "Comisión flat de 1€, DCA gratuito, cuenta remunerada, interfaz limpia.",
+        "desventajas": "Sin gráficos técnicos avanzados, incentiva el trading emocional.",
         "recomendacion": [
             "Configura un Plan de Inversión mensual automático en ETFs globales: es gratis y elimina la emoción.",
-            "Desactiva las notificaciones de precio y listas de 'Trending'. Solo mira tu cartera una vez al mes.",
-            "Aprovecha la cuenta de efectivo para tu fondo de emergencia en lugar de dejarlo parado.",
+            "Desactiva las notificaciones de precio y listas de 'Trending'.",
+            "Aprovecha la cuenta de efectivo para tu fondo de emergencia.",
         ],
     },
     "revolut": {
         "name": "Revolut",
         "region": "Global",
         "tipo": "Super-app financiera / broker",
-        "comisiones": "Plan gratuito: 1 operación/mes gratis, luego ~0.25% (mín. 1€). Planes de pago: más operaciones incluidas.",
+        "comisiones": "Plan gratuito: 1 operación/mes gratis, luego ~0.25% (mín. 1€).",
         "minimo_deposito": "1€",
-        "activos_disponibles": "Acciones fraccionadas, ETFs, cripto, metales, materias primas",
-        "pitfall": "Exceso de confianza / Especulación cripto",
-        "pitfall_detail": (
-            "Revolut coloca la compra de Bitcoin al lado de la tarjeta de débito y los gastos del supermercado. "
-            "Este diseño banaliza la inversión: si comprar cripto es igual de fácil que pagar el café, el cerebro "
-            "no registra el riesgo. Resultado: carteras con 60-80% en activos especulativos sin diversificación."
-        ),
-        "ventajas": "Todo integrado en una sola app, soporte multi-divisa sin comisión, acciones fraccionadas.",
-        "desventajas": "Custodia discutible en cripto, límite de operaciones gratis, sin herramientas de análisis.",
+        "activos_disponibles": "Acciones fraccionadas, ETFs, cripto, metales",
+        "pitfall": "Especulación cripto banalizada",
+        "pitfall_detail": "Revolut pone la compra de Bitcoin al lado de pagar el café. Este diseño banaliza el riesgo. Resultado: carteras con 60-80% en activos especulativos.",
+        "ventajas": "Todo integrado, multi-divisa, acciones fraccionadas.",
+        "desventajas": "Límite de operaciones gratis, sin herramientas de análisis serias.",
         "recomendacion": [
-            "Usa la función 'Ahorro en fracciones' para invertir automáticamente el cambio de tus compras diarias.",
-            "Si inviertes en cripto, limita esa posición al 5-10% del capital total. Nunca más.",
-            "Separa en cuentas distintas: dinero de gastos vs. dinero de inversión a largo plazo.",
+            "Limita la exposición a cripto al 5-10% del capital. Sin excepción.",
+            "Separa cuentas: dinero de gastos vs. dinero de inversión.",
+            "Usa la función de ahorro automático en fracciones.",
         ],
     },
     "scalable_capital": {
         "name": "Scalable Capital",
-        "region": "Europa (esp. DACH + España)",
+        "region": "Europa (DACH + España)",
         "tipo": "Neobroker / Robo-advisor",
-        "comisiones": "Free Broker: 0.99€/orden. PRIME+: 2.99€/mes → trading ilimitado gratis.",
+        "comisiones": "Free: 0.99€/orden. PRIME+: 2.99€/mes → trading ilimitado gratis.",
         "minimo_deposito": "1€",
-        "activos_disponibles": "Acciones, ETFs, fondos, derivados, cripto, bonos",
-        "pitfall": "Sesgo de sobre-operar (suscripción flat)",
-        "pitfall_detail": (
-            "El modelo PRIME+ de tarifa plana crea un sesgo poderoso: si pagas 2.99€/mes y cada operación es gratis, "
-            "el cerebro presiona para 'aprovechar' haciendo más trades. Más rotación = más errores de timing = peores resultados. "
-            "Estudios demuestran que inversores que operan más frecuentemente obtienen peores rentabilidades."
-        ),
-        "ventajas": "Gran variedad de activos, DCA gratuito, interfaz intuitiva, Robo-advisor disponible.",
-        "desventajas": "PRIME+ puede incentivar el sobretrading, derivados complejos accesibles para novatos.",
+        "activos_disponibles": "Acciones, ETFs, fondos, derivados, cripto",
+        "pitfall": "Sobreoperar por suscripción flat",
+        "pitfall_detail": "PRIME+ crea el sesgo de 'aprovechar' haciendo más trades. Más rotación = más errores de timing = peores resultados.",
+        "ventajas": "Gran variedad, DCA gratuito, Robo-advisor disponible.",
+        "desventajas": "PRIME+ incentiva el sobretrading.",
         "recomendacion": [
-            "Si usas PRIME+, comprométete a no hacer más de 2-3 cambios en tu cartera al año.",
-            "Activa el Robo-Advisor para dejar que el algoritmo gestione el rebalanceo.",
-            "Evita los derivados (ETPs apalancados, opciones) hasta dominar la inversión pasiva básica.",
+            "Con PRIME+, comprométete a no más de 2-3 cambios de cartera al año.",
+            "Activa el Robo-Advisor para el rebalanceo automático.",
+            "Evita los ETPs apalancados hasta dominar la inversión pasiva.",
         ],
     },
     "interactive_brokers": {
         "name": "Interactive Brokers (IBKR)",
         "region": "Global",
         "tipo": "Broker institucional / avanzado",
-        "comisiones": "Plan LITE (EEUU): gratis en acciones/ETFs. Plan PRO: desde $0.005/acción. Comisiones ultra-bajas en mercados globales.",
-        "minimo_deposito": "0€ (plan IBKR Lite / Global Trader)",
-        "activos_disponibles": "Acciones, ETFs, opciones, futuros, forex, bonos, fondos, cripto en 150+ mercados",
+        "comisiones": "LITE (EEUU): 0€ en acciones/ETFs. PRO: desde $0.005/acción.",
+        "minimo_deposito": "0€",
+        "activos_disponibles": "Acciones, ETFs, opciones, futuros, forex, bonos, 150+ mercados",
         "pitfall": "Parálisis por análisis / Ilusión de control",
-        "pitfall_detail": (
-            "La terminal TWS de IBKR tiene cientos de indicadores, datos Level-2, scanner de mercado y herramientas cuantitativas. "
-            "Para un principiante, esto crea la ilusión de que si analiza suficientes datos podrá predecir el mercado. "
-            "Paradoja: más datos mal interpretados generan peores decisiones que menos datos bien entendidos."
-        ),
-        "ventajas": "Las comisiones más bajas del mundo, acceso a cualquier mercado global, herramientas de nivel institucional.",
-        "desventajas": "Curva de aprendizaje muy pronunciada, interfaz abrumadora, no recomendado para empezar.",
+        "pitfall_detail": "La terminal TWS tiene cientos de indicadores. Para un principiante, más datos mal interpretados generan peores decisiones.",
+        "ventajas": "Las comisiones más bajas del mundo, acceso a cualquier mercado global.",
+        "desventajas": "Curva de aprendizaje muy pronunciada, interfaz abrumadora.",
         "recomendacion": [
-            "Usa la app móvil 'IBKR GlobalTrader' en lugar de la terminal TWS: es mucho más sencilla.",
-            "Empieza comprando solo ETFs globales (VT, VWRA, CSPX) hasta dominar el proceso.",
-            "No abras cuenta de Margen hasta tener al menos 2 años de experiencia. Nunca operes con dinero prestado.",
+            "Usa la app 'IBKR GlobalTrader' en lugar de TWS.",
+            "Empieza solo con ETFs globales (VWRA, CSPX).",
+            "Nunca abras cuenta de Margen hasta tener 2+ años de experiencia.",
         ],
     },
     "robinhood": {
         "name": "Robinhood",
-        "region": "EEUU (sin acceso desde Europa)",
+        "region": "EEUU",
         "tipo": "Neobroker gamificado",
-        "comisiones": "0€ en acciones, ETFs, opciones y cripto (EEUU). Ingresos por PFOF (venta del flujo de órdenes).",
+        "comisiones": "0$ en acciones, ETFs, opciones y cripto (EEUU).",
         "minimo_deposito": "1$",
-        "activos_disponibles": "Acciones, ETFs, opciones, cripto, ADRs (solo mercado EEUU)",
-        "pitfall": "FOMO extremo / Gamificación",
-        "pitfall_detail": (
-            "Robinhood fue la primera app en aplicar psicología del juego a la inversión: confeti digital al comprar, "
-            "listas de 'Top Movers' que cambian cada minuto, gráficos que parpادean en rojo y verde. "
-            "Fue responsable del boom de opciones de novatos en 2021 y múltiples casos de pérdidas devastadoras. "
-            "Su modelo de PFOF implica que tu orden se ejecuta peor para que el broker cobre de tu spread."
-        ),
-        "ventajas": "Sin comisiones, interfaz muy simple, acciones fraccionadas desde 1$.",
-        "desventajas": "Solo mercado EEUU, modelo PFOF, fomenta el trading impulsivo, sin herramientas reales de análisis.",
+        "activos_disponibles": "Acciones, ETFs, opciones, cripto (solo EEUU)",
+        "pitfall": "Gamificación extrema / FOMO",
+        "pitfall_detail": "Confeti digital al comprar, listas de Top Movers cada minuto. Responsable del boom de opciones de novatos en 2021 con pérdidas devastadoras.",
+        "ventajas": "Sin comisiones, interfaz simple, acciones fraccionadas desde 1$.",
+        "desventajas": "Solo EEUU, modelo PFOF, fomenta el trading impulsivo.",
         "recomendacion": [
-            "Desactiva todas las notificaciones de precio. Sin excepción.",
-            "Ignora las secciones de 'Trending' y 'Top Movers'. Son FOMO puro.",
-            "Considera alternativas con mejor ejecución: Fidelity o Schwab para EEUU.",
+            "Desactiva TODAS las notificaciones de precio.",
+            "Ignora 'Trending' y 'Top Movers' completamente.",
+            "Considera alternativas: Fidelity o Schwab para EEUU.",
         ],
     },
     "fintual": {
         "name": "Fintual",
         "region": "Chile / México",
         "tipo": "Robo-advisor regulado",
-        "comisiones": "~1% anual de comisión de administración. Sin cobro por depósitos ni retiros.",
+        "comisiones": "~1% anual de administración.",
         "minimo_deposito": "1 USD / 10 MXN",
-        "activos_disponibles": "Fondos mutuos diversificados (gestionados por Fintual) + ETFs subyacentes",
+        "activos_disponibles": "Fondos mutuos diversificados (gestionados por Fintual)",
         "pitfall": "Anclaje a rentabilidades pasadas del fondo 'Risky'",
-        "pitfall_detail": (
-            "El fondo 'Risky' de Fintual (con exposición a tecnológicas) tuvo rentabilidades del 40-80% en 2020-2021. "
-            "Muchos inversores se anclaron a esas cifras como expectativa normal. En 2022 cayó 35%. "
-            "El sesgo de anclaje a rendimientos pasados excepcionales es una de las fuentes de mayor frustración."
-        ),
-        "ventajas": "Regulado, diversificado automáticamente, sin mínimos relevantes, muy fácil de usar.",
-        "desventajas": "No puedes elegir activos individuales, comisión del 1% puede ser alta a largo plazo.",
+        "pitfall_detail": "'Risky' tuvo +40-80% en 2020-2021. Muchos se anclaron a esas cifras. En 2022 cayó 35%. El sesgo de anclaje a rendimientos pasados genera frustración.",
+        "ventajas": "Regulado, diversificado automáticamente, muy fácil de usar.",
+        "desventajas": "No puedes elegir activos individuales, comisión del 1% puede ser alta.",
         "recomendacion": [
-            "Responde el cuestionario de riesgo con total honestidad. Es tu escudo psicológico.",
-            "Si usas 'Risky', asegúrate de poder aguantar caídas de 40-50% sin vender.",
-            "Complementa con un fondo de liquidez si necesitas acceder al dinero en menos de 3 años.",
+            "Responde el cuestionario de riesgo con total honestidad.",
+            "Si usas 'Risky', asegúrate de aguantar caídas del 40-50%.",
+            "Complementa con fondo de liquidez para metas a menos de 3 años.",
         ],
     },
     "gbm": {
         "name": "GBM+",
         "region": "México / LATAM",
         "tipo": "Casa de bolsa / broker digital",
-        "comisiones": "0.25% por operación en acciones. Smart Cash (liquidez) sin comisión.",
+        "comisiones": "0.25% por operación en acciones. Smart Cash sin comisión.",
         "minimo_deposito": "200 MXN",
-        "activos_disponibles": "Acciones mexicanas, ETFs en MXN, CETES, fondos GBM, Smart Cash",
+        "activos_disponibles": "Acciones MX, ETFs en MXN, CETES, fondos GBM, Smart Cash",
         "pitfall": "Aversión a la pérdida por saldos en rojo",
-        "pitfall_detail": (
-            "GBM+ muestra minusvalías y rendimientos diarios en rojo brillante de forma prominente. "
-            "La investigación de Kahneman y Tversky demuestra que perder 100 duele el doble de lo que alegra ganar 100. "
-            "Ver tu saldo fluctuar diariamente en rojo dispara este mecanismo y empuja a vender en fondos de ciclos."
-        ),
-        "ventajas": "Regulado por CNBV, Smart Cash de alta liquidez, CETES para principiantes, soporte en español.",
-        "desventajas": "Enfocado en mercado mexicano, comisión por operación puede acumularse si se opera mucho.",
+        "pitfall_detail": "GBM+ muestra minusvalías en rojo brillante. La investigación de Kahneman demuestra que perder 100 duele 2x más que alegra ganar 100. Ver el saldo rojo empuja a vender en fondos de ciclos.",
+        "ventajas": "Regulado CNBV, Smart Cash de alta liquidez, CETES, soporte en español.",
+        "desventajas": "Enfocado en mercado mexicano, comisión por operación acumulable.",
         "recomendacion": [
-            "Usa Smart Cash para tu fondo de emergencia: rendimientos de CETES sin riesgo de mercado.",
+            "Usa Smart Cash para tu fondo de emergencia.",
             "Revisa tu cartera de acciones una vez al mes, no diariamente.",
-            "Automatiza inversiones en ETFs indexados con aportaciones quincenales fijas.",
+            "Automatiza inversiones en ETFs indexados quincenalmente.",
         ],
     },
     "hey_banco": {
         "name": "Hey Banco",
         "region": "México",
         "tipo": "Banco digital / inversión integrada",
-        "comisiones": "Sin comisión en pagaré tradicional. Fondos con comisión implícita en el precio de administración.",
+        "comisiones": "Sin comisión en pagaré. Fondos con comisión implícita.",
         "minimo_deposito": "1 MXN",
-        "activos_disponibles": "Pagaré bancario garantizado, fondos de inversión, CETES",
-        "pitfall": "Aversión al riesgo extremo / Zona de confort renta fija",
-        "pitfall_detail": (
-            "Hey Banco promueve su pagaré con rendimientos atractivos y garantizados. Para un principiante, "
-            "esto actúa como una 'zona segura' que impide aprender a invertir en renta variable. "
-            "A largo plazo, los pagarés no superan la inflación y el dinero pierde poder adquisitivo real."
-        ),
-        "ventajas": "Sencillo, garantizado por la CNBV, excelente para fondo de emergencia y metas de corto plazo.",
-        "desventajas": "Rendimientos que no superan la inflación a largo plazo, no invierte en mercados globales.",
+        "activos_disponibles": "Pagaré bancario, fondos, CETES",
+        "pitfall": "Zona de confort renta fija",
+        "pitfall_detail": "El pagaré garantizado impide aprender a invertir en renta variable. A largo plazo, los pagarés no superan la inflación.",
+        "ventajas": "Sencillo, garantizado, ideal para fondo de emergencia.",
+        "desventajas": "No supera la inflación a largo plazo, sin mercados globales.",
         "recomendacion": [
-            "Perfecto para: fondo de emergencia, ahorro a menos de 1 año, dinero que necesitarás pronto.",
-            "Inadecuado para: jubilación, metas a más de 5 años, creación de patrimonio real.",
-            "Complementa con una cuenta en GBM+ o Fintual para exposición a mercados globales.",
+            "Perfecto para fondo de emergencia y metas a menos de 1 año.",
+            "Inadecuado para jubilación o metas a más de 5 años.",
+            "Complementa con GBM+ o Fintual para mercados globales.",
         ],
     },
     "bbva_trader": {
         "name": "BBVA Trader",
         "region": "España / México",
         "tipo": "Broker bancario tradicional",
-        "comisiones": "Comisiones variables por mercado (desde 6€ + % sobre valor), tarifas de custodia anuales.",
-        "minimo_deposito": "Variable según cuenta",
+        "comisiones": "Desde 6€ + % sobre valor, tarifas de custodia anuales.",
+        "minimo_deposito": "Variable",
         "activos_disponibles": "Acciones españolas, europeas, EEUU, ETFs, fondos, warrants",
-        "pitfall": "Sesgo de Status Quo + costos invisibles",
-        "pitfall_detail": (
-            "Muchos inversores eligen BBVA Trader por la tranquilidad de tenerlo todo en su banco tradicional. "
-            "Sin embargo, las comisiones de custodia y corretaje son considerablemente más altas que los neobrokers. "
-            "Una cartera de 50.000€ puede pagar 300-500€/año solo en custodia, erosionando silenciosamente el rendimiento compuesto."
-        ),
-        "ventajas": "Seguridad de banco regulado, posibilidad de hablar con un gestor, familiaridad.",
-        "desventajas": "Las comisiones más altas del mercado para inversión minorista, tecnología más antigua.",
+        "pitfall": "Costos invisibles / Status Quo",
+        "pitfall_detail": "Las comisiones de custodia son considerablemente más altas que los neobrokers. Una cartera de 50.000€ puede pagar 300-500€/año solo en custodia, erosionando silenciosamente el rendimiento.",
+        "ventajas": "Seguridad bancaria, posibilidad de hablar con gestor.",
+        "desventajas": "Las comisiones más altas del mercado para inversión minorista.",
         "recomendacion": [
-            "Calcula exactamente cuánto pagas al año en custodia más corretaje. Puede sorprenderte.",
-            "Si tu cartera es mayor de 30.000€, considera mover ETFs a Trade Republic o IBKR.",
-            "Usa BBVA para fondos de inversión si ya tienes asesor; para ETFs usa un neobroker.",
+            "Calcula exactamente cuánto pagas al año en custodia + corretaje.",
+            "Si tienes más de 30.000€, considera mover ETFs a Trade Republic o IBKR.",
+            "Usa BBVA para fondos con asesor; para ETFs, neobroker.",
         ],
     },
     "openbank": {
         "name": "Openbank / Santander",
         "region": "España",
         "tipo": "Banco digital del Grupo Santander",
-        "comisiones": "Sin comisión de custodia en fondos. Robo-advisor: ~0.45-0.85% anual según patrimonio.",
-        "minimo_deposito": "10€ (fondos) / 1€ (ahorro)",
-        "activos_disponibles": "Fondos de inversión, ETFs, robo-advisor automatizado, depósitos",
+        "comisiones": "Sin custodia en fondos. Robo-advisor: ~0.45-0.85% anual.",
+        "minimo_deposito": "10€",
+        "activos_disponibles": "Fondos de inversión, ETFs, robo-advisor, depósitos",
         "pitfall": "Efecto disposición + fondos de gestión activa cara",
-        "pitfall_detail": (
-            "El catálogo de Openbank incluye muchos fondos de gestión activa con TER de 1.5-2.5%. "
-            "El 'efecto disposición' hace que los inversores mantengan fondos que rinden poco por confianza en la marca Santander, "
-            "en lugar de cambiar a fondos indexados de bajo costo con mejor historial estadístico."
-        ),
-        "ventajas": "Respaldo del Grupo Santander, buen Robo-advisor, fondos indexados baratos disponibles.",
-        "desventajas": "Fácil caer en fondos de gestión activa con comisiones altas si no se mira el TER.",
+        "pitfall_detail": "El catálogo incluye fondos de gestión activa con TER 1.5-2.5%. El 'efecto disposición' hace que inversores mantengan fondos que rinden poco por confianza en la marca.",
+        "ventajas": "Respaldo Santander, buen Robo-advisor, fondos indexados disponibles.",
+        "desventajas": "Fácil caer en fondos de gestión activa con comisiones altas.",
         "recomendacion": [
-            "Busca específicamente fondos Amundi o Vanguard disponibles en el catálogo: tienen TER < 0.2%.",
-            "Si quieres simplicidad total, usa el Robo-advisor para metas de largo plazo.",
-            "Siempre mira el TER (Total Expense Ratio) antes de contratar cualquier fondo.",
+            "Busca fondos Amundi o Vanguard con TER < 0.2%.",
+            "Usa el Robo-advisor para metas de largo plazo.",
+            "Siempre mira el TER antes de contratar cualquier fondo.",
         ],
     },
 }
 
-# ---------------------------------------------------------------------------
-# MOTOR DE COACHING PSICOLÓGICO CONDUCTUAL
-# ---------------------------------------------------------------------------
-
+# ─────────────────────────────────────────────────────────────────────────────
+# SESGOS (solo para el radar visual, no para generar respuestas plantilla)
+# ─────────────────────────────────────────────────────────────────────────────
 BIASES_COACHING = {
     "fomo": {
         "explanation": "FOMO (Fear of Missing Out): urgencia de comprar impulsado por ver que otros ganan dinero rápido.",
-        "coach_intro": "Detecto que sientes urgencia de actuar antes de 'perderte' algo. Esa sensación es muy humana, pero es también la causa número uno de pérdidas en inversores minoristas.",
-        "framework": [
-            "**El problema del timing:** Entrar en un activo porque ha subido mucho es exactamente lo contrario de comprar barato. Estás pagando la expectativa de otros, no el valor real.",
-            "**La trampa narrativa:** Las historias de ganancias rápidas que oyes (en redes, con amigos) son el sesgo de supervivencia: no oyes a los que perdieron el 80%.",
-            "**La solución del tiempo:** Pregúntate: '¿Compraría este activo igual si no supiera que subió un 40% este mes?' Si la respuesta es no, estás comprando emoción, no valor.",
-        ],
+        "coach_intro": "Detecto señales de FOMO en tu mensaje.",
+        "framework": [],
     },
     "panico": {
         "explanation": "Pánico Vendedor: el impulso de liquidar posiciones ante caídas para 'evitar perderlo todo'.",
-        "coach_intro": "Lo que describes suena a pánico de mercado. Es la reacción más natural del mundo, pero también la más costosa estadísticamente.",
-        "framework": [
-            "**Las pérdidas en papel vs. pérdidas reales:** Una caída del 20% en tu pantalla es una minusvalía latente. Si vendes, la conviertes en pérdida definitiva e irreversible.",
-            "**La evidencia histórica:** El S&P 500 ha tenido correcciones del 20%+ en más de 30 ocasiones desde 1928. En todos los casos, superó los máximos anteriores.",
-            "**La pregunta correcta:** '¿Cambió algo fundamental en el negocio de esta empresa, o solo cambió el precio?' Si solo cambió el precio, tu tesis sigue vigente.",
-        ],
+        "coach_intro": "Detecto señales de pánico vendedor.",
+        "framework": [],
     },
     "overconfidence": {
-        "explanation": "Sobreconfianza: creer que tienes información o habilidad suficiente para predecir el mercado mejor que la media.",
-        "coach_intro": "Detecto una confianza alta en la decisión. Eso no es malo en sí, pero vale la pena someterla a un test de rigor.",
-        "framework": [
-            "**El problema de la complejidad:** El precio de un activo incorpora simultáneamente el análisis de millones de inversores, algoritmos institucionales y datos macroeconómicos. Tu ventaja informativa sobre todo eso es estadísticamente marginal.",
-            "**El sesgo de confirmación:** Cuando tenemos una idea, buscamos instintivamente información que la confirme y descartamos la que la contradice. Es un fallo cognitivo universal.",
-            "**El test de reversión:** ¿Podrías argumentar con igual convicción el caso contrario (que el activo NO va a subir)? Si no, puede que no estés analizando, sino racionalizando.",
-        ],
+        "explanation": "Sobreconfianza: creer que puedes predecir el mercado mejor que la media.",
+        "coach_intro": "Detecto señales de exceso de confianza.",
+        "framework": [],
     },
     "loss_aversion": {
-        "explanation": "Aversión a la Pérdida: el dolor psicológico de perder es tan intenso que prefieres mantener una posición perdedora indefinidamente.",
-        "coach_intro": "Parece que el dolor de las pérdidas latentes está influyendo en tu decisión. Es comprensible, pero es un sesgo que casi siempre lleva a peores resultados.",
-        "framework": [
-            "**El experimento mental:** Imagina que hoy vendes esa posición y recibes el efectivo. ¿Lo volverías a invertir en ese mismo activo hoy, al precio actual? Si la respuesta es no, solo estás manteniendo por no querer 'admitir' la pérdida.",
-            "**El costo de oportunidad invisible:** Cada euro bloqueado en una posición perdedora sin perspectivas es un euro que no está trabajando en algo mejor.",
-            "**El precio de compra es irrelevante para el mercado:** El mercado no sabe ni le importa a cuánto compraste. Ese número solo existe en tu mente.",
-        ],
+        "explanation": "Aversión a la Pérdida: el dolor de perder es tan intenso que mantienes posiciones perdedoras.",
+        "coach_intro": "Detecto aversión a la pérdida.",
+        "framework": [],
     },
     "anchoring": {
-        "explanation": "Anclaje: tomar decisiones basándose en un precio de referencia del pasado (tu precio de compra) en lugar del valor actual.",
-        "coach_intro": "Identifico que estás usando un precio del pasado como referencia para tomar decisiones del presente. Eso es el sesgo de anclaje.",
-        "framework": [
-            "**El número mágico que no existe:** Tu precio de compra es información relevante para tu fiscalidad, pero completamente irrelevante para el valor futuro del activo.",
-            "**La pregunta correcta:** '¿Cuánto vale este activo HOY en función de sus fundamentales, flujos de caja esperados y perspectivas de sector?' No: '¿Cuándo volverá al precio al que lo compré?'",
-            "**La trampa del punto de equilibrio:** Esperar a 'recuperar lo invertido' puede mantenerte atrapado en una posición mediocre mientras otros activos generan retornos reales.",
-        ],
+        "explanation": "Anclaje: tomar decisiones basándose en un precio de referencia del pasado.",
+        "coach_intro": "Detecto sesgo de anclaje.",
+        "framework": [],
     },
     "ninguno": {
         "explanation": "Comportamiento racional: tono equilibrado, sin señales de sesgo emocional dominante.",
-        "coach_intro": "Tu mensaje refleja un enfoque bastante racional. Vamos a analizar la situación con detalle.",
-        "framework": [
-            "**Mantén la disciplina:** La consistencia y la paciencia son las dos variables que más contribuyen al rendimiento de largo plazo, por encima del market timing.",
-            "**Revisa tu tesis periódicamente:** Una buena inversión se basa en una tesis fundamentada. Revisarla cada trimestre (no cada día) es una buena práctica.",
-            "**Sigue educándote:** El conocimiento compuesto, igual que el interés compuesto, es el mayor activo a largo plazo.",
-        ],
+        "coach_intro": "Tu mensaje es racional.",
+        "framework": [],
     },
 }
 
-# ---------------------------------------------------------------------------
-# Lógica dinámica de gestión: ¿Vender? ¿Comprar? ¿Aguantar?
-# ---------------------------------------------------------------------------
 
-def _build_management_advice(question_type: str, audit: dict, bias: str) -> str:
+# ─────────────────────────────────────────────────────────────────────────────
+# CONSTRUCTOR DE CONTEXTO PARA EL LLM
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _build_llm_context(
+    user_text: str,
+    detected_intent: str,
+    detected_bias: str,
+    bias_probs: dict,
+    ticker_audit: dict | None,
+    broker_id: str | None,
+    exp_level: str = "Principiante",
+) -> str:
     """
-    Genera consejos de gestión adaptados al tipo de pregunta detectada,
-    al estado técnico real del activo y al sesgo del usuario.
+    Construye un bloque de contexto estructurado para enviar al LLM
+    junto al mensaje del usuario. Este contexto transforma la respuesta
+    de genérica a específica y fundamentada.
     """
-    ticker = audit.get("ticker", "el activo")
-    nombre = audit.get("nombre", ticker)
-    precio = audit.get("precio_actual")
-    retorno = audit.get("retorno_hoy")
-    rsi = audit.get("rsi_14")
-    dist_sma = audit.get("distancia_sma")
-    zscore = audit.get("zscore_hoy")
-    vol = audit.get("vol_anualizada")
-    estado = audit.get("estado_tecnico", "neutral")
-    simulado = audit.get("simulado", False)
+    lines = []
 
-    # Header con datos técnicos reales
-    if simulado or precio is None:
-        header = f"\n**{nombre}** — *Datos de mercado no disponibles en este momento*\n"
-    else:
-        signo = "+" if retorno >= 0 else ""
-        header = (
-            f"\n**{nombre} ({ticker})**\n"
-            f"| Precio Actual | Retorno Hoy | RSI 14d | Dist. SMA50 | Volatilidad anual |\n"
-            f"|:---:|:---:|:---:|:---:|:---:|\n"
-            f"| **${precio:,.2f}** | **{signo}{retorno:.2f}%** | **{rsi}** | **{dist_sma:+.1f}%** | **{vol:.1f}%** |\n\n"
-        )
+    # ── Perfil del usuario ──────────────────────────────────────────────
+    lines.append(f"PERFIL DEL USUARIO:")
+    lines.append(f"- Nivel de experiencia: {exp_level}")
+    lines.append(f"- Sesgo psicológico detectado por ML: {detected_bias} "
+                 f"(probabilidades: {', '.join(f'{k}={v:.0%}' for k,v in sorted(bias_probs.items(), key=lambda x:-x[1])[:3])})")
+    lines.append(f"- Intención detectada: {detected_intent}")
 
-    # Lógica condicional según pregunta y datos
-    advice_lines = []
+    # ── Datos de mercado ────────────────────────────────────────────────
+    if ticker_audit:
+        nombre = ticker_audit.get("nombre", ticker_audit.get("ticker", "?"))
+        ticker = ticker_audit.get("ticker", "?")
+        if ticker_audit.get("simulado") or ticker_audit.get("precio_actual") is None:
+            lines.append(f"\nACTIVO MENCIONADO: {nombre} ({ticker})")
+            lines.append("- Estado: datos en tiempo real no disponibles (posible ticker desconocido o fallo de red)")
+        else:
+            lines.append(f"\nDAILY MARKET AUDIT — {nombre} ({ticker}):")
+            lines.append(f"- Precio actual: ${ticker_audit['precio_actual']:,.4f}")
+            retorno = ticker_audit.get('retorno_hoy', 0)
+            signo = "+" if retorno >= 0 else ""
+            lines.append(f"- Retorno hoy: {signo}{retorno:.3f}%")
+            lines.append(f"- RSI 14 días: {ticker_audit['rsi_14']} "
+                         f"({'SOBRECOMPRADO' if ticker_audit['rsi_14'] >= 65 else 'SOBREVENDIDO' if ticker_audit['rsi_14'] <= 35 else 'NEUTRAL'})")
+            lines.append(f"- Distancia a SMA50: {ticker_audit['distancia_sma']:+.2f}%")
+            lines.append(f"- Z-Score retorno hoy: {ticker_audit['zscore_hoy']:+.3f} "
+                         f"({'estadísticamente extremo' if abs(ticker_audit['zscore_hoy']) > 2.5 else 'normal'})")
+            lines.append(f"- Volatilidad anualizada (21d): {ticker_audit['vol_anualizada']:.1f}%")
+            lines.append(f"- Estado técnico: {ticker_audit['estado_tecnico'].upper()}")
+            lines.append(f"- Diagnóstico técnico: {ticker_audit['alerta_tecnica']}")
 
-    if question_type == "vender":
-        advice_lines.append("### ¿Debería vender?")
-        if bias == "panico":
-            advice_lines.append(
-                "> ⚠️ **El pánico es el peor consejero para vender.** "
-                "Vender durante una caída impulsiva convierte una pérdida temporal en una pérdida permanente."
-            )
-        if not simulado and rsi is not None:
-            if rsi <= 30:
-                advice_lines.append(
-                    f"- RSI en **{rsi}** (sobreventa): técnicamente, el mercado ya ha 'castigado' este activo "
-                    f"de forma exagerada. Vender aquí es vender en el momento estadísticamente más desfavorable."
-                )
-            elif rsi >= 70:
-                advice_lines.append(
-                    f"- RSI en **{rsi}** (sobrecompra): si tu objetivo era tomar ganancias, el mercado "
-                    f"técnicamente te está dando una oportunidad. Pero considera: ¿cambió tu tesis original de inversión?"
-                )
-            else:
-                advice_lines.append(f"- RSI en **{rsi}** (zona neutral): no hay señal técnica extrema de sobrecompra ni sobreventa.")
-        advice_lines.extend([
-            "**Las 3 preguntas antes de vender:**",
-            "1. ¿Ha cambiado la razón por la que compraste este activo (fundamentales del negocio, tendencia del sector)?",
-            "2. ¿Estás vendiendo porque el precio bajó (emoción) o porque tu análisis cambió (racional)?",
-            "3. Si vendes hoy, ¿en qué invertirías el dinero y por qué sería mejor que mantener?",
-            "",
-            "**Alternativas a vender todo:**",
-            "- **Recorte parcial:** vende el 20-30% de la posición para reducir exposición sin liquidarla.",
-            "- **Stop-loss mental:** define un nivel de precio o pérdida máxima que te resulte tolerable antes de actuar.",
-            "- **Espera 48 horas:** las decisiones de venta en caliente suelen revertirse cuando baja la adrenalina.",
-        ])
+    # ── Info del broker ─────────────────────────────────────────────────
+    broker_profile = BROKERS_PROFILE.get(broker_id) if broker_id else None
+    if broker_profile:
+        lines.append(f"\nPLATAFORMA DEL USUARIO: {broker_profile['name']}")
+        lines.append(f"- Comisiones: {broker_profile['comisiones']}")
+        lines.append(f"- Trampa de diseño frecuente: {broker_profile['pitfall']} — {broker_profile['pitfall_detail']}")
 
-    elif question_type == "comprar":
-        advice_lines.append("### ¿Debería comprar?")
-        if bias == "fomo":
-            advice_lines.append(
-                "> ⚠️ **El FOMO es la peor motivación para comprar.** "
-                "Si compras porque el activo ya subió mucho, estás pagando la euforia de otros."
-            )
-        if not simulado and rsi is not None:
-            if rsi >= 70:
-                advice_lines.append(
-                    f"- RSI en **{rsi}** (sobrecompra): el activo ha subido rápido en poco tiempo. "
-                    f"Comprar en esta zona implica asumir el riesgo de una corrección técnica próxima."
-                )
-            elif rsi <= 35:
-                advice_lines.append(
-                    f"- RSI en **{rsi}** (sobreventa): si tu tesis es sólida, este puede ser un punto "
-                    f"de entrada con mejor relación riesgo/recompensa que en momentos de euforia."
-                )
-            if dist_sma is not None and dist_sma > 15:
-                advice_lines.append(
-                    f"- El precio está un **{dist_sma:.1f}%** por encima de su SMA50. "
-                    f"Comprar lejos de la media móvil reduce tu margen de seguridad."
-                )
-        advice_lines.extend([
-            "**Principios de compra inteligente:**",
-            "- **DCA (Dollar Cost Averaging):** en lugar de comprar todo de golpe, divide la compra en 3-6 partes durante los próximos meses. Reduce el riesgo de timing.",
-            "- **Tamaño de posición:** ningún activo individual debería superar el 10-15% de tu cartera total si no estás muy familiarizado con él.",
-            "- **Horizonte temporal:** ¿Cuánto tiempo estás dispuesto a mantenerlo si cae un 40%? Si la respuesta es 'lo vendería', reconsidera el tamaño de la posición.",
-            f"- **Volatilidad actual de {nombre}:** **{vol:.1f}% anualizada**. " + (
-                "Alta volatilidad → invertir en múltiples momentos, no de golpe." if vol and vol > 30
-                else "Volatilidad moderada."
-            ) if not simulado and vol else "",
-        ])
-
-    elif question_type == "mantener":
-        advice_lines.append("### ¿Debería mantener?")
-        advice_lines.extend([
-            "Mantener una inversión es una decisión activa, no pasiva. Requiere que tu tesis original siga vigente.",
-            "",
-            "**Checklist de mantenimiento:**",
-            "- [ ] ¿El negocio sigue generando ingresos/crecimiento según lo esperado?",
-            "- [ ] ¿Han cambiado significativamente las condiciones del sector?",
-            "- [ ] ¿Tu peso en esta posición sigue siendo proporcional a tu tolerancia al riesgo?",
-            "- [ ] ¿Llevas más de 6 meses sin revisar tus fundamentos?",
-            "",
-            "**Sobre el rebalanceo:**",
-            "Si el activo ha crecido mucho y ahora ocupa más del 15-20% de tu cartera, considera vender una fracción para restablecer el equilibrio, no por miedo, sino por gestión de riesgo sistemática.",
-        ])
-
-    return header + "\n".join([line for line in advice_lines if line is not None])
+    return "\n".join(lines)
 
 
-def _detect_question_type(text: str) -> str:
-    """Detecta si el usuario pregunta por vender, comprar, mantener u otro."""
-    text_lower = text.lower()
-    vender_words = ["vend", "salir", "liquidar", "cerrar posicion", "deshacerme", "quiero salir"]
-    comprar_words = ["compr", "entrar", "meter", "invertir", "añadir", "aumentar posicion"]
-    mantener_words = ["manten", "aguantar", "quedarme", "seguir", "esperar", "hodl"]
+# ─────────────────────────────────────────────────────────────────────────────
+# SISTEMA PROMPT DEL CONSEJERO FINANCIERO
+# ─────────────────────────────────────────────────────────────────────────────
 
-    if any(w in text_lower for w in vender_words):
-        return "vender"
-    if any(w in text_lower for w in comprar_words):
-        return "comprar"
-    if any(w in text_lower for w in mantener_words):
-        return "mantener"
-    return "general"
+SYSTEM_PROMPT = """Eres SIPA, un consejero financiero personal de élite con especialización en psicología conductual del inversor. Piensas y respondes como un asesor financiero experimentado que además entiende profundamente la psicología humana.
 
+TU PERSONALIDAD:
+- Eres directo, honesto y empático. No das rodeos.
+- Hablas como un amigo que sabe de finanzas, no como un manual académico.
+- Cuando alguien comete un error, lo dices con claridad pero sin juzgar.
+- Eres específico: usas los datos reales del mercado que te proporcionan para dar opiniones concretas.
+- Nunca predices el futuro del precio con certeza. Razonas con probabilidades y principios.
+- Adaptas tu nivel de tecnicismo al perfil del usuario.
+
+LO QUE HACES:
+1. Respondes la pregunta concreta del usuario (no la ignores por el sesgo).
+2. Si hay datos técnicos reales del activo (RSI, SMA, etc.), los integras naturalmente en tu respuesta como haría un analista.
+3. Identificas sesgos emocionales y los nombras de forma educativa, no condescendiente.
+4. Das pasos de acción concretos y accionables, no consejos genéricos.
+5. Si el activo es desconocido o no tienes datos, dices que no puedes analizarlo con datos y explicas qué factores buscarías.
+6. Si preguntan por brokers, comparas con contexto real de costos y perfil del usuario.
+
+LO QUE NUNCA HACES:
+- Responder con plantillas genéricas que podrían servir para cualquier pregunta.
+- Repetir siempre el mismo bloque de texto independientemente del contexto.
+- Decir "consulta a un asesor financiero" como única respuesta (tú ERES el asesor).
+- Ignorar los datos de mercado reales que te proporcionan.
+- Dar respuestas de más de 400 palabras (ser conciso es ser profesional).
+
+FORMATO:
+- Responde en español conversacional.
+- Usa párrafos cortos, no bloques de texto.
+- Puedes usar negritas para enfatizar puntos clave.
+- Si das una lista, que sean 3-4 puntos máximo, no 10.
+- Sé humano: puedes usar expresiones coloquiales cuando el tono lo permita.
+"""
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MOTOR DE FALLBACK (reglas, solo si no hay ninguna API key)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _fallback_rules_response(
+    user_text: str,
+    detected_bias: str,
+    ticker_audit: dict | None,
+    broker_id: str | None,
+) -> str:
+    """
+    Motor de último recurso. Genera una respuesta mínima estructurada.
+    Sin API key, no puede ser conversacional — informa al usuario.
+    """
+    msg_parts = []
+
+    # Aviso sobre la limitación
+    msg_parts.append(
+        "⚠️ **Sin API Key configurada** — Las respuestas en modo local son limitadas. "
+        "Para obtener análisis conversacionales completos, añade tu **Gemini API Key** (gratuita) en el panel lateral.\n\n"
+        "---\n"
+    )
+
+    # Análisis técnico si hay datos
+    if ticker_audit and not ticker_audit.get("simulado") and ticker_audit.get("precio_actual"):
+        nombre = ticker_audit["nombre"]
+        ret = ticker_audit["retorno_hoy"]
+        rsi = ticker_audit["rsi_14"]
+        signo = "+" if ret >= 0 else ""
+        msg_parts.append(f"**{nombre}** — Precio: ${ticker_audit['precio_actual']:,.2f} ({signo}{ret:.2f}% hoy)")
+        msg_parts.append(f"RSI 14d: **{rsi}** → {ticker_audit['estado_tecnico'].upper()}")
+        msg_parts.append(f"{ticker_audit['alerta_tecnica']}\n")
+
+    # Sesgo detectado
+    bias_msgs = {
+        "panico": "El análisis NLP detecta **pánico vendedor** en tu mensaje. Históricamente, vender en caídas extremas es la decisión más costosa que puede tomar un inversor.",
+        "fomo": "El análisis NLP detecta **FOMO** en tu mensaje. Comprar por urgencia de no perderte algo raramente termina bien.",
+        "overconfidence": "El análisis NLP detecta **sobreconfianza** en tu mensaje. Los mercados han arruinado a traders que creyeron poder predecirlos.",
+        "loss_aversion": "El análisis NLP detecta **aversión a la pérdida**. Las pérdidas en papel no son reales hasta que vendes.",
+        "anchoring": "El análisis NLP detecta **sesgo de anclaje**. El precio al que compraste no determina el valor actual del activo.",
+        "ninguno": "No se detectan sesgos emocionales dominantes. Tu enfoque parece racional.",
+    }
+    msg_parts.append(bias_msgs.get(detected_bias, ""))
+
+    # Info de broker
+    bp = BROKERS_PROFILE.get(broker_id) if broker_id else None
+    if bp:
+        msg_parts.append(f"\n**{bp['name']}:** {bp['comisiones']}")
+
+    return "\n".join(msg_parts)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FUNCIÓN PRINCIPAL: generate_coach_response
+# ─────────────────────────────────────────────────────────────────────────────
 
 def generate_coach_response(
     user_text: str,
@@ -426,136 +388,169 @@ def generate_coach_response(
     detected_bias: str,
     bias_probs: dict,
     broker_id: str = None,
+    gemini_key: str = None,
     openai_key: str = None,
     ticker_audit: dict = None,
+    exp_level: str = "Principiante",
+    chat_history: list = None,
 ) -> dict:
     """
-    Genera la respuesta del Coach SIPA v2 de forma dinámica.
-    - Integra datos técnicos reales del activo si se detectó un ticker.
-    - Aplica lógica de gestión condicional (vender/comprar/mantener).
-    - Fusiona el sesgo psicológico con el estado técnico para dar un veredicto único.
-    - Opcionalmente enriquece con OpenAI si hay API Key.
+    Genera la respuesta del Coach SIPA v2.
+    Jerarquía: Gemini → OpenAI → Fallback local.
+
+    Args:
+        chat_history: lista de dicts [{role: 'user'|'model', parts: [str]}]
+                      para mantener contexto de conversación en Gemini.
     """
-    bias_info = BIASES_COACHING.get(detected_bias, BIASES_COACHING["ninguno"])
-    question_type = _detect_question_type(user_text)
+    # Construir el contexto enriquecido
+    context_block = _build_llm_context(
+        user_text=user_text,
+        detected_intent=detected_intent,
+        detected_bias=detected_bias,
+        bias_probs=bias_probs,
+        ticker_audit=ticker_audit,
+        broker_id=broker_id,
+        exp_level=exp_level,
+    )
 
-    # --- Sección 1: Diagnóstico psicológico ---
-    bias_section = f"### Diagnóstico Psicológico\n{bias_info['coach_intro']}\n\n"
-    framework_lines = "\n".join([f"- {point}" for point in bias_info['framework']])
-    bias_section += f"**Marco de análisis:**\n{framework_lines}\n"
+    # ── 1. GEMINI (principal) ────────────────────────────────────────────
+    if gemini_key and gemini_key.strip().startswith("AI"):
+        try:
+            import google.generativeai as genai
+            genai.configure(api_key=gemini_key.strip())
 
-    # --- Sección 2: Auditoría técnica del activo (si aplica) ---
-    market_section = ""
-    if ticker_audit:
-        mgmt = _build_management_advice(question_type, ticker_audit, detected_bias)
-        alerta = ticker_audit.get("alerta_tecnica", "")
-        market_section = f"\n---\n### Análisis Técnico en Tiempo Real\n{mgmt}\n\n"
-        if alerta and not ticker_audit.get("simulado"):
-            market_section += f"**Señales técnicas adicionales:** {alerta}\n"
+            model = genai.GenerativeModel(
+                model_name="gemini-2.0-flash",
+                system_instruction=SYSTEM_PROMPT,
+                generation_config={
+                    "temperature": 0.75,
+                    "max_output_tokens": 700,
+                    "top_p": 0.95,
+                },
+            )
 
-    # --- Sección 3: Broker context (si el usuario mencionó uno) ---
-    broker_section = ""
-    broker_profile = BROKERS_PROFILE.get(broker_id)
-    if broker_profile:
-        broker_section = (
-            f"\n---\n### Tu Plataforma: {broker_profile['name']}\n"
-            f"**Trampa de diseño frecuente:** {broker_profile['pitfall']} — {broker_profile['pitfall_detail']}\n\n"
-            f"**Comisiones relevantes:** {broker_profile['comisiones']}\n\n"
-            f"**Qué hacer en {broker_profile['name']}:**\n"
-            + "\n".join([f"- {r}" for r in broker_profile['recomendacion']]) + "\n"
-        )
+            # Mensaje enriquecido con contexto
+            full_user_message = (
+                f"[CONTEXTO ANALÍTICO — procesa esto internamente, no lo repitas en tu respuesta]\n"
+                f"{context_block}\n"
+                f"[FIN DEL CONTEXTO]\n\n"
+                f"PREGUNTA DEL USUARIO: {user_text}"
+            )
 
-    # --- Ensamblado final ---
-    full_response = bias_section + market_section + broker_section
+            # Mantener historial de conversación si existe
+            if chat_history and len(chat_history) > 0:
+                history_gemini = []
+                for msg in chat_history[-6:]:  # últimos 3 intercambios
+                    if msg.get("role") in ("user", "model"):
+                        history_gemini.append(msg)
+                chat = model.start_chat(history=history_gemini)
+            else:
+                chat = model.start_chat(history=[])
 
-    # --- OpenAI opcional ---
+            response = chat.send_message(full_user_message)
+            ai_text = response.text
+
+            return {
+                "success": True,
+                "is_llm": True,
+                "llm_engine": "Gemini 2.0 Flash",
+                "response": ai_text,
+                "probs": bias_probs,
+            }
+        except Exception as e:
+            error_msg = str(e)
+            # Key inválida
+            if "API_KEY" in error_msg.upper() or "INVALID" in error_msg.upper():
+                return {
+                    "success": False,
+                    "is_llm": False,
+                    "llm_engine": "error",
+                    "response": f"❌ La API Key de Gemini no es válida: `{error_msg[:120]}`",
+                    "probs": bias_probs,
+                }
+            # Otros errores → seguir al siguiente motor
+
+    # ── 2. OPENAI (fallback) ─────────────────────────────────────────────
     if openai_key and openai_key.strip().startswith("sk-"):
         try:
             from openai import OpenAI
             client = OpenAI(api_key=openai_key.strip())
 
-            ticker_ctx = ""
-            if ticker_audit and not ticker_audit.get("simulado"):
-                ticker_ctx = (
-                    f"El modelo de análisis técnico local ha calculado para el activo {ticker_audit['nombre']} ({ticker_audit['ticker']}):\n"
-                    f"- Precio: ${ticker_audit['precio_actual']:.2f}\n"
-                    f"- RSI 14d: {ticker_audit['rsi_14']}\n"
-                    f"- Distancia SMA50: {ticker_audit['distancia_sma']:+.1f}%\n"
-                    f"- Z-Score retorno hoy: {ticker_audit['zscore_hoy']:.2f}\n"
-                    f"- Estado técnico: {ticker_audit['estado_tecnico']}\n"
+            messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+
+            # Incluir historial si existe
+            if chat_history:
+                for msg in chat_history[-6:]:
+                    role = "assistant" if msg.get("role") == "model" else msg.get("role", "user")
+                    content = msg.get("parts", [""])[0] if msg.get("parts") else ""
+                    if content and role in ("user", "assistant"):
+                        messages.append({"role": role, "content": content})
+
+            messages.append({
+                "role": "user",
+                "content": (
+                    f"[CONTEXTO]\n{context_block}\n[FIN CONTEXTO]\n\n"
+                    f"PREGUNTA: {user_text}"
                 )
+            })
 
-            broker_ctx = f"El usuario usa {broker_profile['name']}. " if broker_profile else ""
-
-            system_prompt = (
-                "Eres el Coach SIPA v2, un asistente de psicología financiera y finanzas personales de élite. "
-                "Eres empático, riguroso, humilde y educativo. Tu misión: mostrar al usuario que predecir el mercado es imposible "
-                "y orientarle hacia una gestión racional basada en su perfil de riesgo real.\n\n"
-                f"{broker_ctx}"
-                f"Nuestros modelos locales detectaron: Sesgo={detected_bias} (probabilidades={bias_probs}), "
-                f"Intención={detected_intent}, Tipo de pregunta={question_type}.\n"
-                f"{ticker_ctx}"
-                "Genera una respuesta en Markdown que:\n"
-                "1. Aborde el sesgo emocional del usuario con empatía y argumentos conductuales.\n"
-                "2. Integre los datos técnicos reales para dar un veredicto específico, no genérico.\n"
-                "3. Si el usuario pregunta por vender/comprar, aplique un framework de gestión de riesgo real.\n"
-                "4. Sea honesto: nunca prediga el futuro del precio. Razona con probabilidades y principios.\n"
-                "5. Use encabezados Markdown, tablas si aplica, y sea conciso pero profundo."
-            )
-
-            response = client.chat.completions.create(
+            resp = client.chat.completions.create(
                 model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_text},
-                ],
-                temperature=0.65,
-                max_tokens=900,
+                messages=messages,
+                temperature=0.72,
+                max_tokens=700,
             )
-            ai_content = response.choices[0].message.content
+            ai_text = resp.choices[0].message.content
             return {
-                "success": True, "is_llm": True,
-                "response": ai_content,
+                "success": True,
+                "is_llm": True,
+                "llm_engine": "GPT-4o-mini",
+                "response": ai_text,
                 "probs": bias_probs,
-                "question_type": question_type,
             }
-        except Exception as e:
-            pass  # Fallback al motor local
+        except Exception:
+            pass
 
+    # ── 3. FALLBACK LOCAL ────────────────────────────────────────────────
+    fallback_text = _fallback_rules_response(
+        user_text=user_text,
+        detected_bias=detected_bias,
+        ticker_audit=ticker_audit,
+        broker_id=broker_id,
+    )
     return {
         "success": True,
         "is_llm": False,
-        "response": full_response,
+        "llm_engine": "local",
+        "response": fallback_text,
         "probs": bias_probs,
-        "question_type": question_type,
     }
 
 
-# ---------------------------------------------------------------------------
-# Test autónomo
-# ---------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────────────────────
+# TEST
+# ─────────────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("=== TEST COACH ===\n")
-    casos = [
-        ("Compré nvidia hace poco y está cayendo, ¿vendo?", "quiero_vender", "panico", "NVDA"),
-        ("Todos están ganando con Bitcoin, ¿entro ahora?", "quiero_comprar", "fomo", "BTC-USD"),
-        ("Tengo Apple y quiero saber si mantenerla o comprar más", "consultar_cartera", "ninguno", "AAPL"),
-        ("La compré a 50, no vendo hasta que vuelva a 50", "quiero_vender", "anchoring", None),
-    ]
-
+    # Solo prueba el contexto sin LLM
     from market_analysis import get_ticker_audit
 
-    for texto, intent, sesgo, ticker in casos:
-        audit = get_ticker_audit(ticker) if ticker else None
-        resp = generate_coach_response(
-            user_text=texto,
-            detected_intent=intent,
-            detected_bias=sesgo,
-            bias_probs={sesgo: 0.85},
-            broker_id="trade_republic",
-            ticker_audit=audit,
-        )
-        print(f"PREGUNTA: {texto}")
-        print(f"SESGO: {sesgo} | TICKER: {ticker}")
-        print(resp["response"][:600])
-        print("\n" + "=" * 70 + "\n")
+    audit = get_ticker_audit("NVDA")
+    ctx = _build_llm_context(
+        user_text="Compré nvidia y está cayendo, ¿vendo?",
+        detected_intent="quiero_vender",
+        detected_bias="panico",
+        bias_probs={"panico": 0.85, "fomo": 0.08},
+        ticker_audit=audit,
+        broker_id="trade_republic",
+    )
+    print("=== CONTEXTO GENERADO PARA EL LLM ===")
+    print(ctx)
+    print("\n=== TEST SIN KEY (fallback) ===")
+    resp = generate_coach_response(
+        user_text="Compré nvidia y está cayendo, ¿vendo?",
+        detected_intent="quiero_vender",
+        detected_bias="panico",
+        bias_probs={"panico": 0.85},
+        ticker_audit=audit,
+    )
+    print(resp["response"])

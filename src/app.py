@@ -24,6 +24,13 @@ from coach import (
     generate_coach_response, BIASES_COACHING, BROKERS_PROFILE,
 )
 
+# ── Detectar versión de google-generativeai instalada ─────────────────────
+try:
+    import google.generativeai as _genai_check
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GEMINI_AVAILABLE = False
+
 # ── Configuración Streamlit ────────────────────────────────────────────────
 st.set_page_config(
     page_title="SIPA v2 — Coach de Finanzas Personales & Psicología de la Inversión",
@@ -127,12 +134,42 @@ with st.sidebar:
     st.markdown("<p style='color:#A3AED0;font-size:14px;margin-top:0'>Behavioral Finance Engine</p>", unsafe_allow_html=True)
     st.markdown("---")
 
-    # ── OpenAI API Key ─────────────────────────────────────────────────────
-    st.markdown("### 🔑 Motor Conversacional")
+    # ── Gemini API Key (MOTOR PRINCIPAL) ──────────────────────────────────
+    st.markdown("### 🤖 Motor de IA")
+
+    if GEMINI_AVAILABLE:
+        st.success("✅ Gemini SDK instalado")
+    else:
+        st.warning("⚠️ SDK no instalado. Ejecuta: `pip install google-generativeai`")
+
+    st.markdown(
+        "**[Obtén tu clave gratis aquí →](https://aistudio.google.com/apikey)**"
+        " (Google AI Studio, tier gratuito, sin tarjeta de crédito)",
+        unsafe_allow_html=False
+    )
+    gemini_key = st.text_input(
+        "🔑 Gemini API Key",
+        type="password",
+        placeholder="AIza...",
+        help="Clave de Google AI Studio. Es gratuita. Con ella SIPA responde como un asesor real."
+    )
+
+    with st.expander("¿Cómo conseguir la clave? (30 segundos)", expanded=False):
+        st.markdown("""
+        1. Entra en **[aistudio.google.com](https://aistudio.google.com/apikey)**
+        2. Haz clic en **"Create API Key"**
+        3. Copia la clave (empieza por `AIza...`)
+        4. Pégala arriba
+        5. ¡Listo! Sin tarjeta, sin pago.
+        """)
+
+    st.markdown("---")
+    st.markdown("### 🔑 OpenAI (alternativa)")
     openai_key = st.text_input(
         "OpenAI API Key (Opcional)",
         type="password",
-        help="Sin clave el Coach funciona al 100% gratis en local con motor de reglas y ML."
+        placeholder="sk-...",
+        help="Solo se usa si no hay clave de Gemini."
     )
 
     # ── Perfil del inversor ────────────────────────────────────────────────
@@ -265,6 +302,16 @@ with tab_chat:
                                 mentioned_broker = bid
                                 break
 
+                        # ── Historial en formato Gemini ────────────────────
+                        gemini_history = []
+                        for hist_msg in st.session_state.chat_history[1:]:  # skip bienvenida
+                            role = "model" if hist_msg["role"] == "assistant" else "user"
+                            content = hist_msg["content"]
+                            for badge in ["✨ **[Gemini 2.0 Flash]**\n\n", "🧠 **[GPT-4o-mini]**\n\n",
+                                          "⚠️ **[Motor Local — Añade tu Gemini Key para respuestas inteligentes]**\n\n"]:
+                                content = content.replace(badge, "")
+                            gemini_history.append({"role": role, "parts": [content]})
+
                         # ── Generar respuesta del Coach ────────────────────
                         coach_output = generate_coach_response(
                             user_text=user_input,
@@ -272,14 +319,24 @@ with tab_chat:
                             detected_bias=pred_bias,
                             bias_probs=probs_dict,
                             broker_id=mentioned_broker if mentioned_broker else None,
+                            gemini_key=gemini_key,
                             openai_key=openai_key,
                             ticker_audit=ticker_audit,
+                            exp_level=exp_level,
+                            chat_history=gemini_history,
                         )
 
                     # ── Renderizar respuesta ───────────────────────────────
-                    mode_badge = "✨ **[GPT-4o-mini]**" if coach_output.get("is_llm") else "🧠 **[Motor SIPA Local]**"
+                    engine = coach_output.get("llm_engine", "local")
+                    if engine == "Gemini 2.0 Flash":
+                        mode_badge = "✨ **[Gemini 2.0 Flash]**"
+                    elif engine == "GPT-4o-mini":
+                        mode_badge = "🧠 **[GPT-4o-mini]**"
+                    else:
+                        mode_badge = "⚠️ **[Motor Local — Añade tu Gemini Key para respuestas inteligentes]**"
                     full_response = f"{mode_badge}\n\n{coach_output['response']}"
                     st.markdown(full_response)
+
 
                     # ── Panel colapsable: diagnóstico NLP ──────────────────
                     with st.expander("🔍 Diagnóstico NLP (detalles técnicos)", expanded=False):
